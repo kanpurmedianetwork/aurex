@@ -1,47 +1,79 @@
+'use client'
+
+import { useState } from 'react'
+import { ArrowRight, ChevronDown, Heart, Menu, Search, ShoppingBag, Sparkles, X } from 'lucide-react'
+
+const referenceImage = 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Image-26385173-oFWfICbHcl4pkaztDWURS9ERw4bdHl.jpeg'
+
+const categories = [
+  { name: 'Rings', image: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=900&q=85' },
+  { name: 'Earrings', image: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=900&q=85' },
+  { name: 'Necklaces', image: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=900&q=85' },
+  { name: 'Bracelets', image: 'https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=900&q=85' },
+]
+
+const products = [
+  { name: 'The Aurelia Solitaire', price: '$1,240', tag: 'Bestseller', image: 'https://images.unsplash.com/photo-1603561596112-db75c8b5f9d1?auto=format&fit=crop&w=1000&q=85' },
+  { name: 'Petite Pavé Hoops', price: '$680', tag: 'New arrival', image: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=1000&q=85' },
+  { name: 'Luna Tennis Bracelet', price: '$1,890', tag: 'Lab-grown', image: 'https://images.unsplash.com/photo-1573408301185-9146fe634ad0?auto=format&fit=crop&w=1000&q=85' },
+  { name: 'Celeste Pendant', price: '$920', tag: 'Iconic', image: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=1000&q=85' },
+]
+
 export default function Page() {
+  const [menuOpen, setMenuOpen] = useState(false)
+  const [cartCount, setCartCount] = useState(0)
+  const [liked, setLiked] = useState<number[]>([])
+  const [email, setEmail] = useState('')
+  const [subscribed, setSubscribed] = useState(false)
+
+  function toggleLike(index: number) {
+    setLiked((current) => current.includes(index) ? current.filter((item) => item !== index) : [...current, index])
+  }
+
   return (
-    <main
-      style={{
-        colorScheme: 'light dark',
-        position: 'relative',
-        display: 'flex',
-        minHeight: '100vh',
-        alignItems: 'center',
-        justifyContent: 'center',
-        backgroundColor: 'light-dark(#fff, #000)',
-        color: 'light-dark(#000, #fff)',
-      }}
-    >
-      <svg
-        aria-hidden="true"
-        style={{ width: 80, height: 80 }}
-        width={80}
-        height={80}
-        fill="none"
-        viewBox="0 0 20 20"
-        xmlns="http://www.w3.org/2000/svg"
-        stroke="currentColor"
-        strokeWidth="0.5"
-      >
-        <path
-          d="M14.2 14.2H17V6.9375C17 4.76288 15.2371 3 13.0625 3H5.8V5.8M14.2 14.2V7.79063L7.79062 14.2H14.2ZM14.2 14.2V17H6.9375C4.76288 17 3 15.2371 3 13.0625V5.8H5.8M5.8 5.8V12.2313L12.2313 5.8H5.8Z"
-          strokeLinejoin="round"
-        />
-      </svg>
-      <p
-        style={{
-          position: 'absolute',
-          left: '50%',
-          top: 'calc(50% + 56px)',
-          transform: 'translateX(-50%)',
-          whiteSpace: 'nowrap',
-          fontSize: '14px',
-          fontWeight: 500,
-          color: 'light-dark(#71717a, #a1a1aa)',
-        }}
-      >
-        Your v0 generation will show here.
-      </p>
+    <main className="min-h-screen overflow-hidden bg-background text-foreground">
+      <div className="bg-navy px-4 py-2 text-center font-mono text-[10px] tracking-[0.2em] text-primary-foreground sm:text-xs">COMPLIMENTARY SHIPPING ON ORDERS OVER $500</div>
+
+      <header className="sticky top-0 z-40 border-b border-border/70 bg-background/95 backdrop-blur">
+        <div className="mx-auto flex h-18 max-w-7xl items-center justify-between px-4 sm:px-8">
+          <button aria-label="Open menu" onClick={() => setMenuOpen(true)} className="icon-button lg:hidden"><Menu size={20} /></button>
+          <nav className="hidden items-center gap-7 lg:flex">
+            {['Shop', 'Collections', 'Our story'].map((item) => <a key={item} href={`#${item.toLowerCase().replace(' ', '-')}`} className="nav-link">{item}</a>)}
+          </nav>
+          <a href="#top" className="font-serif text-2xl tracking-[0.15em] text-navy sm:text-3xl">AUREX</a>
+          <div className="flex items-center gap-1 sm:gap-3">
+            <button aria-label="Search" className="icon-button"><Search size={19} /></button>
+            <button aria-label="Shopping bag" className="icon-button relative" onClick={() => setCartCount((count) => count + 1)}><ShoppingBag size={19} />{cartCount > 0 && <span className="badge">{cartCount}</span>}</button>
+          </div>
+        </div>
+        <div className="hidden items-center justify-center gap-8 border-t border-border/60 py-3 font-mono text-[10px] uppercase tracking-[0.18em] text-muted-foreground lg:flex">
+          <a href="#new">New arrivals</a><a href="#best-sellers">Best sellers</a><a href="#diamonds">Lab-grown diamonds</a><a href="#gifting">Gifting</a>
+        </div>
+      </header>
+
+      {menuOpen && <div className="fixed inset-0 z-50 bg-navy/40 lg:hidden" onClick={() => setMenuOpen(false)}><aside className="h-full w-[82%] bg-background p-6 shadow-2xl" onClick={(event) => event.stopPropagation()}><div className="flex items-center justify-between"><span className="font-serif text-2xl tracking-[0.15em] text-navy">AUREX</span><button aria-label="Close menu" className="icon-button" onClick={() => setMenuOpen(false)}><X size={20} /></button></div><nav className="mt-14 flex flex-col gap-7 font-serif text-3xl"><a href="#shop" onClick={() => setMenuOpen(false)}>Shop</a><a href="#collections" onClick={() => setMenuOpen(false)}>Collections</a><a href="#our-story" onClick={() => setMenuOpen(false)}>Our story</a><a href="#journal" onClick={() => setMenuOpen(false)}>Journal</a></nav><div className="mt-16 border-t border-border pt-6 font-mono text-[10px] uppercase tracking-[0.18em] text-muted-foreground">Complimentary styling appointments available</div></aside></div>}
+
+      <section id="top" className="relative isolate min-h-[680px] overflow-hidden bg-navy text-primary-foreground sm:min-h-[740px]">
+        <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=2000&q=90" alt="Gold jewelry arranged on silk" className="absolute inset-0 -z-20 h-full w-full object-cover object-center opacity-75" />
+        <div className="absolute inset-0 -z-10 bg-gradient-to-r from-navy via-navy/65 to-transparent" />
+        <div className="mx-auto flex min-h-[680px] max-w-7xl items-end px-5 pb-16 sm:min-h-[740px] sm:px-8 sm:pb-24"><div className="max-w-xl"><p className="eyebrow text-champagne">Fine jewelry, thoughtfully made</p><h1 className="mt-5 max-w-lg font-serif text-5xl leading-[0.98] tracking-[-0.04em] text-balance sm:text-7xl">Made to mark your <em>moment.</em></h1><p className="mt-6 max-w-md text-sm leading-6 text-primary-foreground/75 sm:text-base">Timeless silhouettes, exceptional stones, and everyday brilliance. Discover modern heirlooms designed to be worn, loved, and remembered.</p><div className="mt-8 flex flex-wrap gap-3"><a href="#new" className="button button-light">Shop new arrivals <ArrowRight size={16} /></a><a href="#our-story" className="button button-ghost">Our story</a></div></div></div>
+      </section>
+
+      <section className="border-b border-border bg-background px-5 py-5 sm:px-8"><div className="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-x-7 gap-y-3 text-center font-mono text-[10px] uppercase tracking-[0.15em] text-muted-foreground sm:justify-between"><span>100% certified diamonds</span><span className="hidden h-1 w-1 rounded-full bg-champagne sm:block" /><span>Ethically sourced</span><span className="hidden h-1 w-1 rounded-full bg-champagne sm:block" /><span>Lifetime care included</span><span className="hidden h-1 w-1 rounded-full bg-champagne sm:block" /><span>Made to last</span></div></section>
+
+      <section id="collections" className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-24"><div className="flex items-end justify-between gap-4"><div><p className="eyebrow">Find your signature</p><h2 className="section-title">Shop by collection</h2></div><a href="#shop" className="hidden link-arrow sm:flex">View all <ArrowRight size={15} /></a></div><div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-5">{categories.map((category) => <a href="#shop" key={category.name} className="group"><div className="image-card aspect-[0.78] overflow-hidden bg-muted"><img src={category.image} alt={category.name} className="h-full w-full object-cover transition duration-700 group-hover:scale-105" /></div><div className="mt-3 flex items-center justify-between"><h3 className="font-serif text-xl">{category.name}</h3><ArrowRight size={16} className="text-muted-foreground transition group-hover:translate-x-1" /></div></a>)}</div></section>
+
+      <section id="new" className="bg-blush px-5 py-16 sm:px-8 sm:py-24"><div className="mx-auto max-w-7xl"><div className="flex items-end justify-between gap-4"><div><p className="eyebrow">Recently discovered</p><h2 className="section-title">The latest from Aurex</h2></div><a href="#shop" className="hidden link-arrow sm:flex">Shop all pieces <ArrowRight size={15} /></a></div><div className="mt-8 grid grid-cols-2 gap-x-3 gap-y-9 sm:grid-cols-4 sm:gap-5">{products.map((product, index) => <article key={product.name} className="group"><div className="relative aspect-[0.82] overflow-hidden bg-background"><img src={product.image} alt={product.name} className="h-full w-full object-cover transition duration-700 group-hover:scale-105" /><span className="absolute left-3 top-3 bg-background/90 px-2 py-1 font-mono text-[9px] uppercase tracking-widest">{product.tag}</span><button aria-label={`Add ${product.name} to wishlist`} onClick={() => toggleLike(index)} className="absolute right-2 top-2 flex h-10 w-10 items-center justify-center rounded-full bg-background/90 transition hover:bg-background"><Heart size={17} fill={liked.includes(index) ? 'currentColor' : 'none'} className={liked.includes(index) ? 'text-navy' : ''} /></button></div><div className="mt-3 flex items-start justify-between gap-2"><div><h3 className="font-serif text-lg leading-tight sm:text-xl">{product.name}</h3><p className="mt-1 font-mono text-xs tracking-wider text-muted-foreground">{product.price}</p></div><button aria-label={`Quick add ${product.name}`} onClick={() => setCartCount((count) => count + 1)} className="mt-1 rounded-full border border-border px-2.5 py-1 font-mono text-[9px] uppercase tracking-wider transition hover:bg-navy hover:text-primary-foreground">Add</button></div></article>)}</div></div></section>
+
+      <section id="diamonds" className="grid bg-navy text-primary-foreground lg:grid-cols-2"><div className="min-h-[430px] bg-cover bg-center" style={{ backgroundImage: `url(${referenceImage})` }} role="img" aria-label="Aurex jewelry campaign collage" /><div className="flex items-center px-6 py-16 sm:px-12 sm:py-24"><div className="max-w-lg"><p className="eyebrow text-champagne">The Aurex standard</p><h2 className="mt-4 font-serif text-4xl leading-tight sm:text-6xl">Brilliance you can feel good about.</h2><p className="mt-6 text-sm leading-7 text-primary-foreground/70 sm:text-base">Our lab-grown diamonds are real diamonds, with the same fire, clarity, and lasting beauty. Chosen with care. Crafted without compromise.</p><div className="mt-8 grid grid-cols-2 gap-6 border-t border-primary-foreground/15 pt-7"><div><Sparkles className="text-champagne" size={21} /><p className="mt-3 font-mono text-[10px] uppercase tracking-widest text-primary-foreground/70">Real brilliance</p></div><div><span className="font-serif text-2xl text-champagne">∞</span><p className="mt-3 font-mono text-[10px] uppercase tracking-widest text-primary-foreground/70">Made to last</p></div></div><a href="#our-story" className="button button-light mt-9">Explore our values <ArrowRight size={16} /></a></div></div></section>
+
+      <section id="our-story" className="mx-auto grid max-w-7xl gap-10 px-5 py-16 sm:px-8 sm:py-24 lg:grid-cols-[0.85fr_1.15fr] lg:items-center"><div className="order-2 lg:order-1"><p className="eyebrow">A little more meaning</p><h2 className="section-title max-w-md">Jewelry for all the chapters.</h2><p className="mt-6 max-w-md text-sm leading-7 text-muted-foreground sm:text-base">Aurex was born from a simple idea: the pieces you wear every day should feel as extraordinary as the moments that made you who you are.</p><a href="#journal" className="button button-dark mt-8">Discover Aurex <ArrowRight size={16} /></a></div><div className="order-1 grid grid-cols-2 gap-3 lg:order-2"><img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=1000&q=85" alt="Layered gold necklaces" className="aspect-[0.8] w-full object-cover" /><img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=1000&q=85" alt="Diamond ring close-up" className="mt-10 aspect-[0.8] w-full object-cover" /></div></section>
+
+      <section id="gifting" className="bg-champagne px-5 py-16 text-navy sm:px-8 sm:py-20"><div className="mx-auto max-w-3xl text-center"><p className="eyebrow">A note from our clients</p><blockquote className="mt-5 font-serif text-3xl leading-tight sm:text-5xl">“The kind of piece that makes an ordinary day feel like a celebration.”</blockquote><div className="mt-6 font-mono text-[10px] uppercase tracking-[0.18em]">— Amelia R. · Aurex client</div></div></section>
+
+      <section id="journal" className="bg-navy px-5 py-16 text-primary-foreground sm:px-8 sm:py-20"><div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 sm:flex-row sm:items-end"><div><p className="eyebrow text-champagne">Stay in the know</p><h2 className="mt-3 max-w-lg font-serif text-4xl leading-tight sm:text-5xl">Join the Aurex circle.</h2><p className="mt-4 max-w-md text-sm leading-6 text-primary-foreground/65">Early access to new collections, styling notes, and stories worth keeping.</p></div>{subscribed ? <p className="font-serif text-2xl text-champagne">Welcome to the circle.</p> : <form className="flex w-full max-w-md border-b border-primary-foreground/40 pb-2" onSubmit={(event) => { event.preventDefault(); if (email) setSubscribed(true) }}><input required type="email" value={email} onChange={(event) => setEmail(event.target.value)} placeholder="Your email address" aria-label="Email address" className="min-w-0 flex-1 bg-transparent px-0 py-3 text-base outline-none placeholder:text-primary-foreground/45" /><button type="submit" className="font-mono text-[10px] uppercase tracking-widest text-champagne">Subscribe <ArrowRight size={15} className="ml-2 inline" /></button></form>}</div></section>
+
+      <footer className="bg-navy px-5 pb-8 text-primary-foreground sm:px-8"><div className="mx-auto max-w-7xl border-t border-primary-foreground/15 pt-10"><div className="flex flex-col justify-between gap-10 sm:flex-row"><div><div className="font-serif text-3xl tracking-[0.15em]">AUREX</div><p className="mt-4 max-w-xs text-xs leading-5 text-primary-foreground/55">Modern heirlooms for every beautiful moment.</p></div><div className="grid grid-cols-2 gap-x-14 gap-y-4 font-mono text-[10px] uppercase tracking-widest text-primary-foreground/65"><a href="#shop">Shop all</a><a href="#journal">Journal</a><a href="#our-story">About us</a><a href="#gifting">Contact</a><a href="#diamonds">Care guide</a><a href="#top">Shipping & returns</a></div></div><div className="mt-14 flex flex-col gap-2 border-t border-primary-foreground/15 pt-5 font-mono text-[9px] uppercase tracking-widest text-primary-foreground/40 sm:flex-row sm:justify-between"><span>© 2024 Aurex Jewellery</span><span>Designed for Shopify Liquid</span></div></div></footer>
     </main>
   )
 }
