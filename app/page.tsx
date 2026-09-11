@@ -11,10 +11,10 @@ const categories = [
 ]
 
 const products = [
-  { name: 'The Aurelia Solitaire', price: '₹1,24,000', tag: 'Bestseller', image: 'https://images.unsplash.com/photo-1603561596112-db75c8b5f9d1?auto=format&fit=crop&w=1000&q=85' },
-  { name: 'Petite Pavé Hoops', price: '₹68,000', tag: 'New arrival', image: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=1000&q=85' },
-  { name: 'Luna Tennis Bracelet', price: '₹1,89,000', tag: 'Lab-grown', image: 'https://images.unsplash.com/photo-1573408301185-9146fe634ad0?auto=format&fit=crop&w=1000&q=85' },
-  { name: 'Celeste Pendant', price: '₹92,000', tag: 'Iconic', image: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=1000&q=85' },
+  { name: 'The Aurelia Solitaire', price: '₹1,000', tag: 'Bestseller', image: 'https://images.unsplash.com/photo-1603561596112-db75c8b5f9d1?auto=format&fit=crop&w=1000&q=85' },
+  { name: 'Petite Pavé Hoops', price: '₹1,500', tag: 'New arrival', image: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=1000&q=85' },
+  { name: 'Luna Tennis Bracelet', price: '₹500', tag: 'Lab-grown', image: 'https://images.unsplash.com/photo-1573408301185-9146fe634ad0?auto=format&fit=crop&w=1000&q=85' },
+  { name: 'Celeste Pendant', price: '₹1,000', tag: 'Iconic', image: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=1000&q=85' },
 ]
 
 export default function Page() {
