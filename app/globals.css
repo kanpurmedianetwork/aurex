@@ -32,27 +32,27 @@
 
 :root {
   color-scheme: light;
-  --background: oklch(0.985 0.008 85);
-  --foreground: oklch(0.19 0.02 265);
-  --card: oklch(0.99 0.005 85);
-  --card-foreground: oklch(0.19 0.02 265);
-  --popover: oklch(0.99 0.005 85);
-  --popover-foreground: oklch(0.19 0.02 265);
-  --primary: oklch(0.26 0.04 258);
-  --primary-foreground: oklch(0.985 0.008 85);
-  --secondary: oklch(0.94 0.02 83);
-  --secondary-foreground: oklch(0.25 0.03 258);
-  --muted: oklch(0.94 0.015 80);
-  --muted-foreground: oklch(0.47 0.025 260);
-  --accent: oklch(0.92 0.04 80);
-  --accent-foreground: oklch(0.25 0.03 258);
-  --border: oklch(0.86 0.02 80);
-  --input: oklch(0.86 0.02 80);
-  --ring: oklch(0.53 0.07 80);
-  --navy: oklch(0.24 0.055 257);
-  --champagne: oklch(0.82 0.09 78);
-  --blush: oklch(0.95 0.025 55);
-  --radius: 0.25rem;
+  --background: oklch(0.985 0.012 72);
+  --foreground: oklch(0.2 0.025 260);
+  --card: oklch(0.992 0.008 72);
+  --card-foreground: oklch(0.2 0.025 260);
+  --popover: oklch(0.992 0.008 72);
+  --popover-foreground: oklch(0.2 0.025 260);
+  --primary: oklch(0.3 0.055 258);
+  --primary-foreground: oklch(0.985 0.012 72);
+  --secondary: oklch(0.94 0.028 68);
+  --secondary-foreground: oklch(0.28 0.04 258);
+  --muted: oklch(0.945 0.02 68);
+  --muted-foreground: oklch(0.48 0.03 260);
+  --accent: oklch(0.88 0.075 62);
+  --accent-foreground: oklch(0.28 0.04 258);
+  --border: oklch(0.87 0.028 68);
+  --input: oklch(0.87 0.028 68);
+  --ring: oklch(0.62 0.1 52);
+  --navy: oklch(0.245 0.065 258);
+  --champagne: oklch(0.79 0.105 64);
+  --blush: oklch(0.94 0.045 58);
+  --radius: 0.2rem;
 }
 
 * { @apply border-border outline-ring/50; }
@@ -62,8 +62,8 @@ button, a { -webkit-tap-highlight-color: transparent; }
 
 @layer components {
   .eyebrow { @apply font-mono text-[10px] uppercase tracking-[0.22em] text-muted-foreground; }
-  .section-title { @apply mt-3 font-serif text-4xl leading-tight tracking-[-0.03em] sm:text-5xl; }
-  .nav-link { @apply font-mono text-[10px] uppercase tracking-[0.16em] text-muted-foreground transition hover:text-navy; }
+  .section-title { @apply mt-3 font-serif text-4xl leading-[0.98] tracking-[-0.035em] sm:text-5xl; }
+  .nav-link { @apply font-mono text-[10px] uppercase tracking-[0.18em] text-muted-foreground transition hover:text-navy; }
   .icon-button { @apply relative flex h-11 w-11 items-center justify-center rounded-full text-navy transition hover:bg-muted; }
   .badge { @apply absolute right-1 top-1 flex h-4 min-w-4 items-center justify-center rounded-full bg-navy px-1 font-mono text-[8px] text-primary-foreground; }
   .button { @apply inline-flex min-h-11 items-center justify-center gap-3 px-5 font-mono text-[10px] uppercase tracking-[0.14em] transition; }
