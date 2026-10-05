@@ -59,21 +59,20 @@
 html { background: var(--background); scroll-behavior: smooth; }
 body { @apply bg-background text-foreground font-serif; background-image: radial-gradient(rgba(212,175,55,.045) 0.7px, transparent 0.7px); background-size: 7px 7px; }
 section, header, footer { position: relative; }
-section::after { content: ''; position: absolute; inset: 18px 10px; pointer-events: none; border-left: 1px solid rgba(212,175,55,.2); border-right: 1px solid rgba(212,175,55,.2); }
-img { filter: saturate(.82) contrast(.98); }
+img { filter: saturate(.9) contrast(1.02); }
 button, a { -webkit-tap-highlight-color: transparent; }
 
 @layer components {
   .eyebrow { @apply font-mono text-[10px] uppercase tracking-[0.22em] text-champagne; }
   .section-title { @apply mt-3 font-serif text-4xl uppercase leading-[0.98] tracking-[0.12em] text-foreground sm:text-5xl; }
   .section-title::after { content: ''; display: block; width: 58px; height: 1px; margin-top: 18px; background: linear-gradient(90deg, #D4AF37, transparent); }
-  .nav-link { @apply font-mono text-[10px] uppercase tracking-[0.18em] text-muted-foreground transition hover:text-navy; }
-  .icon-button { @apply relative flex h-11 w-11 items-center justify-center rounded-full text-navy transition hover:bg-muted; }
-  .badge { @apply absolute right-1 top-1 flex h-4 min-w-4 items-center justify-center rounded-full bg-navy px-1 font-mono text-[8px] text-primary-foreground; }
+  .nav-link { @apply font-mono text-[10px] uppercase tracking-[0.18em] text-muted-foreground transition hover:text-champagne; }
+  .icon-button { @apply relative flex h-11 w-11 items-center justify-center rounded-full text-foreground transition hover:bg-muted hover:text-champagne; }
+  .badge { @apply absolute right-1 top-1 flex h-4 min-w-4 items-center justify-center rounded-full bg-primary px-1 font-mono text-[8px] text-primary-foreground; }
   .button { @apply inline-flex min-h-11 items-center justify-center gap-3 px-5 font-mono text-[10px] uppercase tracking-[0.14em] transition; }
-  .button-light { @apply bg-background text-navy hover:bg-champagne; }
-  .button-dark { @apply bg-navy text-primary-foreground hover:bg-navy/85; }
+  .button-light { @apply bg-primary text-primary-foreground hover:bg-accent hover:text-accent-foreground; }
+  .button-dark { @apply bg-primary text-primary-foreground hover:bg-accent hover:text-accent-foreground; }
   .button-ghost { @apply border border-primary-foreground/45 text-primary-foreground hover:border-primary-foreground hover:bg-primary-foreground/10; }
-  .link-arrow { @apply items-center gap-2 font-mono text-[10px] uppercase tracking-[0.15em] text-muted-foreground transition hover:text-navy; }
+  .link-arrow { @apply items-center gap-2 font-mono text-[10px] uppercase tracking-[0.15em] text-muted-foreground transition hover:text-champagne; }
   .image-card { @apply bg-muted; }
 }
