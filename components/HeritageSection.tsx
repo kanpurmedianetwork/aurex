@@ -21,10 +21,11 @@ export function HeritageSection() {
                 {/* Neeru Designer Portrait */}
                 <div className="relative h-96 sm:h-[460px] w-full overflow-hidden bg-[#141414]">
                   <Image
-                    src="/lookbook/jewel_153.jpg"
+                    src="/founder-neeru.jpg"
                     alt="Neeru - 10th Generation Jeweller & Designer"
                     fill
-                    className="object-cover object-top filter contrast-[1.05]"
+                    priority
+                    className="object-cover object-top transition-transform duration-700 hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
                   
