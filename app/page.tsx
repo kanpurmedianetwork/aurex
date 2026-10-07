@@ -37,7 +37,7 @@ export default function Home() {
   }
 
   return (
-    <main className="min-h-screen bg-[#0b0b0b] text-[#f4ede4] relative selection:bg-[#c9a35e]/30 selection:text-white">
+    <main className="min-h-screen bg-[#141414] text-[#ede6df] relative selection:bg-[#d8a48f]/30 selection:text-white">
       <div id="top" />
 
       {/* Luxury Sticky Navbar */}

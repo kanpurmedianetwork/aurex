@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import { JEWELRY_PIECES, JewelryPiece } from '@/lib/lookbook-data'
-import { Heart, MessageSquare, Sparkles, Eye, ArrowUpRight } from 'lucide-react'
+import { Heart, Sparkles, Eye, ArrowUpRight } from 'lucide-react'
 
 interface CollectionsSectionProps {
   onSelectPiece: (piece: JewelryPiece) => void
@@ -38,23 +38,23 @@ export function CollectionsSection({
       : JEWELRY_PIECES.filter((p) => p.category === selectedCategory)
 
   return (
-    <section id="collections" className="py-24 bg-[#0c0c0c] relative">
+    <section id="collections" className="py-24 bg-[#141414] relative">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
           <div className="inline-flex items-center gap-2 mb-3">
-            <Sparkles size={12} className="text-[#c9a35e]" />
-            <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-[#dfba7e]">
-              Curated Haute Joaillerie
+            <Sparkles size={12} className="text-[#d8a48f]" />
+            <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-[#d8a48f]">
+              Permanent Haute Joaillerie
             </span>
-            <Sparkles size={12} className="text-[#c9a35e]" />
+            <Sparkles size={12} className="text-[#d8a48f]" />
           </div>
 
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl uppercase tracking-[0.16em] text-white">
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl uppercase tracking-[0.16em] text-[#ede6df]">
             Permanent Collections
           </h2>
 
-          <div className="w-16 h-px bg-gradient-to-r from-transparent via-[#c9a35e] to-transparent mx-auto my-5" />
+          <div className="w-16 h-px bg-gradient-to-r from-transparent via-[#d8a48f] to-transparent mx-auto my-5" />
 
           <p className="font-serif italic text-base text-[#c7c0b5]">
             Each creation is a study in rare gemstone provenance, architectural elegance, and heirloom craftsmanship.
@@ -75,8 +75,8 @@ export function CollectionsSection({
                 onClick={() => setSelectedCategory(cat.id)}
                 className={`px-4 py-2 font-mono text-[10px] uppercase tracking-[0.18em] transition-all duration-300 border ${
                   selectedCategory === cat.id
-                    ? 'border-[#c9a35e] bg-[#c9a35e] text-[#0c0c0c] font-semibold shadow-md shadow-[#c9a35e]/15'
-                    : 'border-[#c9a35e]/20 text-[#a69f94] hover:border-[#c9a35e]/50 hover:text-[#dfba7e] bg-[#121110]'
+                    ? 'border-[#d8a48f] bg-[#d8a48f] text-[#141414] font-semibold shadow-md shadow-[#d8a48f]/15'
+                    : 'border-[#d8a48f]/20 text-[#a39b94] hover:border-[#d8a48f]/50 hover:text-[#d8a48f] bg-[#1a1a1a]'
                 }`}
               >
                 <span>{cat.label}</span>
@@ -94,29 +94,29 @@ export function CollectionsSection({
             return (
               <article
                 key={piece.id}
-                className="group relative bg-[#131211] border border-[#c9a35e]/20 hover:border-[#c9a35e]/60 transition-all duration-500 flex flex-col justify-between overflow-hidden shadow-lg hover:shadow-2xl hover:shadow-[#c9a35e]/5"
+                className="group relative bg-[#1a1a1a] border border-[#d8a48f]/20 hover:border-[#d8a48f]/60 transition-all duration-500 flex flex-col justify-between overflow-hidden shadow-lg hover:shadow-2xl hover:shadow-[#d8a48f]/10"
               >
                 {/* Lookbook ribbon accent */}
                 <div className="absolute top-0 right-0 w-12 h-12 overflow-hidden pointer-events-none z-10">
-                  <div className="absolute transform rotate-45 bg-[#c9a35e]/20 text-[7px] font-mono text-[#dfba7e] uppercase tracking-widest text-center py-0.5 right-[-35px] top-[18px] w-[120px]">
+                  <div className="absolute transform rotate-45 bg-[#d8a48f]/20 text-[7px] font-mono text-[#ebd0c4] uppercase tracking-widest text-center py-0.5 right-[-35px] top-[18px] w-[120px]">
                     Pg {piece.page}
                   </div>
                 </div>
 
                 {/* Card Top Information */}
-                <div className="p-4 flex items-center justify-between border-b border-[#c9a35e]/10">
-                  <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-[#dfba7e]">
+                <div className="p-4 flex items-center justify-between border-b border-[#d8a48f]/10">
+                  <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-[#ebd0c4]">
                     {piece.collection}
                   </span>
 
                   <button
                     onClick={() => onToggleWishlist(piece.id)}
                     aria-label={`Save ${piece.name} to wishlist`}
-                    className="p-1 text-[#a69f94] hover:text-[#dfba7e] transition"
+                    className="p-1 text-[#a39b94] hover:text-[#d8a48f] transition"
                   >
                     <Heart
                       size={16}
-                      className={isLiked ? 'fill-[#c9a35e] text-[#c9a35e]' : ''}
+                      className={isLiked ? 'fill-[#d8a48f] text-[#d8a48f]' : ''}
                     />
                   </button>
                 </div>
@@ -124,7 +124,7 @@ export function CollectionsSection({
                 {/* Center Image with Luxury Glow and Zoom */}
                 <div
                   onClick={() => onSelectPiece(piece)}
-                  className="relative h-64 sm:h-72 w-full p-6 cursor-pointer flex items-center justify-center bg-radial from-[#1e1c19] to-[#11100f] overflow-hidden"
+                  className="relative h-64 sm:h-72 w-full p-6 cursor-pointer flex items-center justify-center bg-radial from-[#222222] to-[#141414] overflow-hidden"
                 >
                   <div className="relative w-full h-full transition-transform duration-700 ease-out group-hover:scale-110">
                     <Image
@@ -137,7 +137,7 @@ export function CollectionsSection({
 
                   {/* Hover Quick View Overlay */}
                   <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <span className="inline-flex items-center gap-1.5 bg-[#0c0c0c]/90 border border-[#c9a35e]/50 px-3.5 py-1.5 font-mono text-[9px] uppercase tracking-[0.18em] text-[#dfba7e]">
+                    <span className="inline-flex items-center gap-1.5 bg-[#141414]/90 border border-[#d8a48f]/50 px-3.5 py-1.5 font-mono text-[9px] uppercase tracking-[0.18em] text-[#ebd0c4]">
                       <Eye size={12} />
                       <span>Examine Gemstones</span>
                     </span>
@@ -148,46 +148,46 @@ export function CollectionsSection({
                 <div className="p-5 flex-1 flex flex-col justify-between">
                   <div>
                     {piece.subtitle && (
-                      <span className="font-script text-lg text-[#d99f84] block mb-1">
+                      <span className="font-script text-lg text-[#d8a48f] block mb-1">
                         {piece.subtitle}
                       </span>
                     )}
 
                     <h3
                       onClick={() => onSelectPiece(piece)}
-                      className="font-serif text-lg text-white font-medium hover:text-[#dfba7e] transition cursor-pointer leading-tight mb-2"
+                      className="font-serif text-lg text-[#ede6df] font-medium hover:text-[#d8a48f] transition cursor-pointer leading-tight mb-2"
                     >
                       {piece.name}
                     </h3>
 
-                    <p className="text-xs text-[#a69f94] line-clamp-2 leading-relaxed mb-4">
+                    <p className="text-xs text-[#a39b94] line-clamp-2 leading-relaxed mb-4">
                       {piece.description}
                     </p>
 
-                    <div className="border-t border-[#c9a35e]/10 pt-3 space-y-1 mb-4 text-[11px] font-mono text-[#c7c0b5]">
+                    <div className="border-t border-[#d8a48f]/10 pt-3 space-y-1 mb-4 text-[11px] font-mono text-[#c7c0b5]">
                       <div className="flex items-start justify-between gap-2">
-                        <span className="text-[#a69f94] uppercase tracking-wider text-[9px]">Gems:</span>
-                        <span className="text-right text-[#dfba7e] text-[10px]">{piece.gemstones}</span>
+                        <span className="text-[#a39b94] uppercase tracking-wider text-[9px]">Gems:</span>
+                        <span className="text-right text-[#d8a48f] text-[10px]">{piece.gemstones}</span>
                       </div>
                       <div className="flex items-center justify-between gap-2">
-                        <span className="text-[#a69f94] uppercase tracking-wider text-[9px]">Metal:</span>
-                        <span className="text-right text-[10px]">{piece.metal}</span>
+                        <span className="text-[#a39b94] uppercase tracking-wider text-[9px]">Metal:</span>
+                        <span className="text-right text-[10px] text-[#ede6df]">{piece.metal}</span>
                       </div>
                     </div>
                   </div>
 
                   {/* Actions */}
-                  <div className="grid grid-cols-2 gap-2 pt-3 border-t border-[#c9a35e]/15">
+                  <div className="grid grid-cols-2 gap-2 pt-3 border-t border-[#d8a48f]/15">
                     <button
                       onClick={() => onSelectPiece(piece)}
-                      className="w-full text-center py-2 border border-[#c9a35e]/30 font-mono text-[9px] uppercase tracking-[0.16em] text-[#dfba7e] hover:bg-[#c9a35e]/10 transition"
+                      className="w-full text-center py-2 border border-[#d8a48f]/30 font-mono text-[9px] uppercase tracking-[0.16em] text-[#ebd0c4] hover:bg-[#d8a48f]/15 transition"
                     >
                       Specifications
                     </button>
 
                     <button
                       onClick={() => onOpenConcierge(piece.name)}
-                      className="w-full inline-flex items-center justify-center gap-1 py-2 bg-[#c9a35e] text-[#0c0c0c] font-mono text-[9px] uppercase tracking-[0.16em] font-semibold hover:bg-[#dfba7e] transition"
+                      className="w-full inline-flex items-center justify-center gap-1 py-2 bg-[#d8a48f] text-[#141414] font-mono text-[9px] uppercase tracking-[0.16em] font-semibold hover:bg-[#ebd0c4] transition"
                     >
                       <span>Inquire</span>
                       <ArrowUpRight size={12} />

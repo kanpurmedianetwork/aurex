@@ -22,11 +22,13 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --color-gold: var(--gold);
-  --color-champagne: var(--champagne);
+
+  /* Exact Lookbook Color Palette: Charcoal Matte & Metallic Rose Gold Foil */
   --color-rosegold: var(--rosegold);
-  --color-emerald-deep: var(--emerald-deep);
-  --color-ruby-deep: var(--ruby-deep);
+  --color-rosegold-light: var(--rosegold-light);
+  --color-rosegold-dark: var(--rosegold-dark);
+  --color-charcoal: var(--charcoal);
+  --color-charcoal-card: var(--charcoal-card);
 
   --font-sans: var(--font-sans), 'Montserrat', sans-serif;
   --font-serif: var(--font-cormorant), 'Cormorant Garamond', Georgia, serif;
@@ -36,29 +38,34 @@
 
 :root {
   color-scheme: dark;
-  --background: #0b0b0b;
-  --foreground: #f4ede4;
-  --card: #131211;
-  --card-foreground: #f4ede4;
-  --popover: #151413;
-  --popover-foreground: #f4ede4;
-  --primary: #c9a35e;
-  --primary-foreground: #0c0c0c;
-  --secondary: #1a1918;
-  --secondary-foreground: #f4ede4;
-  --muted: #1e1d1b;
-  --muted-foreground: #a69f94;
-  --accent: #dfba7e;
-  --accent-foreground: #0c0c0c;
-  --border: rgba(201, 163, 94, 0.22);
-  --input: rgba(201, 163, 94, 0.3);
-  --ring: #c9a35e;
-  --gold: #c9a35e;
-  --champagne: #dfba7e;
-  --rosegold: #d99f84;
-  --emerald-deep: #0e3b2e;
-  --ruby-deep: #6e1628;
-  --radius: 0.2rem;
+  /* Exact Lookbook Background: Deep matte charcoal paper (#141414) */
+  --background: #141414;
+  --foreground: #ede6df;
+  --card: #1b1b1b;
+  --card-foreground: #ede6df;
+  --popover: #1c1c1c;
+  --popover-foreground: #ede6df;
+
+  /* Exact Lookbook Foil Accent: Blush Rose Gold (#D8A48F / #E2B89D) */
+  --primary: #d8a48f;
+  --primary-foreground: #141414;
+  --secondary: #222222;
+  --secondary-foreground: #ede6df;
+  --muted: #242424;
+  --muted-foreground: #a39b94;
+  --accent: #e5b8a0;
+  --accent-foreground: #141414;
+  --border: rgba(216, 164, 143, 0.24);
+  --input: rgba(216, 164, 143, 0.32);
+  --ring: #d8a48f;
+
+  --rosegold: #d8a48f;
+  --rosegold-light: #ebd0c4;
+  --rosegold-dark: #b87b64;
+  --charcoal: #141414;
+  --charcoal-card: #1c1c1c;
+
+  --radius: 0.15rem;
 }
 
 * {
@@ -67,39 +74,40 @@
 }
 
 html {
-  background: #0b0b0b;
+  background: #141414;
   scroll-behavior: smooth;
   color-scheme: dark;
 }
 
 body {
   @apply bg-background text-foreground font-sans;
-  background-color: #0b0b0b;
+  background-color: #141414;
+  /* Subtle lookbook paper tactile texture */
   background-image: 
-    radial-gradient(rgba(201, 163, 94, 0.035) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(12, 12, 12, 0.95), rgba(8, 8, 8, 0.98));
-  background-size: 24px 24px, 100% 100%;
+    radial-gradient(rgba(216, 164, 143, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(20, 20, 20, 0.98), rgba(16, 16, 16, 1));
+  background-size: 28px 28px, 100% 100%;
   background-attachment: fixed;
   overflow-x: hidden;
 }
 
-/* Custom Gold Scrollbar */
+/* Custom Rose Gold Scrollbar */
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 5px;
+  height: 5px;
 }
 ::-webkit-scrollbar-track {
-  background: #0a0a0a;
+  background: #101010;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(201, 163, 94, 0.35);
-  border-radius: 3px;
+  background: rgba(216, 164, 143, 0.35);
+  border-radius: 2px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(201, 163, 94, 0.65);
+  background: rgba(216, 164, 143, 0.7);
 }
 
-/* Haute Joaillerie Typography & Effects */
+/* Haute Joaillerie Typography */
 .font-script {
   font-family: var(--font-script), 'Alex Brush', cursive;
 }
@@ -116,54 +124,29 @@ body {
   font-family: var(--font-mono), 'DM Mono', monospace;
 }
 
-.gold-foil-text {
-  background: linear-gradient(135deg, #f7e6c4 0%, #c9a35e 50%, #e8bc86 100%);
+/* Rose Gold Metallic Text Gradient matching Lookbook */
+.rosegold-gradient-text {
+  background: linear-gradient(135deg, #f5ddd2 0%, #d8a48f 45%, #e8c4b4 80%, #b87b64 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.rosegold-foil-text {
-  background: linear-gradient(135deg, #f3cfbc 0%, #d89e83 50%, #f6dfd2 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.rosegold-border {
+  border: 1px solid rgba(216, 164, 143, 0.25);
 }
 
-.gold-border {
-  border: 1px solid rgba(201, 163, 94, 0.25);
+.rosegold-border-glow {
+  border: 1px solid rgba(216, 164, 143, 0.35);
+  box-shadow: 0 0 20px -5px rgba(216, 164, 143, 0.15);
 }
 
-.gold-border-glow {
-  border: 1px solid rgba(201, 163, 94, 0.35);
-  box-shadow: 0 0 25px -8px rgba(201, 163, 94, 0.18);
+.rosegold-border-glow:hover {
+  border-color: rgba(216, 164, 143, 0.7);
+  box-shadow: 0 0 30px -3px rgba(216, 164, 143, 0.25);
 }
 
-.gold-border-glow:hover {
-  border-color: rgba(201, 163, 94, 0.65);
-  box-shadow: 0 0 35px -5px rgba(201, 163, 94, 0.28);
-}
-
-.editorial-divider {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1.25rem;
-}
-
-.editorial-divider::before,
-.editorial-divider::after {
-  content: '';
-  height: 1px;
-  flex: 1;
-  background: linear-gradient(90deg, transparent, rgba(201, 163, 94, 0.4), transparent);
-}
-
-/* Subtle lookbook ribbon strip styling */
-.lookbook-foil-edge {
-  background: linear-gradient(
-    180deg,
-    rgba(216, 158, 131, 0.8) 0%,
-    rgba(201, 163, 94, 0.9) 50%,
-    rgba(216, 158, 131, 0.8) 100%
-  );
-  box-shadow: 0 0 10px rgba(201, 163, 94, 0.4);
+/* Lookbook foil edge ribbon */
+.lookbook-ribbon-border {
+  border-right: 3px solid #d8a48f;
+  box-shadow: 2px 0 12px rgba(216, 164, 143, 0.35);
 }

@@ -1,9 +1,8 @@
 'use client'
 
-import { useState } from 'react'
-import Image from 'next/image'
-import { AUREX_BRAND } from '@/lib/lookbook-data'
-import { Heart, Menu, PhoneCall, Search, Sparkles, X } from 'lucide-react'
+import { useState, useEffect } from 'react'
+import { AurexLogo } from '@/components/AurexLogo'
+import { Heart, Menu, PhoneCall, Sparkles, X, ChevronDown } from 'lucide-react'
 
 interface NavbarProps {
   wishlistCount: number
@@ -11,83 +10,142 @@ interface NavbarProps {
   onOpenConcierge: () => void
 }
 
+const SUB_CATEGORIES = [
+  { label: 'Engagement Rings', href: '#collections' },
+  { label: 'Wedding Collection', href: '#collections' },
+  { label: 'Colombian Emeralds', href: '#collections' },
+  { label: 'Chandelier Earrings', href: '#collections' },
+  { label: 'Cocktail Rings', href: '#collections' },
+  { label: 'Bracelets & Cuffs', href: '#collections' },
+  { label: 'Royal Accessories', href: '#collections' },
+  { label: 'Everyday Bling (14K)', href: '#collections' },
+]
+
 export function Navbar({ wishlistCount, onOpenWishlist, onOpenConcierge }: NavbarProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
+
+  useEffect(() => {
+    function handleScroll() {
+      setIsScrolled(window.scrollY > 40)
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   return (
     <>
-      {/* Top Luxury Announcement Bar */}
-      <div className="bg-[#121110] border-b border-[#c9a35e]/20 px-4 py-2 text-center">
-        <div className="mx-auto flex max-w-7xl items-center justify-center gap-2 text-[10px] sm:text-xs font-mono uppercase tracking-[0.22em] text-[#dfba7e]">
-          <Sparkles size={12} className="text-[#c9a35e] animate-pulse" />
-          <span>Complimentary White-Glove Bespoke Consultation & Insured Worldwide Delivery</span>
-          <Sparkles size={12} className="text-[#c9a35e] animate-pulse hidden sm:inline" />
+      {/* 1. Top Atelier & Concierge Micro-Bar */}
+      <div className="bg-[#0f0f0f] border-b border-[#d8a48f]/15 px-4 sm:px-8 py-2 text-[10px] font-mono uppercase tracking-[0.22em] text-[#a39b94]">
+        <div className="mx-auto max-w-7xl flex items-center justify-between">
+          <div className="hidden md:flex items-center gap-3 text-[#d8a48f]">
+            <span>Jaipur Atelier</span>
+            <span>·</span>
+            <span>Antwerp Diamonds</span>
+            <span>·</span>
+            <span>New Delhi</span>
+          </div>
+
+          <div className="mx-auto md:mx-0 flex items-center gap-2 text-center text-[#ede6df]">
+            <Sparkles size={11} className="text-[#d8a48f]" />
+            <span>Complimentary Insured Worldwide Delivery & Private Trousseau Consultations</span>
+          </div>
+
+          <div className="hidden lg:flex items-center gap-4">
+            <a href="mailto:aurex1975@gmail.com" className="hover:text-[#d8a48f] transition">
+              aurex1975@gmail.com
+            </a>
+            <span>·</span>
+            <span>Est. 1975</span>
+          </div>
         </div>
       </div>
 
-      {/* Main Sticky Luxury Header */}
-      <header className="sticky top-0 z-40 bg-[#0c0c0c]/90 backdrop-blur-md border-b border-[#c9a35e]/15">
-        <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-8">
-          {/* Mobile Menu Button */}
-          <div className="flex items-center gap-3 lg:hidden">
+      {/* 2. Main Luxury Header */}
+      <header
+        className={`sticky top-0 z-40 transition-all duration-300 border-b border-[#d8a48f]/15 ${
+          isScrolled
+            ? 'bg-[#141414]/95 backdrop-blur-md shadow-2xl py-2'
+            : 'bg-[#141414]/90 backdrop-blur-sm py-3'
+        }`}
+      >
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-8">
+          {/* Mobile Hamburger */}
+          <div className="flex items-center gap-2 lg:hidden">
             <button
               onClick={() => setMobileMenuOpen(true)}
               aria-label="Open navigation menu"
-              className="p-2 text-[#dfba7e] hover:text-[#f7e6c4] transition"
+              className="p-2 text-[#d8a48f] hover:text-[#ede6df] transition"
             >
               <Menu size={22} />
             </button>
           </div>
 
-          {/* Desktop Left Nav Links */}
-          <nav className="hidden lg:flex items-center gap-8 text-[11px] font-mono uppercase tracking-[0.2em] text-[#a69f94]">
-            <a href="#collections" className="hover:text-[#dfba7e] transition duration-200">
+          {/* Desktop Left Navigation Links */}
+          <nav className="hidden lg:flex items-center gap-8 text-[11px] font-mono uppercase tracking-[0.22em] text-[#ede6df]/85">
+            <a href="#collections" className="hover:text-[#d8a48f] transition duration-200">
               Collections
             </a>
-            <a href="#lookbook-viewer" className="hover:text-[#dfba7e] transition duration-200">
-              Lookbook
+            <a href="#lookbook-viewer" className="hover:text-[#d8a48f] transition duration-200">
+              Lookbook Spreads
             </a>
-            <a href="#heritage" className="hover:text-[#dfba7e] transition duration-200">
-              10th Gen Legacy
-            </a>
-            <a href="#client-diaries" className="hover:text-[#dfba7e] transition duration-200">
-              Client Diaries
+            <a href="#collections" className="hover:text-[#d8a48f] transition duration-200">
+              High Jewellery
             </a>
           </nav>
 
-          {/* Center Brand Emblem & Title */}
+          {/* Center Brand Emblem & Title with 100% Transparent Monogram */}
           <a
             href="#top"
-            className="flex flex-col items-center justify-center group py-1"
+            className="flex flex-col items-center justify-center group"
             aria-label="Aurex Fine Jewellery home"
           >
-            <div className="relative w-9 h-7 sm:w-11 sm:h-8 mb-1 transition-transform duration-300 group-hover:scale-105">
-              <Image
-                src="/aurex-monogram.png"
-                alt="Aurex Monogram"
-                fill
-                className="object-contain"
-                priority
-              />
-            </div>
-            <span className="font-serif text-2xl sm:text-3xl tracking-[0.25em] uppercase gold-foil-text font-normal leading-none">
-              AUREX
-            </span>
-            <span className="text-[8px] sm:text-[9px] font-mono tracking-[0.35em] uppercase text-[#a69f94] mt-1">
-              Fine Jewellery
-            </span>
+            <AurexLogo size="md" />
           </a>
 
-          {/* Right Action Icons & VIP Concierge Button */}
-          <div className="flex items-center gap-3 sm:gap-4">
+          {/* Desktop Right Navigation Links & Actions */}
+          <div className="hidden lg:flex items-center gap-8 text-[11px] font-mono uppercase tracking-[0.22em] text-[#ede6df]/85">
+            <a href="#heritage" className="hover:text-[#d8a48f] transition duration-200">
+              10th Gen Heritage
+            </a>
+            <a href="#client-diaries" className="hover:text-[#d8a48f] transition duration-200">
+              Client Diaries
+            </a>
+
+            {/* Wishlist Icon */}
             <button
               onClick={onOpenWishlist}
-              className="relative p-2 text-[#a69f94] hover:text-[#dfba7e] transition"
-              aria-label="View curated wishlist"
+              className="relative p-2 text-[#ede6df] hover:text-[#d8a48f] transition"
+              aria-label="View saved pieces"
+            >
+              <Heart size={18} />
+              {wishlistCount > 0 && (
+                <span className="absolute -top-0.5 -right-0.5 flex h-4 w-4 items-center justify-center rounded-full bg-[#d8a48f] text-[#141414] font-mono text-[8px] font-bold">
+                  {wishlistCount}
+                </span>
+              )}
+            </button>
+
+            {/* Book Private Viewing CTA */}
+            <button
+              onClick={onOpenConcierge}
+              className="inline-flex items-center gap-2 border border-[#d8a48f]/50 px-4 py-2 font-mono text-[10px] uppercase tracking-[0.18em] text-[#d8a48f] hover:bg-[#d8a48f] hover:text-[#141414] transition duration-300"
+            >
+              <PhoneCall size={12} />
+              <span>Private Viewing</span>
+            </button>
+          </div>
+
+          {/* Mobile Right Icons */}
+          <div className="flex items-center gap-2 lg:hidden">
+            <button
+              onClick={onOpenWishlist}
+              className="relative p-2 text-[#ede6df] hover:text-[#d8a48f]"
+              aria-label="View saved pieces"
             >
               <Heart size={19} />
               {wishlistCount > 0 && (
-                <span className="absolute -top-0.5 -right-0.5 flex h-4.5 w-4.5 items-center justify-center rounded-full bg-[#c9a35e] text-[#0c0c0c] font-mono text-[9px] font-bold">
+                <span className="absolute -top-0.5 -right-0.5 flex h-4 w-4 items-center justify-center rounded-full bg-[#d8a48f] text-[#141414] font-mono text-[8px] font-bold">
                   {wishlistCount}
                 </span>
               )}
@@ -95,92 +153,116 @@ export function Navbar({ wishlistCount, onOpenWishlist, onOpenConcierge }: Navba
 
             <button
               onClick={onOpenConcierge}
-              className="hidden sm:inline-flex items-center gap-2 border border-[#c9a35e]/40 px-4 py-2 font-mono text-[10px] uppercase tracking-[0.16em] text-[#dfba7e] hover:bg-[#c9a35e]/10 hover:border-[#c9a35e] transition duration-300"
+              className="p-2 text-[#d8a48f] hover:text-[#ede6df]"
+              aria-label="Book private viewing"
             >
-              <PhoneCall size={12} />
-              <span>Bespoke Concierge</span>
+              <PhoneCall size={19} />
             </button>
           </div>
         </div>
+
+        {/* 3. Sub-Navigation Horizontal Strip (Lookbook Categories) */}
+        <div className="hidden xl:flex items-center justify-center gap-8 border-t border-[#d8a48f]/10 pt-2.5 pb-1 font-mono text-[9px] uppercase tracking-[0.24em] text-[#a39b94]">
+          {SUB_CATEGORIES.map((cat, i) => (
+            <a
+              key={i}
+              href={cat.href}
+              className="hover:text-[#d8a48f] transition duration-200"
+            >
+              {cat.label}
+            </a>
+          ))}
+        </div>
       </header>
 
-      {/* Mobile Drawer Menu */}
+      {/* Mobile Drawer Navigation */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm lg:hidden">
-          <div className="fixed inset-y-0 left-0 w-[85%] max-w-sm bg-[#121110] border-r border-[#c9a35e]/30 p-6 shadow-2xl flex flex-col justify-between">
+        <div className="fixed inset-0 z-50 bg-black/85 backdrop-blur-md lg:hidden">
+          <div className="fixed inset-y-0 left-0 w-[85%] max-w-sm bg-[#171717] border-r border-[#d8a48f]/30 p-6 shadow-2xl flex flex-col justify-between overflow-y-auto">
             <div>
-              <div className="flex items-center justify-between border-b border-[#c9a35e]/20 pb-5">
-                <div className="flex items-center gap-3">
-                  <div className="relative w-8 h-6">
-                    <Image src="/aurex-monogram.png" alt="Aurex Monogram" fill className="object-contain" />
-                  </div>
-                  <div>
-                    <div className="font-serif text-xl tracking-[0.2em] gold-foil-text uppercase">AUREX</div>
-                    <div className="text-[8px] font-mono tracking-[0.3em] uppercase text-[#a69f94]">Fine Jewellery</div>
-                  </div>
-                </div>
+              <div className="flex items-center justify-between border-b border-[#d8a48f]/20 pb-5">
+                <AurexLogo size="sm" />
                 <button
                   onClick={() => setMobileMenuOpen(false)}
-                  className="p-2 text-[#a69f94] hover:text-[#dfba7e]"
+                  className="p-2 text-[#a39b94] hover:text-[#d8a48f]"
                   aria-label="Close menu"
                 >
                   <X size={20} />
                 </button>
               </div>
 
-              <nav className="mt-8 flex flex-col gap-6 font-serif text-2xl">
+              <nav className="mt-8 flex flex-col gap-5 font-serif text-2xl">
                 <a
                   href="#collections"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="text-[#f4ede4] hover:text-[#dfba7e] transition"
+                  className="text-[#ede6df] hover:text-[#d8a48f] transition"
                 >
                   Collections
                 </a>
                 <a
                   href="#lookbook-viewer"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="text-[#f4ede4] hover:text-[#dfba7e] transition"
+                  className="text-[#ede6df] hover:text-[#d8a48f] transition"
                 >
                   Lookbook Spreads
                 </a>
                 <a
                   href="#heritage"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="text-[#f4ede4] hover:text-[#dfba7e] transition"
+                  className="text-[#ede6df] hover:text-[#d8a48f] transition"
                 >
-                  10th Gen Legacy
+                  10th Gen Jaipur Heritage
                 </a>
                 <a
                   href="#client-diaries"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="text-[#f4ede4] hover:text-[#dfba7e] transition"
+                  className="text-[#ede6df] hover:text-[#d8a48f] transition"
                 >
                   Client Diaries
                 </a>
                 <a
-                  href="#concierge"
+                  href="#top"
                   onClick={() => {
                     setMobileMenuOpen(false)
                     onOpenConcierge()
                   }}
-                  className="text-[#dfba7e] hover:text-[#f7e6c4] transition"
+                  className="text-[#d8a48f] hover:text-[#ebd0c4] transition"
                 >
-                  Private Viewing Request
+                  Book Private Viewing
                 </a>
               </nav>
+
+              {/* Mobile Quick Category Jump */}
+              <div className="mt-8 pt-6 border-t border-[#d8a48f]/15">
+                <span className="font-mono text-[9px] uppercase tracking-[0.25em] text-[#d8a48f] block mb-3">
+                  Browse by Creation
+                </span>
+                <div className="flex flex-col gap-2.5 font-mono text-[10px] uppercase tracking-wider text-[#a39b94]">
+                  {SUB_CATEGORIES.map((cat, i) => (
+                    <a
+                      key={i}
+                      href={cat.href}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="hover:text-[#ede6df]"
+                    >
+                      {cat.label}
+                    </a>
+                  ))}
+                </div>
+              </div>
             </div>
 
-            <div className="border-t border-[#c9a35e]/20 pt-6">
+            <div className="border-t border-[#d8a48f]/20 pt-6 mt-8">
               <button
                 onClick={() => {
                   setMobileMenuOpen(false)
                   onOpenConcierge()
                 }}
-                className="w-full bg-gradient-to-r from-[#c9a35e] to-[#dfba7e] text-[#0c0c0c] py-3 text-center font-mono text-xs uppercase tracking-[0.16em] font-medium"
+                className="w-full bg-[#d8a48f] text-[#141414] py-3 text-center font-mono text-xs uppercase tracking-[0.18em] font-semibold hover:bg-[#ebd0c4] transition"
               >
                 Schedule Private Consultation
               </button>
-              <div className="mt-4 text-center font-mono text-[9px] uppercase tracking-[0.18em] text-[#a69f94]">
+              <div className="mt-4 text-center font-mono text-[9px] uppercase tracking-[0.2em] text-[#a39b94]">
                 Jaipur · Antwerp · New Delhi
               </div>
             </div>

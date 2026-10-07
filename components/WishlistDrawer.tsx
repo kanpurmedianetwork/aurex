@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import { JewelryPiece, JEWELRY_PIECES } from '@/lib/lookbook-data'
-import { X, Trash2, MessageCircle, ArrowRight, Heart } from 'lucide-react'
+import { X, Trash2, MessageCircle, Heart } from 'lucide-react'
 
 interface WishlistDrawerProps {
   isOpen: boolean
@@ -33,20 +33,20 @@ export function WishlistDrawer({
   return (
     <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm animate-fadeIn">
       <div
-        className="fixed inset-y-0 right-0 w-full max-w-md bg-[#121110] border-l border-[#c9a35e]/30 p-6 flex flex-col justify-between shadow-2xl overflow-y-auto"
+        className="fixed inset-y-0 right-0 w-full max-w-md bg-[#171717] border-l border-[#d8a48f]/30 p-6 flex flex-col justify-between shadow-2xl overflow-y-auto"
         onClick={(e) => e.stopPropagation()}
       >
         <div>
           {/* Header */}
-          <div className="flex items-center justify-between border-b border-[#c9a35e]/20 pb-4 mb-6">
+          <div className="flex items-center justify-between border-b border-[#d8a48f]/20 pb-4 mb-6">
             <div className="flex items-center gap-2">
-              <Heart size={18} className="fill-[#c9a35e] text-[#c9a35e]" />
-              <h3 className="font-serif text-2xl text-white font-medium">Curated Wishlist</h3>
-              <span className="font-mono text-xs text-[#c9a35e]">({savedPieces.length})</span>
+              <Heart size={18} className="fill-[#d8a48f] text-[#d8a48f]" />
+              <h3 className="font-serif text-2xl text-[#ede6df] font-medium">Curated Vault</h3>
+              <span className="font-mono text-xs text-[#d8a48f]">({savedPieces.length})</span>
             </div>
             <button
               onClick={onClose}
-              className="p-1.5 text-[#a69f94] hover:text-[#dfba7e]"
+              className="p-1.5 text-[#a39b94] hover:text-[#d8a48f]"
               aria-label="Close wishlist drawer"
             >
               <X size={20} />
@@ -55,9 +55,9 @@ export function WishlistDrawer({
 
           {/* Empty State */}
           {savedPieces.length === 0 ? (
-            <div className="py-16 text-center text-[#a69f94]">
-              <Heart size={36} className="mx-auto mb-3 stroke-[1] text-[#c9a35e]/50" />
-              <p className="font-serif text-lg text-white mb-1">Your Curated Vault is Empty</p>
+            <div className="py-16 text-center text-[#a39b94]">
+              <Heart size={36} className="mx-auto mb-3 stroke-[1] text-[#d8a48f]/40" />
+              <p className="font-serif text-lg text-[#ede6df] mb-1">Your Curated Vault is Empty</p>
               <p className="text-xs font-mono max-w-xs mx-auto">
                 Select the heart icon on any lookbook piece to save it for your private viewing portfolio.
               </p>
@@ -67,14 +67,14 @@ export function WishlistDrawer({
               {savedPieces.map((piece) => (
                 <div
                   key={piece.id}
-                  className="flex items-center gap-4 bg-[#181716] border border-[#c9a35e]/15 p-3 hover:border-[#c9a35e]/40 transition group"
+                  className="flex items-center gap-4 bg-[#1f1f1f] border border-[#d8a48f]/15 p-3 hover:border-[#d8a48f]/40 transition group"
                 >
                   <div
                     onClick={() => {
                       onClose()
                       onSelectPiece(piece)
                     }}
-                    className="relative w-16 h-16 shrink-0 bg-[#0c0c0c] border border-[#c9a35e]/20 cursor-pointer overflow-hidden p-1"
+                    className="relative w-16 h-16 shrink-0 bg-[#121212] border border-[#d8a48f]/20 cursor-pointer overflow-hidden p-1"
                   >
                     <Image
                       src={piece.image}
@@ -85,7 +85,7 @@ export function WishlistDrawer({
                   </div>
 
                   <div className="flex-1 min-w-0">
-                    <span className="font-mono text-[8px] uppercase tracking-wider text-[#c9a35e] block">
+                    <span className="font-mono text-[8px] uppercase tracking-wider text-[#d8a48f] block">
                       Pg {piece.page} · {piece.collection}
                     </span>
                     <h4
@@ -93,18 +93,18 @@ export function WishlistDrawer({
                         onClose()
                         onSelectPiece(piece)
                       }}
-                      className="font-serif text-sm text-white truncate hover:text-[#dfba7e] cursor-pointer"
+                      className="font-serif text-sm text-[#ede6df] truncate hover:text-[#d8a48f] cursor-pointer"
                     >
                       {piece.name}
                     </h4>
-                    <p className="text-[10px] text-[#a69f94] truncate">
+                    <p className="text-[10px] text-[#a39b94] truncate">
                       {piece.gemstones}
                     </p>
                   </div>
 
                   <button
                     onClick={() => onRemove(piece.id)}
-                    className="p-2 text-[#a69f94] hover:text-red-400 transition"
+                    className="p-2 text-[#a39b94] hover:text-red-400 transition"
                     aria-label={`Remove ${piece.name}`}
                   >
                     <Trash2 size={15} />
@@ -117,7 +117,7 @@ export function WishlistDrawer({
 
         {/* Footer Actions */}
         {savedPieces.length > 0 && (
-          <div className="border-t border-[#c9a35e]/20 pt-5 space-y-3">
+          <div className="border-t border-[#d8a48f]/20 pt-5 space-y-3">
             <a
               href={whatsappUrl}
               target="_blank"
@@ -133,7 +133,7 @@ export function WishlistDrawer({
                 onClose()
                 onOpenConcierge(`Wishlist inquiry (${savedPieces.length} pieces)`)
               }}
-              className="w-full bg-[#c9a35e] text-[#0c0c0c] py-3 text-center font-mono text-[10px] uppercase tracking-[0.18em] font-semibold hover:bg-[#dfba7e] transition"
+              className="w-full bg-[#d8a48f] text-[#141414] py-3 text-center font-mono text-[10px] uppercase tracking-[0.18em] font-semibold hover:bg-[#ebd0c4] transition"
             >
               Book Viewing for Saved Pieces
             </button>
