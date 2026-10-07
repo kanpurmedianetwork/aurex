@@ -22,57 +22,148 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --color-navy: var(--navy);
+  --color-gold: var(--gold);
   --color-champagne: var(--champagne);
-  --color-blush: var(--blush);
-  --font-sans: 'DM Sans', 'DM Sans Fallback';
-  --font-serif: 'Cormorant Garamond', 'Cormorant Garamond Fallback';
-  --font-mono: 'DM Mono', 'DM Mono Fallback';
+  --color-rosegold: var(--rosegold);
+  --color-emerald-deep: var(--emerald-deep);
+  --color-ruby-deep: var(--ruby-deep);
+
+  --font-sans: var(--font-sans), 'Montserrat', sans-serif;
+  --font-serif: var(--font-cormorant), 'Cormorant Garamond', Georgia, serif;
+  --font-script: var(--font-script), 'Alex Brush', cursive;
+  --font-mono: var(--font-mono), 'DM Mono', monospace;
 }
 
 :root {
   color-scheme: dark;
-  --background: #1A1917;
-  --foreground: #F2EEE9;
-  --card: #211f1d;
-  --card-foreground: #F2EEE9;
-  --popover: #211f1d;
-  --popover-foreground: #F2EEE9;
-  --primary: #D4AF37;
-  --primary-foreground: #F2EEE9;
-  --secondary: #2a2724;
-  --secondary-foreground: #F2EEE9;
-  --muted: #2a2724;
-  --muted-foreground: #B8B2AA;
-  --accent: #F0D77A;
-  --accent-foreground: #1A1917;
-  --border: rgba(212,175,55,0.38);
-  --input: rgba(212,175,55,0.38);
-  --ring: #D4AF37;
-  --navy: #0F0E0D;
-  --champagne: #D4AF37;
-  --blush: #26231c;
-  --radius: 0.15rem;
+  --background: #0b0b0b;
+  --foreground: #f4ede4;
+  --card: #131211;
+  --card-foreground: #f4ede4;
+  --popover: #151413;
+  --popover-foreground: #f4ede4;
+  --primary: #c9a35e;
+  --primary-foreground: #0c0c0c;
+  --secondary: #1a1918;
+  --secondary-foreground: #f4ede4;
+  --muted: #1e1d1b;
+  --muted-foreground: #a69f94;
+  --accent: #dfba7e;
+  --accent-foreground: #0c0c0c;
+  --border: rgba(201, 163, 94, 0.22);
+  --input: rgba(201, 163, 94, 0.3);
+  --ring: #c9a35e;
+  --gold: #c9a35e;
+  --champagne: #dfba7e;
+  --rosegold: #d99f84;
+  --emerald-deep: #0e3b2e;
+  --ruby-deep: #6e1628;
+  --radius: 0.2rem;
 }
 
-* { @apply border-border outline-ring/50; }
-html { background: var(--background); scroll-behavior: smooth; }
-body { @apply bg-background text-foreground font-serif; background-image: radial-gradient(rgba(212,175,55,.045) 0.7px, transparent 0.7px); background-size: 7px 7px; }
-section, header, footer { position: relative; }
-img { filter: saturate(.9) contrast(1.02); }
-button, a { -webkit-tap-highlight-color: transparent; }
+* {
+  @apply border-border outline-ring/50;
+  box-sizing: border-box;
+}
 
-@layer components {
-  .eyebrow { @apply font-mono text-[10px] uppercase tracking-[0.22em] text-champagne; }
-  .section-title { @apply mt-3 font-serif text-4xl uppercase leading-[0.98] tracking-[0.12em] text-foreground sm:text-5xl; }
-  .section-title::after { content: ''; display: block; width: 58px; height: 1px; margin-top: 18px; background: linear-gradient(90deg, #D4AF37, transparent); }
-  .nav-link { @apply font-mono text-[10px] uppercase tracking-[0.18em] text-muted-foreground transition hover:text-champagne; }
-  .icon-button { @apply relative flex h-11 w-11 items-center justify-center rounded-full text-foreground transition hover:bg-muted hover:text-champagne; }
-  .badge { @apply absolute right-1 top-1 flex h-4 min-w-4 items-center justify-center rounded-full bg-primary px-1 font-mono text-[8px] text-primary-foreground; }
-  .button { @apply inline-flex min-h-11 items-center justify-center gap-3 px-5 font-mono text-[10px] uppercase tracking-[0.14em] transition; }
-  .button-light { @apply bg-primary text-primary-foreground hover:bg-accent hover:text-accent-foreground; }
-  .button-dark { @apply bg-primary text-primary-foreground hover:bg-accent hover:text-accent-foreground; }
-  .button-ghost { @apply border border-primary-foreground/45 text-primary-foreground hover:border-primary-foreground hover:bg-primary-foreground/10; }
-  .link-arrow { @apply items-center gap-2 font-mono text-[10px] uppercase tracking-[0.15em] text-muted-foreground transition hover:text-champagne; }
-  .image-card { @apply bg-muted; }
+html {
+  background: #0b0b0b;
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+body {
+  @apply bg-background text-foreground font-sans;
+  background-color: #0b0b0b;
+  background-image: 
+    radial-gradient(rgba(201, 163, 94, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(12, 12, 12, 0.95), rgba(8, 8, 8, 0.98));
+  background-size: 24px 24px, 100% 100%;
+  background-attachment: fixed;
+  overflow-x: hidden;
+}
+
+/* Custom Gold Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(201, 163, 94, 0.35);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(201, 163, 94, 0.65);
+}
+
+/* Haute Joaillerie Typography & Effects */
+.font-script {
+  font-family: var(--font-script), 'Alex Brush', cursive;
+}
+
+.font-serif {
+  font-family: var(--font-cormorant), 'Cormorant Garamond', Georgia, serif;
+}
+
+.font-sans {
+  font-family: var(--font-sans), 'Montserrat', sans-serif;
+}
+
+.font-mono {
+  font-family: var(--font-mono), 'DM Mono', monospace;
+}
+
+.gold-foil-text {
+  background: linear-gradient(135deg, #f7e6c4 0%, #c9a35e 50%, #e8bc86 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.rosegold-foil-text {
+  background: linear-gradient(135deg, #f3cfbc 0%, #d89e83 50%, #f6dfd2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-border {
+  border: 1px solid rgba(201, 163, 94, 0.25);
+}
+
+.gold-border-glow {
+  border: 1px solid rgba(201, 163, 94, 0.35);
+  box-shadow: 0 0 25px -8px rgba(201, 163, 94, 0.18);
+}
+
+.gold-border-glow:hover {
+  border-color: rgba(201, 163, 94, 0.65);
+  box-shadow: 0 0 35px -5px rgba(201, 163, 94, 0.28);
+}
+
+.editorial-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+}
+
+.editorial-divider::before,
+.editorial-divider::after {
+  content: '';
+  height: 1px;
+  flex: 1;
+  background: linear-gradient(90deg, transparent, rgba(201, 163, 94, 0.4), transparent);
+}
+
+/* Subtle lookbook ribbon strip styling */
+.lookbook-foil-edge {
+  background: linear-gradient(
+    180deg,
+    rgba(216, 158, 131, 0.8) 0%,
+    rgba(201, 163, 94, 0.9) 50%,
+    rgba(216, 158, 131, 0.8) 100%
+  );
+  box-shadow: 0 0 10px rgba(201, 163, 94, 0.4);
 }

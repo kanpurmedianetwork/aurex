@@ -1,0 +1,204 @@
+'use client'
+
+import { useState } from 'react'
+import Image from 'next/image'
+import { JEWELRY_PIECES, JewelryPiece } from '@/lib/lookbook-data'
+import { Heart, MessageSquare, Sparkles, Eye, ArrowUpRight } from 'lucide-react'
+
+interface CollectionsSectionProps {
+  onSelectPiece: (piece: JewelryPiece) => void
+  onToggleWishlist: (pieceId: string) => void
+  wishlistIds: string[]
+  onOpenConcierge: (pieceName?: string) => void
+}
+
+const CATEGORIES = [
+  { id: 'all', label: 'All Masterpieces' },
+  { id: 'emerald', label: 'Colombian Emeralds' },
+  { id: 'wedding', label: 'Wedding Collection' },
+  { id: 'engagement', label: 'Engagement Rings' },
+  { id: 'earrings', label: 'Chandelier Earrings' },
+  { id: 'rings', label: 'Cocktail Rings' },
+  { id: 'bracelets', label: 'Bracelets & Cuffs' },
+  { id: 'accessories', label: 'Royal Accessories' },
+  { id: 'everyday', label: 'Everyday Bling' },
+]
+
+export function CollectionsSection({
+  onSelectPiece,
+  onToggleWishlist,
+  wishlistIds,
+  onOpenConcierge
+}: CollectionsSectionProps) {
+  const [selectedCategory, setSelectedCategory] = useState('all')
+
+  const filteredPieces =
+    selectedCategory === 'all'
+      ? JEWELRY_PIECES
+      : JEWELRY_PIECES.filter((p) => p.category === selectedCategory)
+
+  return (
+    <section id="collections" className="py-24 bg-[#0c0c0c] relative">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto mb-14">
+          <div className="inline-flex items-center gap-2 mb-3">
+            <Sparkles size={12} className="text-[#c9a35e]" />
+            <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-[#dfba7e]">
+              Curated Haute Joaillerie
+            </span>
+            <Sparkles size={12} className="text-[#c9a35e]" />
+          </div>
+
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl uppercase tracking-[0.16em] text-white">
+            Permanent Collections
+          </h2>
+
+          <div className="w-16 h-px bg-gradient-to-r from-transparent via-[#c9a35e] to-transparent mx-auto my-5" />
+
+          <p className="font-serif italic text-base text-[#c7c0b5]">
+            Each creation is a study in rare gemstone provenance, architectural elegance, and heirloom craftsmanship.
+          </p>
+        </div>
+
+        {/* Category Filters */}
+        <div className="flex items-center justify-center gap-2 flex-wrap mb-14">
+          {CATEGORIES.map((cat) => {
+            const count =
+              cat.id === 'all'
+                ? JEWELRY_PIECES.length
+                : JEWELRY_PIECES.filter((p) => p.category === cat.id).length
+
+            return (
+              <button
+                key={cat.id}
+                onClick={() => setSelectedCategory(cat.id)}
+                className={`px-4 py-2 font-mono text-[10px] uppercase tracking-[0.18em] transition-all duration-300 border ${
+                  selectedCategory === cat.id
+                    ? 'border-[#c9a35e] bg-[#c9a35e] text-[#0c0c0c] font-semibold shadow-md shadow-[#c9a35e]/15'
+                    : 'border-[#c9a35e]/20 text-[#a69f94] hover:border-[#c9a35e]/50 hover:text-[#dfba7e] bg-[#121110]'
+                }`}
+              >
+                <span>{cat.label}</span>
+                <span className="ml-1.5 opacity-60">({count})</span>
+              </button>
+            )
+          })}
+        </div>
+
+        {/* Jewelry Products Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          {filteredPieces.map((piece) => {
+            const isLiked = wishlistIds.includes(piece.id)
+
+            return (
+              <article
+                key={piece.id}
+                className="group relative bg-[#131211] border border-[#c9a35e]/20 hover:border-[#c9a35e]/60 transition-all duration-500 flex flex-col justify-between overflow-hidden shadow-lg hover:shadow-2xl hover:shadow-[#c9a35e]/5"
+              >
+                {/* Lookbook ribbon accent */}
+                <div className="absolute top-0 right-0 w-12 h-12 overflow-hidden pointer-events-none z-10">
+                  <div className="absolute transform rotate-45 bg-[#c9a35e]/20 text-[7px] font-mono text-[#dfba7e] uppercase tracking-widest text-center py-0.5 right-[-35px] top-[18px] w-[120px]">
+                    Pg {piece.page}
+                  </div>
+                </div>
+
+                {/* Card Top Information */}
+                <div className="p-4 flex items-center justify-between border-b border-[#c9a35e]/10">
+                  <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-[#dfba7e]">
+                    {piece.collection}
+                  </span>
+
+                  <button
+                    onClick={() => onToggleWishlist(piece.id)}
+                    aria-label={`Save ${piece.name} to wishlist`}
+                    className="p-1 text-[#a69f94] hover:text-[#dfba7e] transition"
+                  >
+                    <Heart
+                      size={16}
+                      className={isLiked ? 'fill-[#c9a35e] text-[#c9a35e]' : ''}
+                    />
+                  </button>
+                </div>
+
+                {/* Center Image with Luxury Glow and Zoom */}
+                <div
+                  onClick={() => onSelectPiece(piece)}
+                  className="relative h-64 sm:h-72 w-full p-6 cursor-pointer flex items-center justify-center bg-radial from-[#1e1c19] to-[#11100f] overflow-hidden"
+                >
+                  <div className="relative w-full h-full transition-transform duration-700 ease-out group-hover:scale-110">
+                    <Image
+                      src={piece.image}
+                      alt={piece.name}
+                      fill
+                      className="object-contain drop-shadow-[0_12px_24px_rgba(0,0,0,0.85)]"
+                    />
+                  </div>
+
+                  {/* Hover Quick View Overlay */}
+                  <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <span className="inline-flex items-center gap-1.5 bg-[#0c0c0c]/90 border border-[#c9a35e]/50 px-3.5 py-1.5 font-mono text-[9px] uppercase tracking-[0.18em] text-[#dfba7e]">
+                      <Eye size={12} />
+                      <span>Examine Gemstones</span>
+                    </span>
+                  </div>
+                </div>
+
+                {/* Card Body */}
+                <div className="p-5 flex-1 flex flex-col justify-between">
+                  <div>
+                    {piece.subtitle && (
+                      <span className="font-script text-lg text-[#d99f84] block mb-1">
+                        {piece.subtitle}
+                      </span>
+                    )}
+
+                    <h3
+                      onClick={() => onSelectPiece(piece)}
+                      className="font-serif text-lg text-white font-medium hover:text-[#dfba7e] transition cursor-pointer leading-tight mb-2"
+                    >
+                      {piece.name}
+                    </h3>
+
+                    <p className="text-xs text-[#a69f94] line-clamp-2 leading-relaxed mb-4">
+                      {piece.description}
+                    </p>
+
+                    <div className="border-t border-[#c9a35e]/10 pt-3 space-y-1 mb-4 text-[11px] font-mono text-[#c7c0b5]">
+                      <div className="flex items-start justify-between gap-2">
+                        <span className="text-[#a69f94] uppercase tracking-wider text-[9px]">Gems:</span>
+                        <span className="text-right text-[#dfba7e] text-[10px]">{piece.gemstones}</span>
+                      </div>
+                      <div className="flex items-center justify-between gap-2">
+                        <span className="text-[#a69f94] uppercase tracking-wider text-[9px]">Metal:</span>
+                        <span className="text-right text-[10px]">{piece.metal}</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Actions */}
+                  <div className="grid grid-cols-2 gap-2 pt-3 border-t border-[#c9a35e]/15">
+                    <button
+                      onClick={() => onSelectPiece(piece)}
+                      className="w-full text-center py-2 border border-[#c9a35e]/30 font-mono text-[9px] uppercase tracking-[0.16em] text-[#dfba7e] hover:bg-[#c9a35e]/10 transition"
+                    >
+                      Specifications
+                    </button>
+
+                    <button
+                      onClick={() => onOpenConcierge(piece.name)}
+                      className="w-full inline-flex items-center justify-center gap-1 py-2 bg-[#c9a35e] text-[#0c0c0c] font-mono text-[9px] uppercase tracking-[0.16em] font-semibold hover:bg-[#dfba7e] transition"
+                    >
+                      <span>Inquire</span>
+                      <ArrowUpRight size={12} />
+                    </button>
+                  </div>
+                </div>
+              </article>
+            )
+          })}
+        </div>
+      </div>
+    </section>
+  )
+}
