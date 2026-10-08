@@ -23,7 +23,7 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
 
-  /* Exact Lookbook Color Palette: Charcoal Matte & Metallic Rose Gold Foil */
+  /* Haute Joaillerie Color Palette: Charcoal Matte & Metallic Rose Gold Foil */
   --color-rosegold: var(--rosegold);
   --color-rosegold-light: var(--rosegold-light);
   --color-rosegold-dark: var(--rosegold-dark);
@@ -38,7 +38,7 @@
 
 :root {
   color-scheme: dark;
-  /* Exact Lookbook Background: Deep matte charcoal paper (#141414) */
+  /* Maison Background: Deep matte charcoal paper (#141414) */
   --background: #141414;
   --foreground: #ede6df;
   --card: #1b1b1b;
@@ -46,7 +46,7 @@
   --popover: #1c1c1c;
   --popover-foreground: #ede6df;
 
-  /* Exact Lookbook Foil Accent: Blush Rose Gold (#D8A48F / #E2B89D) */
+  /* Maison Foil Accent: Blush Rose Gold (#D8A48F / #E2B89D) */
   --primary: #d8a48f;
   --primary-foreground: #141414;
   --secondary: #222222;
@@ -82,7 +82,7 @@ html {
 body {
   @apply bg-background text-foreground font-sans;
   background-color: #141414;
-  /* Subtle lookbook paper tactile texture */
+  /* Subtle tactile charcoal paper texture */
   background-image: 
     radial-gradient(rgba(216, 164, 143, 0.035) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(20, 20, 20, 0.98), rgba(16, 16, 16, 1));
@@ -124,7 +124,7 @@ body {
   font-family: var(--font-mono), 'DM Mono', monospace;
 }
 
-/* Rose Gold Metallic Text Gradient matching Lookbook */
+/* Rose Gold Metallic Text Gradient */
 .rosegold-gradient-text {
   background: linear-gradient(135deg, #f5ddd2 0%, #d8a48f 45%, #e8c4b4 80%, #b87b64 100%);
   -webkit-background-clip: text;
@@ -145,8 +145,8 @@ body {
   box-shadow: 0 0 30px -3px rgba(216, 164, 143, 0.25);
 }
 
-/* Lookbook foil edge ribbon */
-.lookbook-ribbon-border {
+/* Maison foil edge ribbon */
+.maison-foil-border {
   border-right: 3px solid #d8a48f;
   box-shadow: 2px 0 12px rgba(216, 164, 143, 0.35);
 }

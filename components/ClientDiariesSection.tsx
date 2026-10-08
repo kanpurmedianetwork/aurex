@@ -12,7 +12,7 @@ export function ClientDiariesSection() {
           <div className="inline-flex items-center gap-2 mb-2">
             <span className="w-6 h-px bg-[#d8a48f]" />
             <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-[#d8a48f]">
-              Lookbook Pages 42–45
+              Patrons of the Maison · Real Celebrations
             </span>
             <span className="w-6 h-px bg-[#d8a48f]" />
           </div>
@@ -40,7 +40,7 @@ export function ClientDiariesSection() {
               className="group bg-[#1a1a1a] border border-[#d8a48f]/25 hover:border-[#d8a48f]/70 transition-all duration-500 p-5 flex flex-col justify-between shadow-xl"
             >
               <div>
-                {/* Arch-shaped photo frame matching the Lookbook page design! */}
+                {/* Arch-shaped photo frame matching brand architectural design */}
                 <div className="relative h-80 w-full overflow-hidden rounded-t-[100px] border border-[#d8a48f]/40 mb-5 bg-[#101010]">
                   <Image
                     src={item.image}

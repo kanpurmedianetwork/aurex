@@ -11,7 +11,7 @@ export function Footer() {
 
   return (
     <footer className="relative bg-[#111111] border-t border-[#d8a48f]/30 pt-20 pb-12 overflow-hidden text-[#a39b94]">
-      {/* Left Rose Gold Foil Ribbon matching Lookbook Back Cover */}
+      {/* Left Rose Gold Foil Ribbon */}
       <div className="absolute left-0 top-0 bottom-0 w-3 z-10 pointer-events-none">
         <Image src="/gold-foil-ribbon.jpg" alt="Rose gold border foil" fill className="object-cover" />
       </div>
@@ -83,25 +83,24 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Lookbook Chapters */}
+          {/* Editorial Folio Archive */}
           <div className="md:col-span-4">
             <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-[#d8a48f] block mb-5">
-              Lookbook Archive
+              Editorial Archive
             </span>
             <p className="text-xs font-serif text-[#c7c0b5] mb-4 leading-relaxed">
-              Explore all 47 pages of our archival 2026 Lookbook featuring rare Muzo emeralds, syndicate polki diamonds, and real client heirlooms.
+              Explore all 47 pages of our archival 2026 collection featuring rare Colombian emeralds, syndicate polki diamonds, and real client heirlooms.
             </p>
             <a
-              href="#lookbook-viewer"
+              href="#editorial"
               className="inline-flex items-center gap-2 border border-[#d8a48f]/50 px-4 py-2 font-mono text-[10px] uppercase tracking-[0.16em] text-[#d8a48f] hover:bg-[#d8a48f]/15 transition"
             >
-              <Sparkles size={13} />
-              <span>Launch Lookbook Reader</span>
+              <span>Explore Editorial Spreads</span>
             </a>
           </div>
         </div>
 
-        {/* Bottom Bar matching Lookbook copyright */}
+        {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[10px] font-mono tracking-widest uppercase text-[#a39b94]">
           <div className="flex items-center gap-4">
             <span>© AUREX 2026</span>

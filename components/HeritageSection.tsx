@@ -74,7 +74,7 @@ export function HeritageSection() {
             <div className="inline-flex items-center gap-2 mb-3">
               <span className="w-6 h-px bg-[#d8a48f]" />
               <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-[#d8a48f]">
-                Lookbook Page 46 · The Heritage Story
+                Heritage · The Founder Story
               </span>
             </div>
 

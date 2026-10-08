@@ -22,7 +22,7 @@ export function QuickViewModal({
   if (!piece) return null
 
   const whatsappUrl = `https://wa.me/919839000000?text=${encodeURIComponent(
-    `Hello Aurex Concierge, I would like to inquire regarding "${piece.name}" (Lookbook Page ${piece.page}) featured in the ${piece.collection}.`
+    `Hello Aurex Concierge, I would like to inquire regarding "${piece.name}" (Plate ${piece.page.toString().padStart(2, '0')}) featured in the ${piece.collection}.`
   )}`
 
   return (
@@ -53,7 +53,7 @@ export function QuickViewModal({
           </div>
 
           <span className="absolute bottom-4 left-4 bg-[#141414]/90 border border-[#d8a48f]/30 px-3 py-1 font-mono text-[9px] uppercase tracking-widest text-[#ebd0c4]">
-            Lookbook · Page {piece.page.toString().padStart(2, '0')}
+            Plate {piece.page.toString().padStart(2, '0')}
           </span>
         </div>
 

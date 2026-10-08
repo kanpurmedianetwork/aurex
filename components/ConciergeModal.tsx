@@ -56,7 +56,7 @@ export function ConciergeModal({ isOpen, onClose, initialPiece }: ConciergeModal
               }}
               className="bg-[#d8a48f] text-[#141414] px-6 py-2.5 font-mono text-[10px] uppercase tracking-widest font-semibold hover:bg-[#ebd0c4] transition"
             >
-              Return to Lookbook
+              Return to Gallery
             </button>
           </div>
         ) : (
@@ -103,7 +103,7 @@ export function ConciergeModal({ isOpen, onClose, initialPiece }: ConciergeModal
                   required
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  placeholder="e.g. Maharani Gayatri Devi / Patron Name"
+                  placeholder="e.g. Your Full Name"
                   className="w-full bg-[#1f1f1f] border border-[#d8a48f]/30 px-3.5 py-2.5 text-xs text-[#ede6df] placeholder:text-[#a39b94]/40 focus:border-[#d8a48f] focus:outline-none"
                 />
               </div>

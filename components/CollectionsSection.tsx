@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import { JEWELRY_PIECES, JewelryPiece } from '@/lib/lookbook-data'
-import { Heart, Sparkles, Eye, ArrowUpRight } from 'lucide-react'
+import { Heart, Eye, ArrowUpRight } from 'lucide-react'
 
 interface CollectionsSectionProps {
   onSelectPiece: (piece: JewelryPiece) => void
@@ -43,11 +43,11 @@ export function CollectionsSection({
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
           <div className="inline-flex items-center gap-2 mb-3">
-            <Sparkles size={12} className="text-[#d8a48f]" />
+            <span className="w-6 h-px bg-[#d8a48f]" />
             <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-[#d8a48f]">
               Permanent Haute Joaillerie
             </span>
-            <Sparkles size={12} className="text-[#d8a48f]" />
+            <span className="w-6 h-px bg-[#d8a48f]" />
           </div>
 
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl uppercase tracking-[0.16em] text-[#ede6df]">
@@ -96,13 +96,6 @@ export function CollectionsSection({
                 key={piece.id}
                 className="group relative bg-[#1a1a1a] border border-[#d8a48f]/20 hover:border-[#d8a48f]/60 transition-all duration-500 flex flex-col justify-between overflow-hidden shadow-lg hover:shadow-2xl hover:shadow-[#d8a48f]/10"
               >
-                {/* Lookbook ribbon accent */}
-                <div className="absolute top-0 right-0 w-12 h-12 overflow-hidden pointer-events-none z-10">
-                  <div className="absolute transform rotate-45 bg-[#d8a48f]/20 text-[7px] font-mono text-[#ebd0c4] uppercase tracking-widest text-center py-0.5 right-[-35px] top-[18px] w-[120px]">
-                    Pg {piece.page}
-                  </div>
-                </div>
-
                 {/* Card Top Information */}
                 <div className="p-4 flex items-center justify-between border-b border-[#d8a48f]/10">
                   <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-[#ebd0c4]">

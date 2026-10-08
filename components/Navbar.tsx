@@ -49,8 +49,8 @@ export function Navbar({ wishlistCount, onOpenWishlist, onOpenConcierge }: Navba
             <a href="#collections" className="hover:text-[#d8a48f] transition duration-200">
               Collections
             </a>
-            <a href="#lookbook-viewer" className="hover:text-[#d8a48f] transition duration-200">
-              Lookbook
+            <a href="#editorial" className="hover:text-[#d8a48f] transition duration-200">
+              Editorial
             </a>
             <a href="#heritage" className="hover:text-[#d8a48f] transition duration-200">
               Heritage
@@ -144,11 +144,11 @@ export function Navbar({ wishlistCount, onOpenWishlist, onOpenConcierge }: Navba
                   Collections
                 </a>
                 <a
-                  href="#lookbook-viewer"
+                  href="#editorial"
                   onClick={() => setMobileMenuOpen(false)}
                   className="text-[#ede6df] hover:text-[#d8a48f] transition"
                 >
-                  Lookbook Spreads
+                  Editorial Spreads
                 </a>
                 <a
                   href="#heritage"

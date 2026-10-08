@@ -59,7 +59,7 @@ export function WishlistDrawer({
               <Heart size={36} className="mx-auto mb-3 stroke-[1] text-[#d8a48f]/40" />
               <p className="font-serif text-lg text-[#ede6df] mb-1">Your Curated Vault is Empty</p>
               <p className="text-xs font-mono max-w-xs mx-auto">
-                Select the heart icon on any lookbook piece to save it for your private viewing portfolio.
+                Select the heart icon on any piece to save it for your private viewing portfolio.
               </p>
             </div>
           ) : (

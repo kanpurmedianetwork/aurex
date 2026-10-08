@@ -40,7 +40,7 @@ export function LookbookViewer({ onSelectPiece, onOpenConcierge }: LookbookViewe
   }
 
   return (
-    <section id="lookbook-viewer" className="py-24 bg-[#111111] border-b border-[#d8a48f]/20 relative">
+    <section id="editorial" className="py-24 bg-[#111111] border-b border-[#d8a48f]/20 relative">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
@@ -48,11 +48,11 @@ export function LookbookViewer({ onSelectPiece, onOpenConcierge }: LookbookViewe
             <div className="flex items-center gap-2 mb-2">
               <span className="w-6 h-px bg-[#d8a48f]" />
               <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-[#d8a48f]">
-                Archival Lookbook Spread · Edition 2026
+                Archival Editorial Spread · Edition 2026
               </span>
             </div>
             <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl uppercase tracking-[0.15em] text-[#ede6df]">
-              The Aurex Lookbook
+              The Aurex Editorial
             </h2>
           </div>
 
@@ -110,7 +110,7 @@ export function LookbookViewer({ onSelectPiece, onOpenConcierge }: LookbookViewe
             <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[580px]">
               {/* LEFT PAGE: Text & Editorial Cursive */}
               <div className="relative p-8 sm:p-12 md:p-16 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-[#d8a48f]/20 bg-[#171717]">
-                {/* Lookbook paper texture background */}
+                {/* Tactile paper texture background */}
                 <div className="absolute inset-0 opacity-40 -z-10">
                   <Image src="/dark-paper-bg.jpg" alt="Texture" fill className="object-cover" />
                 </div>
@@ -124,7 +124,7 @@ export function LookbookViewer({ onSelectPiece, onOpenConcierge }: LookbookViewe
                     <AurexLogo size="sm" showText={false} />
                   </div>
 
-                  {/* Cursive Signature Title matching lookbook */}
+                  {/* Cursive Signature Title */}
                   <div className="mb-4">
                     <span className="font-script text-4xl sm:text-5xl md:text-6xl text-[#d8a48f] block leading-none">
                       {chapter.cursiveSubtitle}
@@ -138,7 +138,7 @@ export function LookbookViewer({ onSelectPiece, onOpenConcierge }: LookbookViewe
 
                   <div className="w-16 h-px bg-[#d8a48f]/60 mb-6" />
 
-                  {/* Editorial Prose from Lookbook */}
+                  {/* Editorial Prose */}
                   <p className="font-serif text-base sm:text-lg leading-relaxed text-[#c7c0b5] mb-8 font-light">
                     {chapter.description}
                   </p>
@@ -166,12 +166,12 @@ export function LookbookViewer({ onSelectPiece, onOpenConcierge }: LookbookViewe
 
               {/* RIGHT PAGE: High-Resolution Jewelry Piece Showcase with Ribbon Edge */}
               <div className="relative p-8 sm:p-12 md:p-16 flex flex-col justify-between bg-[#141414] overflow-hidden">
-                {/* Lookbook page texture */}
+                {/* Page paper texture */}
                 <div className="absolute inset-0 opacity-40 -z-10">
                   <Image src="/dark-paper-bg.jpg" alt="Texture" fill className="object-cover" />
                 </div>
 
-                {/* Metallic Rose Gold Foil Ribbon on right page border - iconic lookbook element */}
+                {/* Metallic Rose Gold Foil Ribbon on right page border */}
                 <div className="absolute right-0 top-0 bottom-0 w-2.5 sm:w-3 z-10">
                   <Image src="/gold-foil-ribbon.jpg" alt="Rose gold border ribbon" fill className="object-cover" />
                 </div>
@@ -189,7 +189,7 @@ export function LookbookViewer({ onSelectPiece, onOpenConcierge }: LookbookViewe
                     {activePiece.tag || 'Haute Joaillerie'}
                   </span>
                   <span className="font-mono text-[10px] text-[#a39b94]">
-                    Lookbook · Page {activePiece.page.toString().padStart(2, '0')}
+                    Page {activePiece.page.toString().padStart(2, '0')}
                   </span>
                 </div>
 

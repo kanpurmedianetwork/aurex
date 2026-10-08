@@ -7,6 +7,7 @@ import { LookbookViewer } from '@/components/LookbookViewer'
 import { CollectionsSection } from '@/components/CollectionsSection'
 import { HeritageSection } from '@/components/HeritageSection'
 import { ClientDiariesSection } from '@/components/ClientDiariesSection'
+import { AtelierCommitments } from '@/components/AtelierCommitments'
 import { Footer } from '@/components/Footer'
 import { QuickViewModal } from '@/components/QuickViewModal'
 import { ConciergeModal } from '@/components/ConciergeModal'
@@ -31,8 +32,8 @@ export default function Home() {
     setIsConciergeOpen(true)
   }
 
-  function handleExploreLookbook() {
-    const el = document.getElementById('lookbook-viewer')
+  function handleExploreEditorial() {
+    const el = document.getElementById('editorial')
     if (el) el.scrollIntoView({ behavior: 'smooth' })
   }
 
@@ -49,11 +50,11 @@ export default function Home() {
 
       {/* Hero Section */}
       <Hero
-        onExploreLookbook={handleExploreLookbook}
+        onExploreEditorial={handleExploreEditorial}
         onOpenConcierge={() => handleOpenConcierge()}
       />
 
-      {/* Interactive Lookbook Spread Viewer */}
+      {/* Interactive Editorial Spread Viewer */}
       <LookbookViewer
         onSelectPiece={(piece) => setSelectedPiece(piece)}
         onOpenConcierge={handleOpenConcierge}
@@ -67,13 +68,16 @@ export default function Home() {
         onOpenConcierge={handleOpenConcierge}
       />
 
+      {/* Atelier Guarantees & Commitments */}
+      <AtelierCommitments />
+
       {/* 10th Generation Jaipur Heritage */}
       <HeritageSection />
 
       {/* Client Diaries */}
       <ClientDiariesSection />
 
-      {/* Footer matching Lookbook Back Cover */}
+      {/* Maison Footer */}
       <Footer />
 
       {/* Quick View Modal for Gemstones & Craftsmanship Specs */}

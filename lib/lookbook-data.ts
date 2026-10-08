@@ -26,7 +26,7 @@ export interface ClientDiaryEntry {
   page: number
 }
 
-export interface LookbookChapter {
+export interface FolioChapter {
   id: string
   number: string
   title: string
@@ -37,6 +37,8 @@ export interface LookbookChapter {
   featuredPieces: string[]
   pageRange: string
 }
+
+export type LookbookChapter = FolioChapter
 
 export const AUREX_BRAND = {
   name: 'AUREX',
@@ -50,7 +52,7 @@ export const AUREX_BRAND = {
   website: 'www.aurex.in',
   email: 'aurex1975@gmail.com',
   phone: '+91 98390 12345',
-  whatsappMessage: "Hello Aurex, I am interested in scheduling a bespoke consultation for high jewellery pieces from the lookbook.",
+  whatsappMessage: "Hello Aurex, I am interested in scheduling a bespoke consultation for high jewellery pieces from your collection.",
   mission:
     "Aurex is a house of legacy, trust, and tradition. A bequest that seeks to bring the world's finest offerings in rare and precious jewels collected over the years and brought right to your doorstep. Since its inception, Aurex has merged the characteristics of the latest international jewelry trends with traditional Indian designs.",
   founderStory:
@@ -668,7 +670,7 @@ export const LOOKBOOK_CHAPTERS: LookbookChapter[] = [
     description: 'For the promise of a life, Aurex offers diamond engagement rings to celebrate eternal love and passion. Adorned with handcrafted precious diamonds of the highest quality from the mines of Antwerp.',
     keyImage: '/lookbook/jewel_018.jpg',
     featuredPieces: ['Antwerp Brilliant Solitaire Ring', 'Pavé Cushion Diamond Halo Ring', 'Dual Solitaire Platinum Bands'],
-    pageRange: 'Pages 03–06'
+    pageRange: 'Folio 03–06'
   },
   {
     id: 'ch-wedding',
@@ -679,7 +681,7 @@ export const LOOKBOOK_CHAPTERS: LookbookChapter[] = [
     description: 'Enchanted poesy of ultimate magnificence, boundless creativity and visionary craftsmanship come to life. Classic, elegant and timeless styles accessorizing brides with unique necklaces, chokers, bracelets and rings.',
     keyImage: '/lookbook/jewel_024.jpg',
     featuredPieces: ['Royal Carved Ruby & Polki Grand Haar', 'Imperial Polki & Colombian Emerald Choker', 'Jaipur Peacock Meenakari Hasli'],
-    pageRange: 'Pages 07–10'
+    pageRange: 'Folio 07–10'
   },
   {
     id: 'ch-emerald',
@@ -690,7 +692,7 @@ export const LOOKBOOK_CHAPTERS: LookbookChapter[] = [
     description: 'This precious stone is associated with magic and mystery. Since it is the quintessential color of nature, it is believed to promote a calm and peaceful spirit. Emeralds are an excellent centerpiece choice and the most sought after in the world.',
     keyImage: '/lookbook/jewel_044.jpg',
     featuredPieces: ['Colombian Emerald Pear-Cut Chandelier Drops', 'Colombian Emerald Bead Sautoir with Pearl Tassels', "Neeru's Signature Jhumki"],
-    pageRange: 'Pages 11–14'
+    pageRange: 'Folio 11–14'
   },
   {
     id: 'ch-earrings',
@@ -701,7 +703,7 @@ export const LOOKBOOK_CHAPTERS: LookbookChapter[] = [
     description: 'Supreme gemstones, breathtaking craftsmanship and modern, vibrant designs. The sculptural shapes of our precious designs are inspired by sources as diverse as everyday objects, people and life moments.',
     keyImage: '/lookbook/jewel_056.jpg',
     featuredPieces: ['Polki Diamond & Carved Ruby Chandbalis', 'Burmese Ruby & Diamond Crescent Drops', 'Marquise Cluster Pear Emerald Chandeliers'],
-    pageRange: 'Pages 15–20'
+    pageRange: 'Folio 15–20'
   },
   {
     id: 'ch-chains',
@@ -712,7 +714,7 @@ export const LOOKBOOK_CHAPTERS: LookbookChapter[] = [
     description: 'From radiant diamond solitaires and layered sautoir necklaces to emerald and ruby beaded tassels crafted with peerless delicacy.',
     keyImage: '/lookbook/jewel_070.jpg',
     featuredPieces: ['Colombian Emerald Bead Sautoir with Pearl Tassels', 'Ruby and Pearl Long Chain', 'Antwerp Cluster Diamond Pendant'],
-    pageRange: 'Pages 21–22'
+    pageRange: 'Folio 21–22'
   },
   {
     id: 'ch-cocktail',
@@ -723,7 +725,7 @@ export const LOOKBOOK_CHAPTERS: LookbookChapter[] = [
     description: 'Boldly oversized & eminently feminine, a collection for the chic and glamorous. Adorned with Colombian emeralds, Burmese ruby and diamonds, this collection is resolutely voluptuous and timeless.',
     keyImage: '/lookbook/jewel_076.jpg',
     featuredPieces: ['Colombian Emerald Sunburst Halo Cocktail Ring', 'Royal Tanzanite & Diamond Split-Shank Ring', 'Burmese Pear Ruby Starburst Ring'],
-    pageRange: 'Pages 23–27'
+    pageRange: 'Folio 23–27'
   },
   {
     id: 'ch-bracelets',
@@ -734,7 +736,7 @@ export const LOOKBOOK_CHAPTERS: LookbookChapter[] = [
     description: 'Add a touch of elegance with a sparkling bracelet from Aurex. Handcrafted from high quality gold and conflict-free diamonds. Our craftsmen can work with you to create a one-of-a-kind tailored design.',
     keyImage: '/lookbook/jewel_091.jpg',
     featuredPieces: ['Platinum Colombian Emerald Statement Cuff', 'Antwerp Brilliant Cut Tennis Bracelet', 'Royal Jaipur Enamel Peacock Kada'],
-    pageRange: 'Pages 28–31'
+    pageRange: 'Folio 28–31'
   },
   {
     id: 'ch-accessories',
@@ -745,7 +747,7 @@ export const LOOKBOOK_CHAPTERS: LookbookChapter[] = [
     description: 'Express your personality or make an artistic statement with Aurex bespoke accessories. Kurta buttons, sherwani buttons, 18K gold hair ornaments, and diamond-set collector boxes.',
     keyImage: '/lookbook/jewel_103.jpg',
     featuredPieces: ['Colombian Emerald Kurta Buttons', 'Burmese Ruby Sherwani Buttons', 'Diamond & Emerald Hairclip in 18K Gold'],
-    pageRange: 'Pages 32–35'
+    pageRange: 'Folio 32–35'
   },
   {
     id: 'ch-everyday',
@@ -756,7 +758,7 @@ export const LOOKBOOK_CHAPTERS: LookbookChapter[] = [
     description: 'Fine, beautiful everyday office jewelry for the modern woman made from 14ct gold, ethically sourced, conflict-free gemstones hand-picked by the designer herself in India.',
     keyImage: '/lookbook/jewel_141.jpg',
     featuredPieces: ['Floating Diamond Heart Pendant', 'Colombian Emerald Florets Cross', 'Diamond Tree of Life Medallion'],
-    pageRange: 'Pages 36–41'
+    pageRange: 'Folio 36–41'
   },
   {
     id: 'ch-diaries',
@@ -767,6 +769,8 @@ export const LOOKBOOK_CHAPTERS: LookbookChapter[] = [
     description: 'Real patrons and brides commemorating life milestones with bespoke Aurex creations, from 300-carat emerald heirlooms to contemporary bridal wear.',
     keyImage: '/lookbook/jewel_145.jpg',
     featuredPieces: ['The 300 Carat Colombian Emerald Heirloom', 'The Aurex Heritage Bride', 'Emerald & Pearls at Royal Palace'],
-    pageRange: 'Pages 42–45'
+    pageRange: 'Folio 42–45'
   }
 ]
+
+export const FOLIO_CHAPTERS = LOOKBOOK_CHAPTERS
