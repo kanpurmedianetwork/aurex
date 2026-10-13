@@ -533,8 +533,8 @@ export const JEWELRY_PIECES: JewelryPiece[] = [
     tag: 'Royal Men’s Edit'
   },
   {
-    id: 'accessory-ruby-sherwani-buttons',
-    name: 'Burmese Ruby Sherwani Buttons (Set of 7)',
+    id: 'accessory-ruby-kurta-buttons',
+    name: 'Diamond and Ruby Kurta Buttons',
     collection: 'Royal Accessories',
     category: 'accessories',
     subtitle: 'Gemstone & Diamond',
@@ -775,7 +775,7 @@ export const LOOKBOOK_CHAPTERS: LookbookChapter[] = [
     collectionName: 'Royal Accessories',
     description: 'Express your personality or make an artistic statement with Aurex bespoke accessories. Kurta buttons, sherwani buttons, 18K gold hair ornaments, and diamond-set collector boxes.',
     keyImage: '/lookbook/jewel_103.jpg',
-    featuredPieces: ['Colombian Emerald Kurta Buttons', 'Burmese Ruby Sherwani Buttons', 'Diamond & Emerald Hairclip in 18K Gold'],
+    featuredPieces: ['Colombian Emerald Kurta Buttons', 'Diamond and Ruby Kurta Buttons', 'Diamond & Emerald Hairclip in 18K Gold'],
     pageRange: 'Folio 32–35'
   },
   {
