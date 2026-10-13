@@ -70,7 +70,7 @@ export function ConciergeModal({ isOpen, onClose, initialPiece }: ConciergeModal
                 Bespoke Concierge
               </h3>
               <p className="text-xs text-[#a39b94] mt-1 font-serif">
-                Direct consultation with 10th-generation designers and Antwerp diamond specialists.
+                Direct consultation with 10th-generation designers and master diamond specialists.
               </p>
             </div>
 

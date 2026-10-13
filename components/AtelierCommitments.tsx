@@ -12,7 +12,7 @@ export function AtelierCommitments() {
     {
       icon: Gem,
       title: 'Certified Gemstones',
-      description: 'Antwerp cut diamonds and rare Colombian emeralds accompanied by reputable gemological laboratory certification (IGI / SGL).'
+      description: 'Brilliant cut diamonds and rare Colombian emeralds accompanied by reputable gemological laboratory certification (IGI / SGL).'
     },
     {
       icon: Sparkles,

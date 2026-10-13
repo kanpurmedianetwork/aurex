@@ -11,7 +11,7 @@ interface HeroProps {
 
 export function Hero({ onExploreEditorial, onOpenConcierge }: HeroProps) {
   return (
-    <section className="relative isolate min-h-screen flex flex-col justify-between overflow-hidden bg-[#141414] pt-28 pb-16">
+    <section className="relative isolate min-h-[100dvh] flex flex-col items-center justify-center overflow-hidden bg-[#141414] px-6 sm:px-10 pt-20 pb-16 sm:py-20">
       {/* 1. Exact Textured Charcoal Matte Paper Background */}
       <div className="absolute inset-0 -z-20">
         <Image
@@ -35,17 +35,14 @@ export function Hero({ onExploreEditorial, onOpenConcierge }: HeroProps) {
         />
       </div>
 
-      {/* 3. Top Space for Floating Minimal Transparent Navbar */}
-      <div className="h-6" />
-
-      {/* 4. Center Content - Replicating the Exact Brand Cover */}
-      <div className="mx-auto max-w-4xl px-6 text-center flex flex-col items-center justify-center my-auto z-10">
-        {/* Upper Heading: "Fine Jewellery COLLECTION" */}
-        <div className="mb-14 sm:mb-20">
-          <span className="font-script text-6xl sm:text-8xl md:text-9xl text-[#d8a48f] block leading-[0.95] drop-shadow-[0_2px_8px_rgba(216,164,143,0.25)]">
-            Fine Jewellery
+      {/* 3. Center Content - Replicating the Exact Brand Cover */}
+      <div className="w-full max-w-4xl text-center flex flex-col items-center justify-center my-auto z-10">
+        {/* Upper Heading: "House of Bespoke Jewellery COLLECTION" */}
+        <div className="mb-10 sm:mb-14">
+          <span className="font-script text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-[#d8a48f] block leading-[1.05] drop-shadow-[0_2px_8px_rgba(216,164,143,0.25)]">
+            House of Bespoke Jewellery
           </span>
-          <p className="font-mono text-[10px] sm:text-xs tracking-[0.55em] uppercase text-[#d8a48f]/80 mt-3 sm:mt-4">
+          <p className="font-mono text-[10px] sm:text-xs tracking-[0.55em] uppercase text-[#d8a48f]/80 mt-3 sm:mt-4 pl-[0.55em]">
             C O L L E C T I O N
           </p>
         </div>
@@ -56,14 +53,14 @@ export function Hero({ onExploreEditorial, onOpenConcierge }: HeroProps) {
             <AurexLogo size="lg" showText={false} />
           </div>
 
-          <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl tracking-[0.35em] uppercase text-[#ede6df] font-light leading-none">
+          <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl tracking-[0.35em] uppercase text-[#ede6df] font-light leading-none pl-[0.35em]">
             AUREX
           </h1>
 
           {/* Understated Line & Legacy Description */}
-          <div className="w-16 h-px bg-[#d8a48f]/50 my-8" />
+          <div className="w-16 h-px bg-[#d8a48f]/50 my-6 sm:my-8" />
 
-          <p className="max-w-xl text-xs sm:text-sm md:text-base leading-relaxed text-[#c7c0b5] font-serif italic mb-10 px-4">
+          <p className="max-w-xl text-xs sm:text-sm md:text-base leading-relaxed text-[#c7c0b5] font-serif italic mb-8 sm:mb-10 px-4">
             A house of legacy, trust, and tradition. A bequest of the world&apos;s rarest gems, merging international jewelry trends with 10th-generation Indian artistry.
           </p>
 
@@ -87,11 +84,11 @@ export function Hero({ onExploreEditorial, onOpenConcierge }: HeroProps) {
         </div>
       </div>
 
-      {/* 5. Minimalist Bottom Indicator */}
-      <div className="mx-auto text-center z-10 pt-8">
+      {/* 4. Minimalist Bottom Indicator pinned to bottom */}
+      <div className="absolute bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 z-10 text-center">
         <a
           href="#editorial"
-          className="inline-flex flex-col items-center gap-1.5 text-[9px] font-mono uppercase tracking-[0.25em] text-[#a39b94] hover:text-[#d8a48f] transition"
+          className="inline-flex flex-col items-center gap-1.5 text-[9px] font-mono uppercase tracking-[0.25em] pl-[0.25em] text-[#a39b94] hover:text-[#d8a48f] transition"
         >
           <span>Scroll to Discover</span>
           <ChevronDown size={14} className="animate-bounce text-[#d8a48f]" />

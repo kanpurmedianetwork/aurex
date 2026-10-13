@@ -48,7 +48,7 @@ export function Footer() {
               </div>
               <div className="flex items-center gap-2">
                 <MapPin size={14} className="text-[#d8a48f]" />
-                <span>Jaipur Atelier · Antwerp Diamond Sourcing · New Delhi</span>
+                <span>Jaipur Atelier · Diamond Sourcing · New Delhi</span>
               </div>
             </div>
           </div>
@@ -66,7 +66,7 @@ export function Footer() {
                 <a href="#collections" className="hover:text-[#d8a48f] transition">Bridal Wedding Chokers</a>
               </li>
               <li>
-                <a href="#collections" className="hover:text-[#d8a48f] transition">Antwerp Engagement Rings</a>
+                <a href="#collections" className="hover:text-[#d8a48f] transition">Solitaire Engagement Rings</a>
               </li>
               <li>
                 <a href="#collections" className="hover:text-[#d8a48f] transition">Chandelier Chandbalis</a>

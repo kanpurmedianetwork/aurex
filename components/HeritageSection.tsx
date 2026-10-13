@@ -44,12 +44,12 @@ export function HeritageSection() {
                 </div>
               </div>
 
-              {/* Floating Signature Piece Card: The Colombian Emerald Jhumki */}
+              {/* Floating Signature Piece Card: Marquise Cluster Pear Emerald Chandeliers */}
               <div className="absolute -bottom-8 -right-4 sm:-right-8 bg-[#1f1f1f]/95 backdrop-blur-md p-4 border border-[#d8a48f]/60 max-w-[210px] shadow-2xl hidden sm:block">
                 <div className="relative h-24 w-full mb-2">
                   <Image
-                    src="/lookbook/jewel_155.jpg"
-                    alt="Signature Colombian Emerald Jhumki"
+                    src="/lookbook/jewel_060.jpg"
+                    alt="Marquise Cluster Pear Emerald Chandeliers"
                     fill
                     className="object-contain"
                   />
@@ -58,11 +58,11 @@ export function HeritageSection() {
                   <span className="font-mono text-[8px] uppercase tracking-[0.2em] text-[#d8a48f] block">
                     Signature Creation
                   </span>
-                  <p className="font-serif text-xs text-[#ede6df]">
-                    Columbian Emerald Jhumki
+                  <p className="font-serif text-xs text-[#ede6df] font-medium leading-snug">
+                    Marquise Cluster Pear Emerald Chandeliers
                   </p>
                   <p className="text-[9px] text-[#a39b94] mt-0.5">
-                    One of a kind in the world
+                    As showcased by Neeru
                   </p>
                 </div>
               </div>
@@ -98,7 +98,7 @@ export function HeritageSection() {
               </p>
 
               <blockquote className="my-6 pl-5 border-l-2 border-[#d8a48f] italic text-[#ede6df] text-base sm:text-lg bg-[#1a1a1a]/70 py-3 pr-4">
-                &ldquo;The brand exacts its inspiration from an amalgamation of traditional and contemporary India. Her signature style Columbian Emerald Jhumki, the one of a kind in the world, focuses on textural serendipity.&rdquo;
+                &ldquo;The brand exacts its inspiration from an amalgamation of traditional and contemporary India. Her signature Marquise Cluster Pear Emerald Chandeliers, a one-of-a-kind bespoke creation, focuses on textural serendipity.&rdquo;
               </blockquote>
 
               <p>
@@ -127,7 +127,7 @@ export function HeritageSection() {
                     Rare Provenance
                   </h4>
                   <p className="text-[11px] text-[#a39b94] mt-0.5">
-                    Antwerp diamonds, Muzo emeralds, Mogok rubies.
+                    Certified diamonds, Muzo emeralds, Mogok rubies.
                   </p>
                 </div>
               </div>

@@ -32,9 +32,9 @@ export function Navbar({ wishlistCount, onOpenWishlist, onOpenConcierge }: Navba
             : 'bg-transparent py-5 sm:py-6'
         }`}
       >
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 sm:px-10">
+        <div className="relative mx-auto flex max-w-7xl items-center justify-between px-6 sm:px-10 min-h-[44px]">
           {/* Mobile Menu Toggle */}
-          <div className="flex items-center lg:hidden">
+          <div className="flex flex-1 items-center lg:hidden">
             <button
               onClick={() => setMobileMenuOpen(true)}
               aria-label="Open menu"
@@ -45,7 +45,7 @@ export function Navbar({ wishlistCount, onOpenWishlist, onOpenConcierge }: Navba
           </div>
 
           {/* Desktop Left Minimal Links */}
-          <nav className="hidden lg:flex items-center gap-9 text-[11px] font-mono uppercase tracking-[0.22em] text-[#ede6df]/75">
+          <nav className="hidden lg:flex flex-1 items-center gap-9 text-[11px] font-mono uppercase tracking-[0.22em] text-[#ede6df]/75">
             <a href="#collections" className="hover:text-[#d8a48f] transition duration-200">
               Collections
             </a>
@@ -60,17 +60,17 @@ export function Navbar({ wishlistCount, onOpenWishlist, onOpenConcierge }: Navba
             </a>
           </nav>
 
-          {/* Center Minimal Transparent Logo */}
+          {/* Center Minimal Transparent Logo - Dead Center across all viewports */}
           <a
             href="#top"
-            className="flex flex-col items-center justify-center group select-none"
+            className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 flex flex-col items-center justify-center group select-none pointer-events-auto"
             aria-label="Aurex Fine Jewellery home"
           >
             <AurexLogo size="md" />
           </a>
 
           {/* Desktop Right Minimal Actions */}
-          <div className="hidden lg:flex items-center gap-7 text-[11px] font-mono uppercase tracking-[0.22em]">
+          <div className="hidden lg:flex flex-1 items-center justify-end gap-7 text-[11px] font-mono uppercase tracking-[0.22em]">
             <button
               onClick={onOpenWishlist}
               className="relative p-2 text-[#ede6df]/75 hover:text-[#d8a48f] transition"
@@ -94,7 +94,7 @@ export function Navbar({ wishlistCount, onOpenWishlist, onOpenConcierge }: Navba
           </div>
 
           {/* Mobile Right Quick Icons */}
-          <div className="flex items-center gap-3 lg:hidden">
+          <div className="flex flex-1 items-center justify-end gap-3 lg:hidden">
             <button
               onClick={onOpenWishlist}
               className="relative p-1.5 text-[#ede6df] hover:text-[#d8a48f]"
@@ -188,7 +188,7 @@ export function Navbar({ wishlistCount, onOpenWishlist, onOpenConcierge }: Navba
                 Schedule Private Viewing
               </button>
               <div className="mt-4 text-center font-mono text-[9px] uppercase tracking-[0.22em] text-[#a39b94]">
-                Jaipur · Antwerp · New Delhi
+                Jaipur · New Delhi
               </div>
             </div>
           </div>

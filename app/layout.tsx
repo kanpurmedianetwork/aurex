@@ -32,12 +32,12 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://www.aurex.in'),
   title: 'AUREX — Haute Joaillerie & Fine Jewellery | House of Legacy, Trust, and Tradition',
   description:
-    'Aurex is a house of legacy, trust, and tradition. Merging international haute joaillerie trends with 10th-generation Jaipur craftsmanship, Antwerp diamonds, and rare Colombian emeralds.',
+    'Aurex is a house of legacy, trust, and tradition. Merging international haute joaillerie trends with 10th-generation Jaipur craftsmanship, certified diamonds, and rare Colombian emeralds.',
   keywords: [
     'Aurex Jewellery',
     'Haute Joaillerie',
     'Colombian Emeralds',
-    'Antwerp Diamonds',
+    'Certified Diamonds',
     'Jaipur Jewellery Heritage',
     'Polki Chokers',
     'Bespoke Bridal Jewellery',
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     siteName: 'Aurex Fine Jewellery',
     title: 'AUREX — Haute Joaillerie & Fine Jewellery Maison',
     description:
-      'A house of legacy, trust, and tradition. 10th-generation Jaipur fine jewellery, rare Colombian emeralds, and certified Antwerp diamonds.',
+      'A house of legacy, trust, and tradition. 10th-generation Jaipur fine jewellery, rare Colombian emeralds, and certified diamonds.',
     images: [
       {
         url: '/dark-paper-bg.jpg',
@@ -67,7 +67,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'AUREX — Haute Joaillerie & Fine Jewellery Maison',
     description:
-      'A house of legacy, trust, and tradition. 10th-generation Jaipur fine jewellery, rare Colombian emeralds, and certified Antwerp diamonds.',
+      'A house of legacy, trust, and tradition. 10th-generation Jaipur fine jewellery, rare Colombian emeralds, and certified diamonds.',
     images: ['/dark-paper-bg.jpg']
   },
   icons: {
