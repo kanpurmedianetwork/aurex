@@ -1,5 +1,6 @@
 'use client'
 
+import { useEffect } from 'react'
 import Image from 'next/image'
 import { JewelryPiece } from '@/lib/lookbook-data'
 import { X, Heart, MessageCircle } from 'lucide-react'
@@ -19,14 +20,31 @@ export function QuickViewModal({
   isLiked,
   onOpenConcierge
 }: QuickViewModalProps) {
+  useEffect(() => {
+    if (!piece) return
+    const originalOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose()
+    }
+    window.addEventListener('keydown', handleKeyDown)
+    return () => {
+      document.body.style.overflow = originalOverflow
+      window.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [piece, onClose])
+
   if (!piece) return null
 
   const whatsappUrl = `https://wa.me/919839000000?text=${encodeURIComponent(
-    `Hello Aurex Concierge, I would like to inquire regarding "${piece.name}" (Plate ${piece.page.toString().padStart(2, '0')}) featured in the ${piece.collection}.`
+    `Hello Aurex Concierge, I would like to inquire regarding "${piece.name}" (Plate ${piece.page.toString().padStart(2, '0')}) from the ${piece.collection}. Metal: ${piece.metal}. Gemstones: ${piece.gemstones}.`
   )}`
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-fadeIn">
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-fadeIn"
+      onClick={onClose}
+    >
       <div
         className="relative w-full max-w-4xl bg-[#171717] border border-[#d8a48f]/40 shadow-2xl overflow-hidden flex flex-col md:flex-row max-h-[90vh]"
         onClick={(e) => e.stopPropagation()}

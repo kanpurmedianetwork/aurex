@@ -22,6 +22,20 @@ export function Navbar({ wishlistCount, onOpenWishlist, onOpenConcierge }: Navba
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  useEffect(() => {
+    if (!mobileMenuOpen) return
+    const originalOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setMobileMenuOpen(false)
+    }
+    window.addEventListener('keydown', handleKeyDown)
+    return () => {
+      document.body.style.overflow = originalOverflow
+      window.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [mobileMenuOpen])
+
   return (
     <>
       {/* Minimal & Completely Transparent Luxury Navigation */}
@@ -78,7 +92,7 @@ export function Navbar({ wishlistCount, onOpenWishlist, onOpenConcierge }: Navba
             >
               <Heart size={18} strokeWidth={1.5} />
               {wishlistCount > 0 && (
-                <span className="absolute 1 top-1 -right-1 flex h-3.5 w-3.5 items-center justify-center rounded-full bg-[#d8a48f] text-[#141414] font-mono text-[8px] font-bold">
+                <span className="absolute top-1 -right-1 flex h-3.5 w-3.5 items-center justify-center rounded-full bg-[#d8a48f] text-[#141414] font-mono text-[8px] font-bold">
                   {wishlistCount}
                 </span>
               )}
@@ -102,7 +116,7 @@ export function Navbar({ wishlistCount, onOpenWishlist, onOpenConcierge }: Navba
             >
               <Heart size={19} strokeWidth={1.5} />
               {wishlistCount > 0 && (
-                <span className="absolute 0 top-0 -right-1 flex h-3.5 w-3.5 items-center justify-center rounded-full bg-[#d8a48f] text-[#141414] font-mono text-[8px] font-bold">
+                <span className="absolute top-0 -right-1 flex h-3.5 w-3.5 items-center justify-center rounded-full bg-[#d8a48f] text-[#141414] font-mono text-[8px] font-bold">
                   {wishlistCount}
                 </span>
               )}
@@ -121,8 +135,14 @@ export function Navbar({ wishlistCount, onOpenWishlist, onOpenConcierge }: Navba
 
       {/* Minimal Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md lg:hidden">
-          <div className="fixed inset-y-0 left-0 w-[85%] max-w-sm bg-[#141414] border-r border-[#d8a48f]/20 p-7 flex flex-col justify-between overflow-y-auto">
+        <div
+          className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md lg:hidden"
+          onClick={() => setMobileMenuOpen(false)}
+        >
+          <div
+            className="fixed inset-y-0 left-0 w-[85%] max-w-sm bg-[#141414] border-r border-[#d8a48f]/20 p-7 flex flex-col justify-between overflow-y-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
             <div>
               <div className="flex items-center justify-between border-b border-[#d8a48f]/15 pb-5">
                 <AurexLogo size="sm" />

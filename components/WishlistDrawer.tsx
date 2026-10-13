@@ -1,5 +1,6 @@
 'use client'
 
+import { useEffect } from 'react'
 import Image from 'next/image'
 import { JewelryPiece, JEWELRY_PIECES } from '@/lib/lookbook-data'
 import { X, Trash2, MessageCircle, Heart } from 'lucide-react'
@@ -21,6 +22,20 @@ export function WishlistDrawer({
   onSelectPiece,
   onOpenConcierge
 }: WishlistDrawerProps) {
+  useEffect(() => {
+    if (!isOpen) return
+    const originalOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose()
+    }
+    window.addEventListener('keydown', handleKeyDown)
+    return () => {
+      document.body.style.overflow = originalOverflow
+      window.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [isOpen, onClose])
+
   if (!isOpen) return null
 
   const savedPieces = JEWELRY_PIECES.filter((p) => wishlistIds.includes(p.id))
@@ -31,7 +46,10 @@ export function WishlistDrawer({
   )}`
 
   return (
-    <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm animate-fadeIn">
+    <div
+      className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm animate-fadeIn"
+      onClick={onClose}
+    >
       <div
         className="fixed inset-y-0 right-0 w-full max-w-md bg-[#171717] border-l border-[#d8a48f]/30 p-6 flex flex-col justify-between shadow-2xl overflow-y-auto"
         onClick={(e) => e.stopPropagation()}

@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import Image from 'next/image'
 import { LOOKBOOK_CHAPTERS, JEWELRY_PIECES, JewelryPiece } from '@/lib/lookbook-data'
 import { AurexLogo } from '@/components/AurexLogo'
@@ -29,15 +29,28 @@ export function LookbookViewer({ onSelectPiece, onOpenConcierge }: LookbookViewe
            p.subtitle.toLowerCase() === chapter.cursiveSubtitle.toLowerCase()
   )
 
-  const activePiece = chapterPieces[0] || JEWELRY_PIECES[0]
+  const activePiece =
+    JEWELRY_PIECES.find((p) => p.image === chapter.keyImage) ||
+    chapterPieces[0] ||
+    JEWELRY_PIECES[0]
 
-  function nextChapter() {
+  const nextChapter = useCallback(() => {
     setCurrentChapterIdx((prev) => (prev + 1) % LOOKBOOK_CHAPTERS.length)
-  }
+  }, [])
 
-  function prevChapter() {
+  const prevChapter = useCallback(() => {
     setCurrentChapterIdx((prev) => (prev - 1 + LOOKBOOK_CHAPTERS.length) % LOOKBOOK_CHAPTERS.length)
-  }
+  }, [])
+
+  useEffect(() => {
+    function handleKeyDown(e: KeyboardEvent) {
+      if (['INPUT', 'TEXTAREA'].includes((e.target as HTMLElement)?.tagName)) return
+      if (e.key === 'ArrowRight') nextChapter()
+      if (e.key === 'ArrowLeft') prevChapter()
+    }
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [nextChapter, prevChapter])
 
   return (
     <section id="editorial" className="py-24 bg-[#111111] border-b border-[#d8a48f]/20 relative">

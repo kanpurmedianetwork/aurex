@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Navbar } from '@/components/Navbar'
 import { Hero } from '@/components/Hero'
 import { LookbookViewer } from '@/components/LookbookViewer'
@@ -21,10 +21,31 @@ export default function Home() {
   const [conciergeInitialPiece, setConciergeInitialPiece] = useState<string | undefined>()
   const [isWishlistOpen, setIsWishlistOpen] = useState(false)
 
+  // Safely restore persisted wishlist from localStorage on client mount
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem('aurex_wishlist')
+      if (saved) {
+        const parsed = JSON.parse(saved)
+        if (Array.isArray(parsed)) {
+          setWishlistIds(parsed)
+        }
+      }
+    } catch {
+      // Fallback silently if storage is unavailable
+    }
+  }, [])
+
   function toggleWishlist(pieceId: string) {
-    setWishlistIds((prev) =>
-      prev.includes(pieceId) ? prev.filter((id) => id !== pieceId) : [...prev, pieceId]
-    )
+    setWishlistIds((prev) => {
+      const next = prev.includes(pieceId) ? prev.filter((id) => id !== pieceId) : [...prev, pieceId]
+      try {
+        localStorage.setItem('aurex_wishlist', JSON.stringify(next))
+      } catch {
+        // Fallback silently
+      }
+      return next
+    })
   }
 
   function handleOpenConcierge(pieceName?: string) {

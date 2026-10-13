@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { AurexLogo } from '@/components/AurexLogo'
 import { X, MessageCircle, CheckCircle2 } from 'lucide-react'
 
@@ -16,6 +16,27 @@ export function ConciergeModal({ isOpen, onClose, initialPiece }: ConciergeModal
   const [city, setCity] = useState('')
   const [interest, setInterest] = useState(initialPiece || 'Bespoke Haute Joaillerie Commission')
   const [submitted, setSubmitted] = useState(false)
+  const [bookingRef, setBookingRef] = useState('')
+
+  useEffect(() => {
+    if (initialPiece) {
+      setInterest(initialPiece)
+    }
+  }, [initialPiece])
+
+  useEffect(() => {
+    if (!isOpen) return
+    const originalOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose()
+    }
+    window.addEventListener('keydown', handleKeyDown)
+    return () => {
+      document.body.style.overflow = originalOverflow
+      window.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [isOpen, onClose])
 
   if (!isOpen) return null
 
@@ -24,18 +45,27 @@ export function ConciergeModal({ isOpen, onClose, initialPiece }: ConciergeModal
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
+    setBookingRef(`AUR-2026-${Math.floor(1000 + Math.random() * 9000)}`)
     setSubmitted(true)
   }
 
+  function handleCloseModal() {
+    setSubmitted(false)
+    onClose()
+  }
+
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md">
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md"
+      onClick={handleCloseModal}
+    >
       <div
         className="relative w-full max-w-xl bg-[#171717] border border-[#d8a48f]/40 shadow-2xl p-6 sm:p-8 overflow-hidden"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close Button */}
         <button
-          onClick={onClose}
+          onClick={handleCloseModal}
           className="absolute top-4 right-4 p-2 text-[#a39b94] hover:text-[#d8a48f] transition"
           aria-label="Close concierge form"
         >
@@ -46,14 +76,16 @@ export function ConciergeModal({ isOpen, onClose, initialPiece }: ConciergeModal
           <div className="py-12 text-center">
             <CheckCircle2 size={48} className="mx-auto text-[#d8a48f] mb-4" />
             <h3 className="font-serif text-3xl text-[#ede6df] mb-2">Consultation Scheduled</h3>
+            {bookingRef && (
+              <span className="inline-block bg-[#1f1f1f] border border-[#d8a48f]/40 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.25em] text-[#d8a48f] mb-4">
+                Reference: {bookingRef}
+              </span>
+            )}
             <p className="text-sm text-[#c7c0b5] max-w-md mx-auto mb-6 font-serif">
               Thank you, {name || 'esteemed patron'}. A private Aurex jewellery advisor will reach out to you within 24 hours to coordinate your bespoke appointment.
             </p>
             <button
-              onClick={() => {
-                setSubmitted(false)
-                onClose()
-              }}
+              onClick={handleCloseModal}
               className="bg-[#d8a48f] text-[#141414] px-6 py-2.5 font-mono text-[10px] uppercase tracking-widest font-semibold hover:bg-[#ebd0c4] transition"
             >
               Return to Gallery
