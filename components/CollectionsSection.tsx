@@ -21,7 +21,7 @@ const CATEGORIES = [
   { id: 'rings', label: 'Bespoke Collection' },
   { id: 'bracelets', label: 'Bracelets & Cuffs' },
   { id: 'accessories', label: 'Royal Accessories' },
-  { id: 'everyday', label: 'Everyday Fine Jewellery' },
+  { id: 'everyday', label: 'Fine Jewellery Collection' },
 ]
 
 export function CollectionsSection({

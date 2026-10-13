@@ -78,7 +78,7 @@ export function Footer() {
                 <a href="#collections" className="hover:text-[#d8a48f] transition">Royal Accessories</a>
               </li>
               <li>
-                <a href="#collections" className="hover:text-[#d8a48f] transition">Everyday Fine Jewellery</a>
+                <a href="#collections" className="hover:text-[#d8a48f] transition">Fine Jewellery Collection</a>
               </li>
             </ul>
           </div>
