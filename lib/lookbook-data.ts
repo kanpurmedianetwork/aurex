@@ -564,7 +564,7 @@ export const JEWELRY_PIECES: JewelryPiece[] = [
   },
   {
     id: 'accessory-emerald-hairclip',
-    name: 'Diamond & Emerald Hairclip in 18K Gold',
+    name: 'Diamond and Emerald Hair Clip in 18K Gold',
     collection: 'Royal Accessories',
     category: 'accessories',
     subtitle: 'Hair Accessories',
@@ -775,7 +775,7 @@ export const LOOKBOOK_CHAPTERS: LookbookChapter[] = [
     collectionName: 'Royal Accessories',
     description: 'Express your personality or make an artistic statement with Aurex bespoke accessories. Kurta buttons, sherwani buttons, 18K gold hair ornaments, and diamond-set collector boxes.',
     keyImage: '/lookbook/jewel_103.jpg',
-    featuredPieces: ['Colombian Emerald Kurta Buttons', 'Diamond and Ruby Kurta Buttons', 'Diamond & Emerald Hairclip in 18K Gold'],
+    featuredPieces: ['Colombian Emerald Kurta Buttons', 'Diamond and Ruby Kurta Buttons', 'Diamond and Emerald Hair Clip in 18K Gold'],
     pageRange: 'Folio 32–35'
   },
   {
