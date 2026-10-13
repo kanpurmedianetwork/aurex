@@ -550,7 +550,7 @@ export const JEWELRY_PIECES: JewelryPiece[] = [
   },
   {
     id: 'accessory-polki-hair-band',
-    name: 'Diamond Polki & Gold Matha Patti / Hair Band',
+    name: 'Diamond Polki & Gold Matha Patti',
     collection: 'Royal Accessories',
     category: 'accessories',
     subtitle: 'Hair Accessories',
