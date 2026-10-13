@@ -500,7 +500,7 @@ export const JEWELRY_PIECES: JewelryPiece[] = [
   },
   {
     id: 'bracelet-enamel-peacock-kada',
-    name: 'Royal Jaipur Enamel Peacock Wedding Kada',
+    name: 'Royal Jaipur Traditional Peacock Kadas',
     collection: 'Bracelets',
     category: 'bracelets',
     subtitle: 'Excellence',
@@ -764,7 +764,7 @@ export const LOOKBOOK_CHAPTERS: LookbookChapter[] = [
     collectionName: 'Bracelets & Cuffs',
     description: 'Add a touch of elegance with a sparkling bracelet from Aurex. Handcrafted from high quality gold and conflict-free diamonds. Our craftsmen can work with you to create a one-of-a-kind tailored design.',
     keyImage: '/lookbook/jewel_091.jpg',
-    featuredPieces: ['Platinum Colombian Emerald Statement Cuff', 'Brilliant Cut Diamond Tennis Bracelet', 'Royal Jaipur Enamel Peacock Kada'],
+    featuredPieces: ['Platinum Colombian Emerald Statement Cuff', 'Brilliant Cut Diamond Tennis Bracelet', 'Royal Jaipur Traditional Peacock Kadas'],
     pageRange: 'Folio 28–31'
   },
   {
