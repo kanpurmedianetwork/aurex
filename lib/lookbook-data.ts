@@ -589,14 +589,42 @@ export const JEWELRY_PIECES: JewelryPiece[] = [
     page: 35
   },
 
-  // --- EVERYDAY BLING / OFFICE COLLECTION ---
+  // --- EVERYDAY FINE JEWELLERY COLLECTION ---
+  {
+    id: 'everyday-sapphire-drop-earrings',
+    name: 'Cushion Blue Sapphire & Diamond Drop Earrings',
+    collection: 'Everyday Fine Jewellery Collection',
+    category: 'everyday',
+    subtitle: 'Everyday Fine Jewellery',
+    quote: 'Delicate gold and colorful gemstones for the modern woman looking for a unique piece to layer.',
+    description: 'Cushion-cut vibrant blue sapphires bezel-set in warm yellow gold suspended from delicate linear diamond ear wires.',
+    gemstones: 'Cushion Cut Blue Sapphires, Brilliant Cut Diamonds',
+    metal: '14K Yellow Gold',
+    image: '/lookbook/jewel_109.jpg',
+    page: 36,
+    featured: true,
+    tag: 'Daily Luxe'
+  },
+  {
+    id: 'everyday-opal-filigree-earrings',
+    name: 'Ethiopian Opal & Diamond Filigree Drop Earrings',
+    collection: 'Everyday Fine Jewellery Collection',
+    category: 'everyday',
+    subtitle: 'Everyday Fine Jewellery',
+    quote: 'Fine, beautiful everyday jewelry for the modern woman made from 14ct gold.',
+    description: 'Iridescent cabochon Ethiopian opals framed in handcrafted vintage-inspired yellow gold filigree with brilliant diamond accents.',
+    gemstones: 'Natural Ethiopian Opals, Brilliant Cut Diamonds',
+    metal: '14K Yellow Gold',
+    image: '/lookbook/jewel_111.jpg',
+    page: 36
+  },
   {
     id: 'everyday-floating-heart-pendant',
     name: 'Floating Diamond Heart Pendant',
-    collection: 'Office Collection',
+    collection: 'Everyday Fine Jewellery Collection',
     category: 'everyday',
-    subtitle: 'Everyday Bling',
-    quote: 'Fine, beautiful everyday office jewelry for the modern woman made from 14ct gold.',
+    subtitle: 'Everyday Fine Jewellery',
+    quote: 'Fine, beautiful everyday jewelry for the modern woman made from 14ct gold.',
     description: 'Open heart silhouette in polished 14ct yellow gold housing three bezel-set floating dancing diamonds behind sapphire crystal.',
     gemstones: 'Brilliant Diamonds (0.35ct tw)',
     metal: '14K Yellow Gold',
@@ -608,9 +636,9 @@ export const JEWELRY_PIECES: JewelryPiece[] = [
   {
     id: 'everyday-emerald-cross-necklace',
     name: 'Colombian Emerald Florets Cross Pendant',
-    collection: 'Office Collection',
+    collection: 'Everyday Fine Jewellery Collection',
     category: 'everyday',
-    subtitle: 'Everyday Bling',
+    subtitle: 'Everyday Fine Jewellery',
     quote: 'Ethically sourced, conflict-free gemstones hand-picked by the designer herself.',
     description: 'Delicate cross pendant set with four pear-cut emeralds and a brilliant diamond rosette core on an airy cable chain.',
     gemstones: 'Natural Colombian Emeralds, Diamond Accents',
@@ -621,9 +649,9 @@ export const JEWELRY_PIECES: JewelryPiece[] = [
   {
     id: 'everyday-tree-of-life',
     name: 'Diamond Tree of Life Medallion',
-    collection: 'Office Collection',
+    collection: 'Everyday Fine Jewellery Collection',
     category: 'everyday',
-    subtitle: 'Everyday Bling',
+    subtitle: 'Everyday Fine Jewellery',
     quote: 'Delicate gold and colorful gemstones for the modern woman looking for a unique piece to layer.',
     description: 'Circular openwork medallion depicting the sacred feminine tree of life accented with diamond foliage.',
     gemstones: 'Micro-Pavé Brilliant Diamonds',
@@ -634,9 +662,9 @@ export const JEWELRY_PIECES: JewelryPiece[] = [
   {
     id: 'everyday-ruby-butterfly',
     name: 'Burmese Ruby Butterfly Pendant',
-    collection: 'Office Collection',
+    collection: 'Everyday Fine Jewellery Collection',
     category: 'everyday',
-    subtitle: 'Everyday Bling',
+    subtitle: 'Everyday Fine Jewellery',
     quote: 'A playful touch of fine luxury for everyday elegance.',
     description: 'Wings of faceted marquise and pear Burmese rubies with a diamond torso suspended on an 18K white gold chain.',
     gemstones: 'Burmese Rubies, Brilliant Diamonds',
@@ -781,12 +809,12 @@ export const LOOKBOOK_CHAPTERS: LookbookChapter[] = [
   {
     id: 'ch-everyday',
     number: '09',
-    title: 'Office Collection',
-    cursiveSubtitle: 'Everyday Bling',
-    collectionName: 'Office Collection',
-    description: 'Fine, beautiful everyday office jewelry for the modern woman made from 14ct gold, ethically sourced, conflict-free gemstones hand-picked by the designer herself in India.',
+    title: 'Everyday Fine Jewellery Collection',
+    cursiveSubtitle: 'Everyday Fine Jewellery',
+    collectionName: 'Everyday Fine Jewellery Collection',
+    description: 'Fine, beautiful everyday jewelry for the modern woman made from 14ct gold, ethically sourced, conflict-free gemstones hand-picked by the designer herself in India.',
     keyImage: '/lookbook/jewel_141.jpg',
-    featuredPieces: ['Floating Diamond Heart Pendant', 'Colombian Emerald Florets Cross', 'Diamond Tree of Life Medallion'],
+    featuredPieces: ['Floating Diamond Heart Pendant', 'Cushion Blue Sapphire Drop Earrings', 'Burmese Ruby Butterfly Pendant'],
     pageRange: 'Folio 36–41'
   },
   {
