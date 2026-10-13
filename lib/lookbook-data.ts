@@ -421,11 +421,40 @@ export const JEWELRY_PIECES: JewelryPiece[] = [
     description: 'Magnificent oval Colombian emerald encased in a seamless radial halo of tapered diamond baguettes.',
     gemstones: 'Colombian Emerald (7.1ct), Tapered Diamond Baguettes',
     metal: 'Platinum and 18K Yellow Gold',
-    image: '/lookbook/jewel_087.jpg',
+    image: '/lookbook/jewel_085.jpg',
     page: 27
   },
 
   // --- BRACELETS ---
+  {
+    id: 'bracelet-multicolor-gemstone-cuff',
+    name: 'Bespoke Multi-Gemstone & Diamond Statement Cuff',
+    collection: 'Bracelets',
+    category: 'bracelets',
+    subtitle: 'Excellence',
+    quote: 'Whatever style you choose, make a chic statement with one of our bracelets.',
+    description: 'Spectacular articulated cuff encrusted with natural Burma rubies, Colombian emeralds, Ceylon sapphires, and brilliant diamonds in an ornate floral mosaic.',
+    gemstones: 'Burmese Rubies, Colombian Emeralds, Ceylon Sapphires & Brilliant Diamonds',
+    metal: '18K Yellow and White Gold',
+    origin: 'Bespoke Karigari',
+    image: '/lookbook/jewel_087.jpg',
+    page: 28,
+    featured: true,
+    tag: 'Bespoke Masterpiece'
+  },
+  {
+    id: 'bracelet-emerald-cut-tennis',
+    name: 'Emerald-Cut Diamond Articulated Tennis Bracelet',
+    collection: 'Bracelets',
+    category: 'bracelets',
+    subtitle: 'Excellence',
+    quote: 'Add a touch of elegance with a sparkling bracelet from Aurex.',
+    description: 'Consecutive step-cut rectangular emerald-cut diamonds seamlessly channel set into an ultra-flexible 18K white gold track.',
+    gemstones: 'Emerald Cut Diamonds (15.5ct tw)',
+    metal: '18K White Gold',
+    image: '/lookbook/jewel_089.jpg',
+    page: 29
+  },
   {
     id: 'bracelet-platinum-emerald-cuff',
     name: 'Platinum Colombian Emerald & Diamond Statement Cuff',
@@ -457,6 +486,19 @@ export const JEWELRY_PIECES: JewelryPiece[] = [
     page: 30
   },
   {
+    id: 'bracelet-fluted-oval-link',
+    name: 'Fluted Gold Oval Link Diamond Bracelet',
+    collection: 'Bracelets',
+    category: 'bracelets',
+    subtitle: 'Excellence',
+    quote: 'Handcrafted from high quality gold and conflict-free diamonds.',
+    description: 'Textured fluted oval links in rich yellow gold accented with pavé diamond halo connector rings.',
+    gemstones: 'Brilliant Cut Diamonds',
+    metal: '18K Yellow & White Gold',
+    image: '/lookbook/jewel_095.jpg',
+    page: 29
+  },
+  {
     id: 'bracelet-enamel-peacock-kada',
     name: 'Royal Jaipur Enamel Peacock Wedding Kada',
     collection: 'Bracelets',
@@ -467,23 +509,10 @@ export const JEWELRY_PIECES: JewelryPiece[] = [
     gemstones: 'Uncut Diamonds, Basra Pearl Drops, Royal Meenakari',
     metal: '22K Solid Gold',
     origin: 'Jaipur Karigari',
-    image: '/lookbook/jewel_101.jpg',
+    image: '/lookbook/jewel_097.jpg',
     page: 31,
     featured: true,
     tag: 'Royal Heirloom'
-  },
-  {
-    id: 'bracelet-emerald-cut-tennis',
-    name: 'Emerald-Cut Diamond Articulated Tennis Bracelet',
-    collection: 'Bracelets',
-    category: 'bracelets',
-    subtitle: 'Excellence',
-    quote: 'Add a touch of elegance with a sparkling bracelet from Aurex.',
-    description: 'Consecutive step-cut rectangular emerald-cut diamonds seamlessly channel set into an ultra-flexible 18K white gold track.',
-    gemstones: 'Emerald Cut Diamonds (15.5ct tw)',
-    metal: '18K White Gold',
-    image: '/lookbook/jewel_097.jpg',
-    page: 29
   },
 
   // --- ROYAL ACCESSORIES ---
@@ -498,7 +527,7 @@ export const JEWELRY_PIECES: JewelryPiece[] = [
     gemstones: 'Natural Colombian Emeralds, Brilliant Diamonds',
     metal: '18K Yellow Gold',
     origin: 'Colombia & Jaipur',
-    image: '/lookbook/jewel_103.jpg',
+    image: '/lookbook/jewel_099.jpg',
     page: 33,
     featured: true,
     tag: 'Royal Men’s Edit'
@@ -514,23 +543,10 @@ export const JEWELRY_PIECES: JewelryPiece[] = [
     gemstones: 'Burmese Rubies, Brilliant Diamonds',
     metal: '18K Yellow Gold',
     origin: 'Burma',
-    image: '/lookbook/jewel_105.jpg',
+    image: '/lookbook/jewel_101.jpg',
     page: 33,
     featured: true,
     tag: 'Bridal Groom Edit'
-  },
-  {
-    id: 'accessory-emerald-hairclip',
-    name: 'Diamond & Emerald Hairclip in 18K Gold',
-    collection: 'Royal Accessories',
-    category: 'accessories',
-    subtitle: 'Hair Accessories',
-    quote: 'Delightful dazzling details using precious gold and gemstones.',
-    description: 'Interlocking Celtic-inspired ribbons of micro-pavé diamonds centering an oval Colombian emerald in warm rose and white gold.',
-    gemstones: 'Oval Colombian Emerald, Brilliant Diamonds',
-    metal: '18K Two-Tone Gold',
-    image: '/lookbook/jewel_107.jpg',
-    page: 34
   },
   {
     id: 'accessory-polki-hair-band',
@@ -543,7 +559,20 @@ export const JEWELRY_PIECES: JewelryPiece[] = [
     gemstones: 'Uncut Diamonds, Pearls, Enamel',
     metal: '22K Gold',
     origin: 'Jaipur',
-    image: '/lookbook/jewel_109.jpg',
+    image: '/lookbook/jewel_103.jpg',
+    page: 34
+  },
+  {
+    id: 'accessory-emerald-hairclip',
+    name: 'Diamond & Emerald Hairclip in 18K Gold',
+    collection: 'Royal Accessories',
+    category: 'accessories',
+    subtitle: 'Hair Accessories',
+    quote: 'Delightful dazzling details using precious gold and gemstones.',
+    description: 'Interlocking Celtic-inspired ribbons of micro-pavé diamonds centering an oval Colombian emerald in warm rose and white gold.',
+    gemstones: 'Oval Colombian Emerald, Brilliant Diamonds',
+    metal: '18K Two-Tone Gold',
+    image: '/lookbook/jewel_105.jpg',
     page: 34
   },
   {
@@ -556,7 +585,7 @@ export const JEWELRY_PIECES: JewelryPiece[] = [
     description: 'Hand-fluted solid yellow gold pocket case featuring a bespoke diamond monogram clasp.',
     gemstones: 'Pavé Set Brilliant Diamonds',
     metal: '18K Yellow Gold',
-    image: '/lookbook/jewel_111.jpg',
+    image: '/lookbook/jewel_107.jpg',
     page: 35
   },
 
