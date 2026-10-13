@@ -355,7 +355,7 @@ export const JEWELRY_PIECES: JewelryPiece[] = [
   {
     id: 'ring-emerald-sunburst-halo',
     name: 'Colombian Emerald Sunburst Halo Cocktail Ring',
-    collection: 'Cocktail Rings',
+    collection: 'Bespoke Collection',
     category: 'rings',
     subtitle: 'Bespoke',
     quote: 'Boldly oversized & eminently feminine, a collection for the chic and glamorous.',
@@ -371,7 +371,7 @@ export const JEWELRY_PIECES: JewelryPiece[] = [
   {
     id: 'ring-royal-tanzanite-halo',
     name: 'Royal Tanzanite & Diamond Split-Shank Ring',
-    collection: 'Cocktail Rings',
+    collection: 'Bespoke Collection',
     category: 'rings',
     subtitle: 'Bespoke',
     quote: 'Invite individuals to explore and embrace their individuality in fresh and creative ways.',
@@ -387,7 +387,7 @@ export const JEWELRY_PIECES: JewelryPiece[] = [
   {
     id: 'ring-burmese-ruby-starburst',
     name: 'Burmese Pear Ruby Starburst Ring',
-    collection: 'Cocktail Rings',
+    collection: 'Bespoke Collection',
     category: 'rings',
     subtitle: 'Bespoke',
     quote: 'Resolutely voluptuous and timeless, bringing together sensual designs and unrestrained glamor.',
@@ -401,7 +401,7 @@ export const JEWELRY_PIECES: JewelryPiece[] = [
   {
     id: 'ring-south-sea-pearl-halo',
     name: 'South Sea Pearl & Diamond Petal Ring',
-    collection: 'Cocktail Rings',
+    collection: 'Bespoke Collection',
     category: 'rings',
     subtitle: 'Bespoke',
     quote: 'Adorned with gemstones that speak to timeless feminine elegance.',
@@ -414,7 +414,7 @@ export const JEWELRY_PIECES: JewelryPiece[] = [
   {
     id: 'ring-colombian-baguette-emerald',
     name: 'Colombian Oval Emerald Baguette Halo Ring',
-    collection: 'Cocktail Rings',
+    collection: 'Bespoke Collection',
     category: 'rings',
     subtitle: 'Bespoke',
     quote: 'Bringing together sensual designs and unrestrained glamor.',
@@ -719,9 +719,9 @@ export const LOOKBOOK_CHAPTERS: LookbookChapter[] = [
   {
     id: 'ch-cocktail',
     number: '06',
-    title: 'Cocktail Rings',
+    title: 'Bespoke Collection',
     cursiveSubtitle: 'Bespoke',
-    collectionName: 'Cocktail Rings',
+    collectionName: 'Bespoke Collection',
     description: 'Boldly oversized & eminently feminine, a collection for the chic and glamorous. Adorned with Colombian emeralds, Burmese ruby and diamonds, this collection is resolutely voluptuous and timeless.',
     keyImage: '/lookbook/jewel_076.jpg',
     featuredPieces: ['Colombian Emerald Sunburst Halo Cocktail Ring', 'Royal Tanzanite & Diamond Split-Shank Ring', 'Burmese Pear Ruby Starburst Ring'],

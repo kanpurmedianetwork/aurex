@@ -72,7 +72,7 @@ export function Footer() {
                 <a href="#collections" className="hover:text-[#d8a48f] transition">Chandelier Chandbalis</a>
               </li>
               <li>
-                <a href="#collections" className="hover:text-[#d8a48f] transition">Bespoke Cocktail Rings</a>
+                <a href="#collections" className="hover:text-[#d8a48f] transition">Bespoke Collection</a>
               </li>
               <li>
                 <a href="#collections" className="hover:text-[#d8a48f] transition">Royal Sherwani Buttons</a>

@@ -18,7 +18,7 @@ const CATEGORIES = [
   { id: 'wedding', label: 'Wedding Collection' },
   { id: 'engagement', label: 'Engagement Rings' },
   { id: 'earrings', label: 'Chandelier Earrings' },
-  { id: 'rings', label: 'Cocktail Rings' },
+  { id: 'rings', label: 'Bespoke Collection' },
   { id: 'bracelets', label: 'Bracelets & Cuffs' },
   { id: 'accessories', label: 'Royal Accessories' },
   { id: 'everyday', label: 'Everyday Bling' },
