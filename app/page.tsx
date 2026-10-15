@@ -8,6 +8,7 @@ import { CollectionsSection } from '@/components/CollectionsSection'
 import { HeritageSection } from '@/components/HeritageSection'
 import { ClientDiariesSection } from '@/components/ClientDiariesSection'
 import { AtelierCommitments } from '@/components/AtelierCommitments'
+import { FounderAtelierSection } from '@/components/FounderAtelierSection'
 import { Footer } from '@/components/Footer'
 import { QuickViewModal } from '@/components/QuickViewModal'
 import { ConciergeModal } from '@/components/ConciergeModal'
@@ -88,6 +89,9 @@ export default function Home() {
         wishlistIds={wishlistIds}
         onOpenConcierge={handleOpenConcierge}
       />
+
+      {/* The Founder's Private Atelier & Office Salon (Featuring ReactBits) */}
+      <FounderAtelierSection onOpenConcierge={handleOpenConcierge} />
 
       {/* Atelier Guarantees & Commitments */}
       <AtelierCommitments />

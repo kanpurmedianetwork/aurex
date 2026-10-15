@@ -150,3 +150,18 @@ body {
   border-right: 3px solid #d8a48f;
   box-shadow: 2px 0 12px rgba(216, 164, 143, 0.35);
 }
+
+/* ReactBits Animation Keyframes */
+@keyframes shine {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.animate-shine {
+  animation: shine 5s linear infinite;
+}
+

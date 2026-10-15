@@ -59,9 +59,12 @@ export function Navbar({ wishlistCount, onOpenWishlist, onOpenConcierge }: Navba
           </div>
 
           {/* Desktop Left Minimal Links */}
-          <nav className="hidden lg:flex flex-1 items-center gap-9 text-[11px] font-mono uppercase tracking-[0.22em] text-[#ede6df]/75">
+          <nav className="hidden lg:flex flex-1 items-center gap-7 text-[11px] font-mono uppercase tracking-[0.2em] text-[#ede6df]/75">
             <a href="#collections" className="hover:text-[#d8a48f] transition duration-200">
               Collections
+            </a>
+            <a href="#atelier" className="hover:text-[#d8a48f] transition duration-200">
+              Atelier
             </a>
             <a href="#editorial" className="hover:text-[#d8a48f] transition duration-200">
               Editorial
@@ -162,6 +165,13 @@ export function Navbar({ wishlistCount, onOpenWishlist, onOpenConcierge }: Navba
                   className="text-[#ede6df] hover:text-[#d8a48f] transition"
                 >
                   Collections
+                </a>
+                <a
+                  href="#atelier"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="text-[#ede6df] hover:text-[#d8a48f] transition"
+                >
+                  The Founder&apos;s Atelier
                 </a>
                 <a
                   href="#editorial"
