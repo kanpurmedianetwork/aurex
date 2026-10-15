@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import { AurexLogo } from '@/components/AurexLogo'
-import { Mail, Globe, MapPin, Sparkles, ArrowUp } from 'lucide-react'
+import { Mail, Globe, MapPin, Sparkles, ArrowUp, Phone } from 'lucide-react'
 
 export function Footer() {
   function scrollToTop() {
@@ -44,6 +44,12 @@ export function Footer() {
                 <Mail size={14} className="text-[#d8a48f]" />
                 <a href="mailto:aurex1975@gmail.com" className="hover:text-[#d8a48f] transition">
                   Email: aurex1975@gmail.com
+                </a>
+              </div>
+              <div className="flex items-center gap-2">
+                <Phone size={14} className="text-[#d8a48f]" />
+                <a href="tel:+919958964984" className="hover:text-[#d8a48f] transition">
+                  Phone / WhatsApp: +91 99589 64984
                 </a>
               </div>
               <div className="flex items-center gap-2">

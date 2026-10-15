@@ -207,8 +207,11 @@ export function Navbar({ wishlistCount, onOpenWishlist, onOpenConcierge }: Navba
               >
                 Schedule Private Viewing
               </button>
-              <div className="mt-4 text-center font-mono text-[9px] uppercase tracking-[0.22em] text-[#a39b94]">
-                Jaipur · New Delhi
+              <div className="mt-4 text-center font-mono text-[10px] uppercase tracking-[0.2em] text-[#a39b94]">
+                <a href="tel:+919958964984" className="text-[#d8a48f] hover:underline block mb-1">
+                  +91 99589 64984
+                </a>
+                <span>Jaipur · New Delhi</span>
               </div>
             </div>
           </div>

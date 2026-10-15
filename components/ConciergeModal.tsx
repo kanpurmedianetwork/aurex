@@ -41,7 +41,7 @@ export function ConciergeModal({ isOpen, onClose, initialPiece }: ConciergeModal
   if (!isOpen) return null
 
   const whatsappMessage = `Hello Aurex Concierge, I would like to schedule a private viewing consultation. Interest: ${interest}. Name: ${name || 'Patron'}, City: ${city || 'India'}.`
-  const whatsappUrl = `https://wa.me/919839000000?text=${encodeURIComponent(whatsappMessage)}`
+  const whatsappUrl = `https://wa.me/919958964984?text=${encodeURIComponent(whatsappMessage)}`
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
@@ -150,7 +150,7 @@ export function ConciergeModal({ isOpen, onClose, initialPiece }: ConciergeModal
                     required
                     value={contact}
                     onChange={(e) => setContact(e.target.value)}
-                    placeholder="+91 98390 XXXXX"
+                    placeholder="+91 99589 XXXXX"
                     className="w-full bg-[#1f1f1f] border border-[#d8a48f]/30 px-3.5 py-2.5 text-xs text-[#ede6df] placeholder:text-[#a39b94]/40 focus:border-[#d8a48f] focus:outline-none"
                   />
                 </div>
@@ -190,7 +190,7 @@ export function ConciergeModal({ isOpen, onClose, initialPiece }: ConciergeModal
               </button>
 
               <div className="pt-2 text-center text-[10px] font-mono text-[#a39b94]">
-                Direct Inquiries: <a href="mailto:aurex1975@gmail.com" className="text-[#d8a48f] hover:underline">aurex1975@gmail.com</a> · www.aurex.in
+                Direct Inquiries: <a href="tel:+919958964984" className="text-[#d8a48f] hover:underline">+91 99589 64984</a> · <a href="mailto:aurex1975@gmail.com" className="text-[#d8a48f] hover:underline">aurex1975@gmail.com</a> · www.aurex.in
               </div>
             </form>
           </div>

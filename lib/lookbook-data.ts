@@ -51,7 +51,8 @@ export const AUREX_BRAND = {
   founderHeritage: 'Mr. Chandra Prakash Agroya (Jaipur)',
   website: 'www.aurex.in',
   email: 'aurex1975@gmail.com',
-  phone: '+91 98390 12345',
+  phone: '+91 99589 64984',
+  whatsappNumber: '919958964984',
   whatsappMessage: "Hello Aurex, I am interested in scheduling a bespoke consultation for high jewellery pieces from your collection.",
   mission:
     "Aurex is a house of legacy, trust, and tradition. A bequest that seeks to bring the world's finest offerings in rare and precious jewels collected over the years and brought right to your doorstep. Since its inception, Aurex has merged the characteristics of the latest international jewelry trends with traditional Indian designs.",

@@ -36,7 +36,7 @@ export function QuickViewModal({
 
   if (!piece) return null
 
-  const whatsappUrl = `https://wa.me/919839000000?text=${encodeURIComponent(
+  const whatsappUrl = `https://wa.me/919958964984?text=${encodeURIComponent(
     `Hello Aurex Concierge, I would like to inquire regarding "${piece.name}" (Plate ${piece.page.toString().padStart(2, '0')}) from the ${piece.collection}. Metal: ${piece.metal}. Gemstones: ${piece.gemstones}.`
   )}`
 

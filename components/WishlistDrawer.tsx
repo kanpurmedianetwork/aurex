@@ -41,7 +41,7 @@ export function WishlistDrawer({
   const savedPieces = JEWELRY_PIECES.filter((p) => wishlistIds.includes(p.id))
 
   const inquirySummary = savedPieces.map((p) => `• ${p.name} (Pg ${p.page})`).join('\n')
-  const whatsappUrl = `https://wa.me/919839000000?text=${encodeURIComponent(
+  const whatsappUrl = `https://wa.me/919958964984?text=${encodeURIComponent(
     `Hello Aurex Concierge, I would like to inquire regarding my curated wishlist pieces:\n\n${inquirySummary}`
   )}`
 
