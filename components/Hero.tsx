@@ -42,7 +42,7 @@ export function Hero({ onExploreEditorial, onOpenConcierge }: HeroProps) {
           <span className="font-script text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-[#d8a48f] block leading-[1.05] drop-shadow-[0_2px_8px_rgba(216,164,143,0.25)]">
             House of Bespoke Jewellery
           </span>
-          <p className="font-mono text-[10px] sm:text-xs tracking-[0.55em] uppercase text-[#d8a48f]/80 mt-3 sm:mt-4 pl-[0.55em]">
+          <p className="font-mono text-[9px] sm:text-[10px] md:text-xs tracking-[0.3em] sm:tracking-[0.55em] uppercase text-[#d8a48f]/80 mt-3 sm:mt-4 pl-[0.3em] sm:pl-[0.55em]">
             C O L L E C T I O N
           </p>
         </div>
@@ -53,7 +53,7 @@ export function Hero({ onExploreEditorial, onOpenConcierge }: HeroProps) {
             <AurexLogo size="lg" showText={false} />
           </div>
 
-          <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl tracking-[0.35em] uppercase text-[#ede6df] font-light leading-none pl-[0.35em]">
+          <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl tracking-[0.2em] sm:tracking-[0.35em] uppercase text-[#ede6df] font-light leading-none pl-[0.2em] sm:pl-[0.35em]">
             AUREX
           </h1>
 

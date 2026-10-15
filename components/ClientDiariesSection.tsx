@@ -32,8 +32,8 @@ export function ClientDiariesSection() {
           </p>
         </div>
 
-        {/* Client Story Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-8">
+        {/* Client Story Cards - Balanced 8-Card Symmetrical Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {CLIENT_DIARIES.map((item) => (
             <div
               key={item.id}
@@ -59,11 +59,11 @@ export function ClientDiariesSection() {
                   {item.client}
                 </span>
 
-                <h3 className="font-serif text-lg text-[#ede6df] font-medium mb-3 leading-snug">
+                <h3 className="font-serif text-lg text-[#ede6df] font-medium mb-3 leading-snug min-h-[3.25rem] line-clamp-2">
                   {item.title}
                 </h3>
 
-                <blockquote className="font-serif italic text-xs leading-relaxed text-[#c7c0b5] pl-3 border-l border-[#d8a48f]/50 mb-4">
+                <blockquote className="font-serif italic text-xs leading-relaxed text-[#c7c0b5] pl-3 border-l border-[#d8a48f]/50 mb-4 min-h-[4rem] line-clamp-3">
                   &ldquo;{item.quote}&rdquo;
                 </blockquote>
               </div>
@@ -72,7 +72,7 @@ export function ClientDiariesSection() {
                 <span className="font-mono text-[8px] uppercase tracking-wider text-[#a39b94] block">
                   Adorned Masterpiece:
                 </span>
-                <p className="font-serif text-xs text-[#ebd0c4] mt-0.5">
+                <p className="font-serif text-xs text-[#ebd0c4] mt-0.5 min-h-[2.5rem] line-clamp-2">
                   {item.jewelryItem}
                 </p>
               </div>

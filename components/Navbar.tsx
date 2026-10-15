@@ -58,8 +58,8 @@ export function Navbar({ wishlistCount, onOpenWishlist, onOpenConcierge }: Navba
             </button>
           </div>
 
-          {/* Desktop Left Minimal Links */}
-          <nav className="hidden lg:flex flex-1 items-center gap-7 text-[11px] font-mono uppercase tracking-[0.2em] text-[#ede6df]/75">
+          {/* Desktop Left Minimal Links - Responsive spacing to prevent logo collisions */}
+          <nav className="hidden lg:flex flex-1 items-center gap-4 xl:gap-7 text-[10px] xl:text-[11px] font-mono uppercase tracking-[0.14em] xl:tracking-[0.2em] text-[#ede6df]/80">
             <a href="#collections" className="hover:text-[#d8a48f] transition duration-200">
               Collections
             </a>
@@ -87,7 +87,7 @@ export function Navbar({ wishlistCount, onOpenWishlist, onOpenConcierge }: Navba
           </a>
 
           {/* Desktop Right Minimal Actions */}
-          <div className="hidden lg:flex flex-1 items-center justify-end gap-7 text-[11px] font-mono uppercase tracking-[0.22em]">
+          <div className="hidden lg:flex flex-1 items-center justify-end gap-4 xl:gap-7 text-[10px] xl:text-[11px] font-mono uppercase tracking-[0.14em] xl:tracking-[0.22em]">
             <button
               onClick={onOpenWishlist}
               className="relative p-2 text-[#ede6df]/75 hover:text-[#d8a48f] transition"
@@ -103,7 +103,7 @@ export function Navbar({ wishlistCount, onOpenWishlist, onOpenConcierge }: Navba
 
             <button
               onClick={onOpenConcierge}
-              className="inline-flex items-center gap-2 border border-[#d8a48f]/40 px-4 py-2 text-[10px] uppercase tracking-[0.2em] text-[#d8a48f] hover:bg-[#d8a48f] hover:text-[#141414] transition duration-300"
+              className="inline-flex items-center gap-1.5 xl:gap-2 border border-[#d8a48f]/40 px-3 xl:px-4 py-1.5 xl:py-2 text-[9px] xl:text-[10px] uppercase tracking-[0.16em] xl:tracking-[0.2em] text-[#d8a48f] hover:bg-[#d8a48f] hover:text-[#141414] transition duration-300"
             >
               <PhoneCall size={12} strokeWidth={1.5} />
               <span>Concierge</span>

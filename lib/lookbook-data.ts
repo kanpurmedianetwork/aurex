@@ -367,6 +367,48 @@ export const JEWELRY_PIECES: JewelryPiece[] = [
     image: '/lookbook/jewel_060.jpg',
     page: 20
   },
+  {
+    id: 'earrings-diamond-emerald-cascade',
+    name: 'Art Deco Colombian Emerald & Diamond Chandeliers',
+    collection: 'Chandelier Earrings',
+    category: 'earrings',
+    subtitle: 'Exuberance',
+    quote: 'Breath-taking, high quality jewelry that transcends the decades.',
+    description: 'Art Deco geometric stepped tiers of round and baguette diamonds culminating in luminous pear Colombian emerald drops.',
+    gemstones: 'Vivid Colombian Emerald Drops (4.8ct tw), Baguette & Brilliant Diamonds',
+    metal: '18K White Gold',
+    origin: 'Colombia',
+    image: '/lookbook/jewel_058.jpg',
+    page: 20
+  },
+  {
+    id: 'earrings-emerald-drop-jhumka',
+    name: 'Royal Colombian Emerald & Pearl Tassel Drops',
+    collection: 'Chandelier Earrings',
+    category: 'earrings',
+    subtitle: 'Exuberance',
+    quote: 'Supreme gemstones, breathtaking craftsmanship and modern, vibrant designs.',
+    description: 'Sculptural floral studs suspending graduated Colombian emerald briolette drops and natural Basra pearl fringe.',
+    gemstones: 'Colombian Emerald Briolettes, Basra Pearls, Syndicate Polki',
+    metal: '22K Gold Kundan Setting',
+    origin: 'Jaipur Karigari',
+    image: '/lookbook/jewel_062.jpg',
+    page: 21
+  },
+  {
+    id: 'earrings-geometric-emerald-drops',
+    name: 'Architectural Emerald & Diamond Linear Drops',
+    collection: 'Chandelier Earrings',
+    category: 'earrings',
+    subtitle: 'Exuberance',
+    quote: 'Sculptural shapes inspired by sources as diverse as everyday objects, people and life moments.',
+    description: 'Ultra-slender articulated linear drop earrings featuring calibrated baguette diamonds and octagonal step-cut Colombian emeralds.',
+    gemstones: 'Step-Cut Colombian Emeralds (3.6ct tw), Baguette Diamonds',
+    metal: 'Platinum & 18K Yellow Gold',
+    origin: 'Colombia',
+    image: '/lookbook/jewel_052.jpg',
+    page: 18
+  },
 
   // --- BESPOKE COCKTAIL RINGS ---
   {
@@ -439,6 +481,20 @@ export const JEWELRY_PIECES: JewelryPiece[] = [
     gemstones: 'Colombian Emerald (7.1ct), Tapered Diamond Baguettes',
     metal: 'Platinum and 18K Yellow Gold',
     image: '/lookbook/jewel_085.jpg',
+    page: 27
+  },
+  {
+    id: 'ring-royal-cushion-sapphire',
+    name: 'Ceylon Royal Blue Sapphire & Baguette Ring',
+    collection: 'Bespoke Collection',
+    category: 'rings',
+    subtitle: 'Bespoke',
+    quote: 'Boldly oversized & eminently feminine, bringing together sensual designs and unrestrained glamor.',
+    description: 'Cushion-cut unheated Ceylon royal blue sapphire flanked by tapered baguette diamond shoulders in a platinum crown.',
+    gemstones: 'Unheated Ceylon Royal Blue Sapphire (6.2ct), Tapered Baguette Diamonds',
+    metal: '950 Platinum & 18K White Gold',
+    origin: 'Ceylon (Sri Lanka)',
+    image: '/lookbook/jewel_084.jpg',
     page: 27
   },
 
@@ -605,6 +661,22 @@ export const JEWELRY_PIECES: JewelryPiece[] = [
     image: '/lookbook/jewel_107.jpg',
     page: 35
   },
+  {
+    id: 'accessory-basra-pearl-sherwani-buttons',
+    name: 'Basra Pearl & Polki Diamond Sherwani Buttons (Set of 6)',
+    collection: 'Royal Accessories',
+    category: 'accessories',
+    subtitle: 'Gemstone & Diamond',
+    quote: 'Express your personality or make an artistic statement with Aurex bespoke accessories.',
+    description: 'Traditional circular groom buttons adorned with syndicate polki diamonds encircling natural Basra button pearls linked with 18K gold chain.',
+    gemstones: 'Natural Basra Button Pearls, Syndicate Polki Diamonds',
+    metal: '18K Yellow Gold',
+    origin: 'Jaipur Karigari',
+    image: '/lookbook/jewel_100.jpg',
+    page: 33,
+    featured: true,
+    tag: 'Royal Groom Edit'
+  },
 
   // --- FINE JEWELLERY COLLECTION ---
   {
@@ -761,6 +833,16 @@ export const CLIENT_DIARIES: ClientDiaryEntry[] = [
     image: '/client-emerald-mala-groom.jpg',
     jewelryItem: 'Triple-Row Colombian Emerald Bead Mala & Sherwani Buttons',
     page: 48
+  },
+  {
+    id: 'client-international-patrons',
+    title: 'International Patrons at Royal Jaipur Gala',
+    client: 'Global Connoisseurs',
+    quote: 'Distinguished international patrons celebrating in bespoke Colombian emerald and polki choker jewels.',
+    description: 'Adorned in an imperial emerald briolette choker and Basra pearl tassel sautoir against the moonlit Jaipur palace courtyard.',
+    image: '/client-international-patrons.jpg',
+    jewelryItem: 'Imperial Colombian Emerald & Polki Choker with Pearl Sautoir',
+    page: 49
   }
 ]
 
@@ -872,8 +954,8 @@ export const LOOKBOOK_CHAPTERS: LookbookChapter[] = [
     collectionName: 'Client Diaries',
     description: 'Real patrons and brides commemorating life milestones with bespoke Aurex creations, from 300-carat emerald heirlooms to contemporary bridal wear and royal sherwani jewels.',
     keyImage: '/lookbook/jewel_145.jpg',
-    featuredPieces: ['The 300 Carat Colombian Emerald Heirloom', 'The Aurex Heritage Bride', 'Emerald & Pearls at Royal Palace', 'Royal Wedding & Bespoke Sherwani Jewels', 'Imperial Colombian Emerald Cabochon & Beads', 'Triple-Strand Emerald Mala & Sherwani Buttons'],
-    pageRange: 'Folio 42–48'
+    featuredPieces: ['The 300 Carat Colombian Emerald Heirloom', 'The Aurex Heritage Bride', 'Emerald & Pearls at Royal Palace', 'Royal Wedding & Bespoke Sherwani Jewels', 'Imperial Colombian Emerald Cabochon & Beads', 'Triple-Strand Emerald Mala & Sherwani Buttons', 'International Patrons at Royal Jaipur Gala'],
+    pageRange: 'Folio 42–49'
   }
 ]
 

@@ -46,7 +46,7 @@ export function QuickViewModal({
       onClick={onClose}
     >
       <div
-        className="relative w-full max-w-4xl bg-[#171717] border border-[#d8a48f]/40 shadow-2xl overflow-hidden flex flex-col md:flex-row max-h-[90vh]"
+        className="relative w-full max-w-4xl bg-[#171717] border border-[#d8a48f]/40 shadow-2xl overflow-y-auto md:overflow-hidden flex flex-col md:flex-row max-h-[90vh]"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close button */}
@@ -59,7 +59,7 @@ export function QuickViewModal({
         </button>
 
         {/* Left Column: Jewelry Photo Display */}
-        <div className="relative md:w-1/2 min-h-[320px] md:min-h-[480px] bg-radial from-[#222222] to-[#111111] p-8 flex items-center justify-center border-b md:border-b-0 md:border-r border-[#d8a48f]/20">
+        <div className="relative md:w-1/2 h-64 sm:h-80 md:min-h-[480px] bg-radial from-[#222222] to-[#111111] p-6 sm:p-8 flex items-center justify-center border-b md:border-b-0 md:border-r border-[#d8a48f]/20 shrink-0">
           <div className="relative w-full h-full max-h-[400px]">
             <Image
               src={piece.image}

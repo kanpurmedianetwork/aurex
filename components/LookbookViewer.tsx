@@ -277,9 +277,9 @@ export function LookbookViewer({ onSelectPiece, onOpenConcierge }: LookbookViewe
           </div>
         )}
 
-        {/* VIEW MODE 2: GRID OVERVIEW */}
+        {/* VIEW MODE 2: GRID OVERVIEW - Symmetrical 10-Chapter Grid */}
         {viewMode === 'grid' && (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-5 gap-5">
             {LOOKBOOK_CHAPTERS.map((ch, idx) => (
               <div
                 key={ch.id}
@@ -287,29 +287,32 @@ export function LookbookViewer({ onSelectPiece, onOpenConcierge }: LookbookViewe
                   setCurrentChapterIdx(idx)
                   setViewMode('spread')
                 }}
-                className="cursor-pointer group bg-[#1b1b1b] border border-[#d8a48f]/20 hover:border-[#d8a48f] p-6 transition duration-300 relative overflow-hidden"
+                className="cursor-pointer group bg-[#1b1b1b] border border-[#d8a48f]/20 hover:border-[#d8a48f] p-5 transition duration-300 relative overflow-hidden flex flex-col justify-between"
               >
-                <div className="flex items-center justify-between text-xs font-mono text-[#d8a48f] mb-2">
-                  <span>CHAPTER {ch.number}</span>
-                  <span className="text-[#a39b94]">{ch.pageRange}</span>
+                <div>
+                  <div className="flex items-center justify-between text-xs font-mono text-[#d8a48f] mb-2">
+                    <span>CH {ch.number}</span>
+                    <span className="text-[#a39b94] text-[10px]">{ch.pageRange}</span>
+                  </div>
+                  <span className="font-script text-xl text-[#d8a48f] block mb-1 min-h-[1.75rem] leading-tight">
+                    {ch.cursiveSubtitle}
+                  </span>
+                  <h3 className="font-serif text-base uppercase tracking-wider text-[#ede6df] mb-3 min-h-[2.75rem] line-clamp-2">
+                    {ch.title}
+                  </h3>
+                  <div className="relative h-40 w-full mb-3 bg-[#141414] p-2 border border-[#d8a48f]/10">
+                    <Image
+                      src={ch.keyImage}
+                      alt={ch.title}
+                      fill
+                      className="object-contain transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
+                  <p className="text-[11px] text-[#a39b94] line-clamp-2 leading-relaxed min-h-[2.25rem]">
+                    {ch.description}
+                  </p>
                 </div>
-                <span className="font-script text-2xl text-[#d8a48f] block mb-1">
-                  {ch.cursiveSubtitle}
-                </span>
-                <h3 className="font-serif text-xl uppercase tracking-wider text-[#ede6df] mb-4">
-                  {ch.title}
-                </h3>
-                <div className="relative h-48 w-full mb-4">
-                  <Image
-                    src={ch.keyImage}
-                    alt={ch.title}
-                    fill
-                    className="object-contain transition-transform duration-500 group-hover:scale-105"
-                  />
-                </div>
-                <p className="text-xs text-[#a39b94] line-clamp-2 leading-relaxed">
-                  {ch.description}
-                </p>
+
                 <div className="mt-4 pt-3 border-t border-[#d8a48f]/15 flex items-center justify-between text-[10px] font-mono uppercase tracking-widest text-[#ebd0c4]">
                   <span>Open Spread</span>
                   <ArrowRight size={12} className="transition-transform group-hover:translate-x-1" />

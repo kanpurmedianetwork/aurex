@@ -86,8 +86,14 @@ export function CollectionsSection({
           })}
         </div>
 
-        {/* Jewelry Products Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        {/* Jewelry Products Grid - Symmetrical Dynamic Layout */}
+        <div
+          className={
+            filteredPieces.length === 6 || filteredPieces.length === 3 || (selectedCategory !== 'all' && filteredPieces.length <= 6)
+              ? 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8'
+              : 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6'
+          }
+        >
           {filteredPieces.map((piece) => {
             const isLiked = wishlistIds.includes(piece.id)
 
@@ -137,34 +143,40 @@ export function CollectionsSection({
                   </div>
                 </div>
 
-                {/* Card Body */}
+                {/* Card Body with Consistent Vertical Alignment */}
                 <div className="p-5 flex-1 flex flex-col justify-between">
                   <div>
-                    {piece.subtitle && (
-                      <span className="font-script text-lg text-[#d8a48f] block mb-1">
-                        {piece.subtitle}
-                      </span>
-                    )}
+                    <div className="min-h-[1.75rem] mb-1 flex items-center">
+                      {piece.subtitle ? (
+                        <span className="font-script text-xl text-[#d8a48f] block leading-none">
+                          {piece.subtitle}
+                        </span>
+                      ) : (
+                        <span className="font-mono text-[9px] uppercase tracking-wider text-[#a39b94]/60 block">
+                          Haute Joaillerie
+                        </span>
+                      )}
+                    </div>
 
                     <h3
                       onClick={() => onSelectPiece(piece)}
-                      className="font-serif text-lg text-[#ede6df] font-medium hover:text-[#d8a48f] transition cursor-pointer leading-tight mb-2"
+                      className="font-serif text-lg text-[#ede6df] font-medium hover:text-[#d8a48f] transition cursor-pointer leading-tight mb-2 min-h-[3rem] line-clamp-2"
                     >
                       {piece.name}
                     </h3>
 
-                    <p className="text-xs text-[#a39b94] line-clamp-2 leading-relaxed mb-4">
+                    <p className="text-xs text-[#a39b94] line-clamp-2 leading-relaxed mb-4 min-h-[2.5rem]">
                       {piece.description}
                     </p>
 
-                    <div className="border-t border-[#d8a48f]/10 pt-3 space-y-1 mb-4 text-[11px] font-mono text-[#c7c0b5]">
+                    <div className="border-t border-[#d8a48f]/10 pt-3 space-y-1.5 mb-4 text-[11px] font-mono text-[#c7c0b5] min-h-[3.25rem]">
                       <div className="flex items-start justify-between gap-2">
-                        <span className="text-[#a39b94] uppercase tracking-wider text-[9px]">Gems:</span>
-                        <span className="text-right text-[#d8a48f] text-[10px]">{piece.gemstones}</span>
+                        <span className="text-[#a39b94] uppercase tracking-wider text-[9px] shrink-0">Gems:</span>
+                        <span className="text-right text-[#d8a48f] text-[10px] truncate max-w-[72%]">{piece.gemstones}</span>
                       </div>
                       <div className="flex items-center justify-between gap-2">
-                        <span className="text-[#a39b94] uppercase tracking-wider text-[9px]">Metal:</span>
-                        <span className="text-right text-[10px] text-[#ede6df]">{piece.metal}</span>
+                        <span className="text-[#a39b94] uppercase tracking-wider text-[9px] shrink-0">Metal:</span>
+                        <span className="text-right text-[10px] text-[#ede6df] truncate max-w-[72%]">{piece.metal}</span>
                       </div>
                     </div>
                   </div>

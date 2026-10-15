@@ -146,7 +146,7 @@ export function FounderAtelierSection({ onOpenConcierge }: FounderAtelierSection
               scale={1.01}
               className="relative p-2 bg-[#1b1b1b] border border-[#d8a48f]/40 shadow-2xl group"
             >
-              <div className="relative h-80 sm:h-[480px] w-full overflow-hidden bg-[#141414]">
+              <div className="relative h-96 sm:h-[480px] w-full overflow-hidden bg-[#141414]">
                 <Image
                   src="/founder-atelier-office.jpg"
                   alt="Founder Neeru in her luxury jewellery design atelier office"
@@ -157,14 +157,14 @@ export function FounderAtelierSection({ onOpenConcierge }: FounderAtelierSection
                 <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />
 
                 {/* Top Badge */}
-                <div className="absolute top-4 left-4 z-10">
+                <div className="absolute top-3 sm:top-4 left-3 sm:left-4 z-10">
                   <span className="bg-[#141414]/90 border border-[#d8a48f]/40 px-3 py-1 font-mono text-[9px] uppercase tracking-[0.2em] text-[#d8a48f] backdrop-blur-md">
                     Direct Consultation With The Designer
                   </span>
                 </div>
 
                 {/* Bottom Overlay Info */}
-                <div className="absolute bottom-5 left-5 right-5 z-10 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+                <div className="absolute bottom-4 sm:bottom-5 left-4 sm:left-5 right-4 sm:right-5 z-10 flex flex-col sm:flex-row sm:items-end justify-between gap-3 sm:gap-4">
                   <div>
                     <span className="font-mono text-[9px] uppercase tracking-[0.25em] text-[#d8a48f] block mb-1">
                       Creative Director & 10th Gen Jeweller
@@ -194,7 +194,7 @@ export function FounderAtelierSection({ onOpenConcierge }: FounderAtelierSection
             <SpotlightCard
               spotlightColor="rgba(216, 164, 143, 0.22)"
               spotlightSize={400}
-              className="border-[#d8a48f]/30 bg-[#171717] p-8 shadow-2xl relative"
+              className="border-[#d8a48f]/30 bg-[#171717] p-6 sm:p-8 shadow-2xl relative"
             >
               <div className="flex items-center justify-between mb-4">
                 <span className="font-mono text-[9px] uppercase tracking-[0.25em] text-[#d8a48f]">
@@ -216,11 +216,11 @@ export function FounderAtelierSection({ onOpenConcierge }: FounderAtelierSection
               {/* Station Specifications Grid */}
               <div className="bg-[#1e1e1e] border border-[#d8a48f]/15 p-4 space-y-3 mb-6">
                 {currentStation.details.map((det, idx) => (
-                  <div key={idx} className="flex items-start justify-between gap-3 text-xs font-mono">
+                  <div key={idx} className="flex items-start justify-between gap-3 text-xs font-mono min-w-0">
                     <span className="text-[#a39b94] uppercase tracking-wider text-[9px] shrink-0">
                       {det.label}:
                     </span>
-                    <span className="text-right text-[#d8a48f] text-[10px]">
+                    <span className="text-right text-[#d8a48f] text-[10px] break-words">
                       {det.value}
                     </span>
                   </div>

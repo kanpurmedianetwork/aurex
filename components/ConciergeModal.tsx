@@ -60,7 +60,7 @@ export function ConciergeModal({ isOpen, onClose, initialPiece }: ConciergeModal
       onClick={handleCloseModal}
     >
       <div
-        className="relative w-full max-w-xl bg-[#171717] border border-[#d8a48f]/40 shadow-2xl p-6 sm:p-8 overflow-hidden"
+        className="relative w-full max-w-xl bg-[#171717] border border-[#d8a48f]/40 shadow-2xl p-6 sm:p-8 max-h-[92vh] overflow-y-auto"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close Button */}

@@ -45,7 +45,7 @@ export function HeritageSection() {
               </div>
 
               {/* Floating Signature Piece Card: Marquise Cluster Pear Emerald Chandeliers */}
-              <div className="absolute -bottom-8 -right-4 sm:-right-8 bg-[#1f1f1f]/95 backdrop-blur-md p-4 border border-[#d8a48f]/60 max-w-[210px] shadow-2xl hidden sm:block">
+              <div className="absolute -bottom-6 -right-2 sm:-right-4 xl:-right-8 bg-[#1f1f1f]/95 backdrop-blur-md p-3.5 sm:p-4 border border-[#d8a48f]/60 max-w-[180px] sm:max-w-[200px] xl:max-w-[210px] shadow-2xl hidden sm:block z-10">
                 <div className="relative h-24 w-full mb-2">
                   <Image
                     src="/lookbook/jewel_060.jpg"
