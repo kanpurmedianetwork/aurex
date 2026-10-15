@@ -735,6 +735,16 @@ export const CLIENT_DIARIES: ClientDiaryEntry[] = [
     image: '/client-emerald-heirloom.jpg',
     jewelryItem: 'Colombian Emerald Cabochon & Graduated Beads Haar',
     page: 47
+  },
+  {
+    id: 'client-emerald-mala',
+    title: 'Triple-Strand Emerald Mala & Royal Sherwani',
+    client: 'Royal Wedding Patron',
+    quote: 'Adorning a triple-strand natural Colombian emerald bead mala and bespoke buttons overlooking the palace courtyard.',
+    description: 'A magnificent ensemble of graduated Colombian emerald beads paired with custom handcrafted emerald buttons in 18K yellow gold.',
+    image: '/client-emerald-mala-groom.jpg',
+    jewelryItem: 'Triple-Row Colombian Emerald Bead Mala & Sherwani Buttons',
+    page: 48
   }
 ]
 
@@ -846,8 +856,8 @@ export const LOOKBOOK_CHAPTERS: LookbookChapter[] = [
     collectionName: 'Client Diaries',
     description: 'Real patrons and brides commemorating life milestones with bespoke Aurex creations, from 300-carat emerald heirlooms to contemporary bridal wear and royal sherwani jewels.',
     keyImage: '/lookbook/jewel_145.jpg',
-    featuredPieces: ['The 300 Carat Colombian Emerald Heirloom', 'The Aurex Heritage Bride', 'Emerald & Pearls at Royal Palace', 'Royal Wedding & Bespoke Sherwani Jewels', 'Imperial Colombian Emerald Cabochon & Beads'],
-    pageRange: 'Folio 42–47'
+    featuredPieces: ['The 300 Carat Colombian Emerald Heirloom', 'The Aurex Heritage Bride', 'Emerald & Pearls at Royal Palace', 'Royal Wedding & Bespoke Sherwani Jewels', 'Imperial Colombian Emerald Cabochon & Beads', 'Triple-Strand Emerald Mala & Sherwani Buttons'],
+    pageRange: 'Folio 42–48'
   }
 ]
 
