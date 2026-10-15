@@ -32,8 +32,8 @@ export function ClientDiariesSection() {
           </p>
         </div>
 
-        {/* 4 Client Story Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+        {/* Client Story Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 sm:gap-7">
           {CLIENT_DIARIES.map((item) => (
             <div
               key={item.id}
@@ -46,7 +46,7 @@ export function ClientDiariesSection() {
                     src={item.image}
                     alt={item.title}
                     fill
-                    className="object-cover object-center filter contrast-[1.03] transition-transform duration-700 group-hover:scale-105"
+                    className="object-cover object-top filter contrast-[1.03] transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                   

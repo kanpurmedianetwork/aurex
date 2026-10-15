@@ -715,6 +715,16 @@ export const CLIENT_DIARIES: ClientDiaryEntry[] = [
     image: '/lookbook/jewel_151.jpg',
     jewelryItem: 'South Sea Pearl Long Knot Sautoir',
     page: 45
+  },
+  {
+    id: 'client-royal-sherwani',
+    title: 'Royal Wedding & Bespoke Sherwani Jewels',
+    client: 'Distinguished Patrons',
+    quote: 'Distinguished patrons adorning handcrafted 18K gold and gemstone kurta buttons for a grand royal celebration.',
+    description: 'Captured amidst the majestic palace courtyard, featuring handcrafted ruby and diamond buttons complementing custom traditional attire.',
+    image: '/client-wedding-portrait.jpg',
+    jewelryItem: 'Bespoke Ruby & Diamond Sherwani Buttons in 18K Gold',
+    page: 46
   }
 ]
 
@@ -824,10 +834,10 @@ export const LOOKBOOK_CHAPTERS: LookbookChapter[] = [
     title: 'Client Diaries',
     cursiveSubtitle: 'Client Diaries',
     collectionName: 'Client Diaries',
-    description: 'Real patrons and brides commemorating life milestones with bespoke Aurex creations, from 300-carat emerald heirlooms to contemporary bridal wear.',
+    description: 'Real patrons and brides commemorating life milestones with bespoke Aurex creations, from 300-carat emerald heirlooms to contemporary bridal wear and royal sherwani jewels.',
     keyImage: '/lookbook/jewel_145.jpg',
-    featuredPieces: ['The 300 Carat Colombian Emerald Heirloom', 'The Aurex Heritage Bride', 'Emerald & Pearls at Royal Palace'],
-    pageRange: 'Folio 42–45'
+    featuredPieces: ['The 300 Carat Colombian Emerald Heirloom', 'The Aurex Heritage Bride', 'Emerald & Pearls at Royal Palace', 'Royal Wedding & Bespoke Sherwani Jewels'],
+    pageRange: 'Folio 42–46'
   }
 ]
 
