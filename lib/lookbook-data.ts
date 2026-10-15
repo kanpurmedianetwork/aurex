@@ -231,6 +231,22 @@ export const JEWELRY_PIECES: JewelryPiece[] = [
 
   // --- COLUMBIAN EMERALD COLLECTION ---
   {
+    id: 'emerald-300ct-heirloom-necklace',
+    name: 'The 300 Carat Colombian Emerald Heirloom',
+    collection: 'Colombian Emerald Collection',
+    category: 'emerald',
+    subtitle: 'Crown Masterpiece',
+    quote: 'This monumental gem embodies the pinnacle of Colombian emerald provenance, encircled by a radiant constellation of fine diamonds.',
+    description: 'An unheated 300-carat monumental oval Colombian emerald centerpiece framed in twin tiers of marquise and pear-cut diamonds, suspended from a graduated brilliant-cut diamond riviere necklace.',
+    gemstones: 'Monumental Colombian Emerald (300ct), Marquise, Pear & Round Brilliant Diamonds (28ct tw)',
+    metal: 'Platinum / 18K White Gold',
+    origin: 'Muzo, Colombia',
+    image: '/colombian-emerald-300ct-heirloom.jpg',
+    page: 42,
+    featured: true,
+    tag: 'Crown Masterpiece'
+  },
+  {
     id: 'emerald-tassel-sautoir',
     name: 'Colombian Emerald Bead Sautoir with Pearl Tassels',
     collection: 'Colombian Emerald Collection',
@@ -680,10 +696,10 @@ export const CLIENT_DIARIES: ClientDiaryEntry[] = [
     id: 'client-300ct-emerald',
     title: 'The 300 Carat Colombian Emerald Heirloom',
     client: 'Royal Heritage Patron',
-    quote: 'Aurex exclusive legacy featuring a beautiful 300 carat Columbian emerald and pearl necklace adorned by our lovely client.',
-    description: 'Commissioned for a landmark family anniversary, this bespoke creation incorporates unheated Muzo emerald drops collected across two decades.',
-    image: '/lookbook/jewel_150.jpg',
-    jewelryItem: '300ct Colombian Emerald & Basra Pearl Haar',
+    quote: 'Aurex exclusive legacy featuring a monumental 300 carat Colombian emerald centerpiece framed in pear & marquise diamonds on a diamond riviere necklace.',
+    description: 'Commissioned as a multi-generational legacy heirloom, this bespoke creation showcases an extraordinary 300ct unheated Muzo Colombian emerald.',
+    image: '/colombian-emerald-300ct-heirloom.jpg',
+    jewelryItem: '300ct Colombian Emerald & Diamond Riviere Necklace',
     page: 42
   },
   {
