@@ -725,6 +725,16 @@ export const CLIENT_DIARIES: ClientDiaryEntry[] = [
     image: '/client-wedding-portrait.jpg',
     jewelryItem: 'Bespoke Ruby & Diamond Sherwani Buttons in 18K Gold',
     page: 46
+  },
+  {
+    id: 'client-emerald-cabochon',
+    title: 'Imperial Colombian Emerald Cabochon & Beads',
+    client: 'Royal Heritage Patron',
+    quote: 'Our lovely patron wearing an extraordinary Colombian emerald cabochon and graduated bead necklace with matching ear pendants.',
+    description: 'A study in royal Colombian emerald provenance, featuring monumental unheated cabochon emeralds set in handcrafted 18K yellow gold.',
+    image: '/client-emerald-heirloom.jpg',
+    jewelryItem: 'Colombian Emerald Cabochon & Graduated Beads Haar',
+    page: 47
   }
 ]
 
@@ -836,8 +846,8 @@ export const LOOKBOOK_CHAPTERS: LookbookChapter[] = [
     collectionName: 'Client Diaries',
     description: 'Real patrons and brides commemorating life milestones with bespoke Aurex creations, from 300-carat emerald heirlooms to contemporary bridal wear and royal sherwani jewels.',
     keyImage: '/lookbook/jewel_145.jpg',
-    featuredPieces: ['The 300 Carat Colombian Emerald Heirloom', 'The Aurex Heritage Bride', 'Emerald & Pearls at Royal Palace', 'Royal Wedding & Bespoke Sherwani Jewels'],
-    pageRange: 'Folio 42–46'
+    featuredPieces: ['The 300 Carat Colombian Emerald Heirloom', 'The Aurex Heritage Bride', 'Emerald & Pearls at Royal Palace', 'Royal Wedding & Bespoke Sherwani Jewels', 'Imperial Colombian Emerald Cabochon & Beads'],
+    pageRange: 'Folio 42–47'
   }
 ]
 
