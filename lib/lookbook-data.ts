@@ -698,7 +698,7 @@ export const CLIENT_DIARIES: ClientDiaryEntry[] = [
     client: 'Royal Heritage Patron',
     quote: 'Aurex exclusive legacy featuring a monumental 300 carat Colombian emerald centerpiece framed in pear & marquise diamonds on a diamond riviere necklace.',
     description: 'Commissioned as a multi-generational legacy heirloom, this bespoke creation showcases an extraordinary 300ct unheated Muzo Colombian emerald.',
-    image: '/colombian-emerald-300ct-heirloom.jpg',
+    image: '/colombian-emerald-300ct-model.jpg',
     jewelryItem: '300ct Colombian Emerald & Diamond Riviere Necklace',
     page: 42
   },
