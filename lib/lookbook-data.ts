@@ -795,13 +795,13 @@ export const CLIENT_DIARIES: ClientDiaryEntry[] = [
     page: 44
   },
   {
-    id: 'client-south-sea-pearl',
-    title: 'Modern Sophistication in South Sea Pearls',
-    client: 'Contemporary Patron',
-    quote: 'Our beautiful client is wearing a South sea pearl Long knot necklace.',
-    description: 'Effortlessly styled for an evening gala, proving how heritage pearl craftsmanship translates seamlessly into contemporary fashion.',
-    image: '/lookbook/jewel_151.jpg',
-    jewelryItem: 'South Sea Pearl Long Knot Sautoir',
+    id: 'client-jaipur-polki-choker',
+    title: 'Heritage Polki & Basra Pearls at Jaipur Palace',
+    client: 'Distinguished Royal Patron',
+    quote: 'Adorning our handcrafted Syndicate Polki and Basra pearl choker collar at the royal Jaipur palace celebration.',
+    description: 'Captured amidst the historic palace courtyard, radiating timeless grace in a bespoke Syndicate Polki choker with graduated natural pearls.',
+    image: '/client-jaipur-polki-choker.jpg',
+    jewelryItem: 'Imperial Syndicate Polki & Natural Basra Pearl Choker Set',
     page: 45
   },
   {
