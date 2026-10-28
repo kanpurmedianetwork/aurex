@@ -125,6 +125,11 @@ export function CollectionsSection({
                   onClick={() => onSelectPiece(piece)}
                   className="relative h-64 sm:h-72 w-full p-6 cursor-pointer flex items-center justify-center bg-radial from-[#222222] to-[#141414] overflow-hidden"
                 >
+                  {piece.modelImage && (
+                    <span className="absolute top-2.5 left-2.5 z-10 bg-[#141414]/90 border border-[#d8a48f]/40 px-2 py-0.5 font-mono text-[8px] uppercase tracking-wider text-[#d8a48f] backdrop-blur-sm pointer-events-none">
+                      On-Model View
+                    </span>
+                  )}
                   <div className="relative w-full h-full transition-transform duration-700 ease-out group-hover:scale-110">
                     <Image
                       src={piece.image}

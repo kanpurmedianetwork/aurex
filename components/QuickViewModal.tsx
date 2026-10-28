@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { JewelryPiece } from '@/lib/lookbook-data'
 import { X, Heart, MessageCircle } from 'lucide-react'
@@ -20,6 +20,12 @@ export function QuickViewModal({
   isLiked,
   onOpenConcierge
 }: QuickViewModalProps) {
+  const [viewMode, setViewMode] = useState<'piece' | 'model'>('piece')
+
+  useEffect(() => {
+    setViewMode('piece')
+  }, [piece?.id])
+
   useEffect(() => {
     if (!piece) return
     const originalOverflow = document.body.style.overflow
@@ -46,13 +52,13 @@ export function QuickViewModal({
       onClick={onClose}
     >
       <div
-        className="relative w-full max-w-4xl bg-[#171717] border border-[#d8a48f]/40 shadow-2xl overflow-y-auto md:overflow-hidden flex flex-col md:flex-row max-h-[90vh]"
+        className="relative w-full max-w-4xl bg-[#171717] border border-[#d8a48f]/40 shadow-2xl overflow-y-auto md:overflow-hidden flex flex-col md:flex-row max-h-[92vh] sm:max-h-[88vh]"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 z-20 p-2 text-[#a39b94] hover:text-[#d8a48f] bg-[#141414]/80 transition rounded-full"
+          className="absolute top-3 right-3 sm:top-4 sm:right-4 z-30 p-2 text-[#a39b94] hover:text-[#d8a48f] bg-[#141414]/80 transition rounded-full"
           aria-label="Close dialog"
         >
           <X size={20} />
@@ -60,12 +66,44 @@ export function QuickViewModal({
 
         {/* Left Column: Jewelry Photo Display */}
         <div className="relative md:w-1/2 h-64 sm:h-80 md:min-h-[480px] bg-radial from-[#222222] to-[#111111] p-6 sm:p-8 flex items-center justify-center border-b md:border-b-0 md:border-r border-[#d8a48f]/20 shrink-0">
+          {/* Toggle between Product View and On-Model View if modelImage exists */}
+          {piece.modelImage && (
+            <div className="absolute top-3 left-3 sm:top-4 sm:left-4 z-20 flex items-center bg-[#141414]/90 border border-[#d8a48f]/40 p-0.5 backdrop-blur-md">
+              <button
+                type="button"
+                onClick={() => setViewMode('piece')}
+                className={`px-3 py-1 font-mono text-[9px] uppercase tracking-widest transition ${
+                  viewMode === 'piece'
+                    ? 'bg-[#d8a48f] text-[#141414] font-semibold shadow'
+                    : 'text-[#a39b94] hover:text-[#ede6df]'
+                }`}
+              >
+                Piece
+              </button>
+              <button
+                type="button"
+                onClick={() => setViewMode('model')}
+                className={`px-3 py-1 font-mono text-[9px] uppercase tracking-widest transition ${
+                  viewMode === 'model'
+                    ? 'bg-[#d8a48f] text-[#141414] font-semibold shadow'
+                    : 'text-[#a39b94] hover:text-[#ede6df]'
+                }`}
+              >
+                On Model
+              </button>
+            </div>
+          )}
+
           <div className="relative w-full h-full max-h-[400px]">
             <Image
-              src={piece.image}
+              src={viewMode === 'model' && piece.modelImage ? piece.modelImage : piece.image}
               alt={piece.name}
               fill
-              className="object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.9)]"
+              className={
+                viewMode === 'model' && piece.modelImage
+                  ? 'object-cover object-top border border-[#d8a48f]/20 shadow-xl'
+                  : 'object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.9)]'
+              }
               priority
             />
           </div>
@@ -76,7 +114,7 @@ export function QuickViewModal({
         </div>
 
         {/* Right Column: Specifications & Inquiries */}
-        <div className="md:w-1/2 p-6 sm:p-8 overflow-y-auto flex flex-col justify-between">
+        <div className="md:w-1/2 p-5 sm:p-6 md:p-8 md:overflow-y-auto flex flex-col justify-between">
           <div>
             <div className="flex items-center justify-between mb-2">
               <span className="font-mono text-[9px] uppercase tracking-[0.22em] text-[#d8a48f]">

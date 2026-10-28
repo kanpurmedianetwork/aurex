@@ -10,6 +10,7 @@ export interface JewelryPiece {
   metal: string
   origin?: string
   image: string
+  modelImage?: string
   page: number
   featured?: boolean
   tag?: string
@@ -203,17 +204,20 @@ export const JEWELRY_PIECES: JewelryPiece[] = [
   },
   {
     id: 'wedding-emerald-pearl-mala',
-    name: 'Carved Colombian Emerald & Basra Pearl Mala',
+    name: 'Teardrop Colombian Emerald & Basra Pearl Royal Mala',
     collection: 'Wedding Collection',
     category: 'wedding',
     subtitle: "Love's finest symbol",
     quote: 'A bequest that seeks to bring the world’s finest rare jewels.',
-    description: 'Fluted Colombian emerald drops paired with graduated Basra pearls and kundan-set diamond caps.',
-    gemstones: 'Carved Colombian Emerald Melons, Basra Pearls, Polki Diamonds',
-    metal: '22K Gold',
-    origin: 'Colombia & Basra',
+    description: 'Luminous teardrop Colombian emerald drops paired with graduated golden Basra pearls and kundan-set polki diamond caps on green silk cord.',
+    gemstones: 'Translucent Colombian Emerald Drops (17 drops), Natural Basra Pearls, Syndicate Polki Diamonds',
+    metal: '22K & 18K Yellow Gold with Silk Dori',
+    origin: 'Colombia & Basra (Jaipur Karigari)',
     image: '/lookbook/jewel_030.jpg',
-    page: 10
+    modelImage: '/colombian-emerald-basra-pearl-model.jpg',
+    page: 10,
+    featured: true,
+    tag: 'Royal Heirloom'
   },
   {
     id: 'wedding-seed-pearl-ruby-choker',
@@ -242,6 +246,7 @@ export const JEWELRY_PIECES: JewelryPiece[] = [
     metal: 'Platinum / 18K White Gold',
     origin: 'Muzo, Colombia',
     image: '/colombian-emerald-300ct-heirloom.jpg',
+    modelImage: '/colombian-emerald-300ct-model.jpg',
     page: 42,
     featured: true,
     tag: 'Crown Masterpiece'
