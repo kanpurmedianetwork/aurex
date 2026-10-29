@@ -19,7 +19,7 @@ const CATEGORIES = [
   { id: 'engagement', label: 'Engagement Rings' },
   { id: 'earrings', label: 'Chandelier Earrings' },
   { id: 'rings', label: 'Bespoke Collection' },
-  { id: 'bracelets', label: 'Bracelets & Cuffs' },
+  { id: 'bracelets', label: 'Bracelets' },
   { id: 'accessories', label: 'Royal Accessories' },
   { id: 'everyday', label: 'Fine Jewellery Collection' },
 ]

@@ -24,10 +24,23 @@ export function LookbookViewer({ onSelectPiece, onOpenConcierge }: LookbookViewe
 
   const chapter = LOOKBOOK_CHAPTERS[currentChapterIdx]
 
-  const chapterPieces = JEWELRY_PIECES.filter(
-    (p) => p.collection.toLowerCase() === chapter.collectionName.toLowerCase() ||
-           p.subtitle.toLowerCase() === chapter.cursiveSubtitle.toLowerCase()
-  )
+  const chapterPieces = JEWELRY_PIECES.filter((p) => {
+    if (chapter.id === 'ch-bracelets') return p.category === 'bracelets'
+    if (chapter.id === 'ch-chains') return p.id === 'fine-double-layered-diamond-chain' || p.category === 'everyday'
+    if (chapter.id === 'ch-engagement') return p.category === 'engagement'
+    if (chapter.id === 'ch-wedding') return p.category === 'wedding'
+    if (chapter.id === 'ch-emerald') return p.category === 'emerald'
+    if (chapter.id === 'ch-earrings') return p.category === 'earrings'
+    if (chapter.id === 'ch-cocktail') return p.category === 'rings'
+    if (chapter.id === 'ch-accessories') return p.category === 'accessories'
+    if (chapter.id === 'ch-everyday') return p.category === 'everyday'
+    return (
+      p.collection.toLowerCase() === chapter.collectionName.toLowerCase() ||
+      p.collection.toLowerCase().includes(chapter.title.toLowerCase()) ||
+      p.subtitle.toLowerCase() === chapter.cursiveSubtitle.toLowerCase() ||
+      chapter.featuredPieces.includes(p.name)
+    )
+  })
 
   const activePiece =
     JEWELRY_PIECES.find((p) => p.image === chapter.keyImage) ||
