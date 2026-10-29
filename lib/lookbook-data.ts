@@ -505,14 +505,14 @@ export const JEWELRY_PIECES: JewelryPiece[] = [
 
   // --- BRACELETS ---
   {
-    id: 'bracelet-multi-shape-fancy-diamond',
-    name: 'Multi-Shape Fancy Diamond Tennis Bracelet',
+    id: 'bracelet-multicut-tennis-diamond',
+    name: 'Multicut Tennis Diamond Bracelet',
     collection: 'Bracelets',
     category: 'bracelets',
     subtitle: 'Modern Diamanterie',
     quote: 'A celebratory symphony of individual diamond silhouettes united in continuous brilliance.',
     description: 'Spectacular platinum tennis bracelet featuring a graduated sequence of fancy-shaped diamonds including heart, emerald, pear, round brilliant, and oval cuts, secured with a seamless box clasp.',
-    gemstones: 'Fancy Multi-Cut Diamonds: Heart, Emerald, Pear, Round & Oval (14.2ct tw)',
+    gemstones: 'Fancy Multicut Diamonds: Heart, Emerald, Pear, Round & Oval (14.2ct tw)',
     metal: '950 Platinum & 18K White Gold',
     origin: 'Natural Certified Conflict-Free Diamonds',
     image: '/multi-shape-fancy-diamond-bracelet.jpg',
@@ -938,7 +938,7 @@ export const LOOKBOOK_CHAPTERS: LookbookChapter[] = [
     collectionName: 'Chains & Sautoirs',
     description: 'From radiant diamond solitaires and layered sautoir necklaces to emerald and ruby beaded tassels crafted with peerless delicacy.',
     keyImage: '/lookbook/jewel_070.jpg',
-    featuredPieces: ['Colombian Emerald Bead Sautoir with Pearl Tassels', 'Ruby and Pearl Long Chain', 'Cluster Diamond Pendant'],
+    featuredPieces: ['Double Layered Diamond Chain', 'Colombian Emerald Bead Sautoir with Pearl Tassels', 'Ruby and Pearl Long Chain'],
     pageRange: 'Folio 21–22'
   },
   {
@@ -960,7 +960,7 @@ export const LOOKBOOK_CHAPTERS: LookbookChapter[] = [
     collectionName: 'Bracelets & Cuffs',
     description: 'Add a touch of elegance with a sparkling bracelet from Aurex. Handcrafted from high quality gold and conflict-free diamonds. Our craftsmen can work with you to create a one-of-a-kind tailored design.',
     keyImage: '/lookbook/jewel_091.jpg',
-    featuredPieces: ['Platinum Colombian Emerald Statement Cuff', 'Brilliant Cut Diamond Tennis Bracelet', 'Royal Jaipur Traditional Peacock Kadas'],
+    featuredPieces: ['Multicut Tennis Diamond Bracelet', 'Platinum Colombian Emerald Statement Cuff', 'Brilliant Cut Diamond Tennis Bracelet'],
     pageRange: 'Folio 28–31'
   },
   {
