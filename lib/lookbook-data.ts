@@ -505,6 +505,23 @@ export const JEWELRY_PIECES: JewelryPiece[] = [
 
   // --- BRACELETS ---
   {
+    id: 'bracelet-multi-shape-fancy-diamond',
+    name: 'Multi-Shape Fancy Diamond Tennis Bracelet',
+    collection: 'Bracelets',
+    category: 'bracelets',
+    subtitle: 'Modern Diamanterie',
+    quote: 'A celebratory symphony of individual diamond silhouettes united in continuous brilliance.',
+    description: 'Spectacular platinum tennis bracelet featuring a graduated sequence of fancy-shaped diamonds including heart, emerald, pear, round brilliant, and oval cuts, secured with a seamless box clasp.',
+    gemstones: 'Fancy Multi-Cut Diamonds: Heart, Emerald, Pear, Round & Oval (14.2ct tw)',
+    metal: '950 Platinum & 18K White Gold',
+    origin: 'Natural Certified Conflict-Free Diamonds',
+    image: '/multi-shape-fancy-diamond-bracelet.jpg',
+    modelImage: '/multi-shape-fancy-diamond-bracelet-model.jpg',
+    page: 30,
+    featured: true,
+    tag: 'Collector’s Edition'
+  },
+  {
     id: 'bracelet-multicolor-gemstone-cuff',
     name: 'Bespoke Multi-Gemstone & Diamond Statement Cuff',
     collection: 'Bracelets',
@@ -684,6 +701,23 @@ export const JEWELRY_PIECES: JewelryPiece[] = [
   },
 
   // --- FINE JEWELLERY COLLECTION ---
+  {
+    id: 'fine-double-layered-diamond-chain',
+    name: 'Double Layered Diamond Chain',
+    collection: 'Fine Jewellery Collection',
+    category: 'everyday',
+    subtitle: 'Haute Diamanterie',
+    quote: 'An exquisite cascading double-strand of architectural emerald-cut diamond halos linked in fluid harmony.',
+    description: 'Articulated two-tier diamond chain necklace featuring graduated rectangular emerald-cut diamond halo stations joined by brilliant quatrefoil links in 18K white gold.',
+    gemstones: 'Emerald-Cut Center Diamonds & Micro-Pavé Brilliant Diamond Halos (18.5ct tw)',
+    metal: '18K White Gold & 950 Platinum',
+    origin: 'Natural Certified Diamonds',
+    image: '/double-layered-diamond-chain.jpg',
+    modelImage: '/double-layered-diamond-chain-model.jpg',
+    page: 39,
+    featured: true,
+    tag: 'Signature Diamond'
+  },
   {
     id: 'everyday-sapphire-drop-earrings',
     name: 'Cushion Blue Sapphire & Diamond Drop Earrings',
