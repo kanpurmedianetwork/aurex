@@ -21,11 +21,11 @@ export function HeritageSection() {
                 {/* Neeru Designer Portrait */}
                 <div className="relative h-96 sm:h-[460px] w-full overflow-hidden bg-[#141414]">
                   <Image
-                    src="/founder-neeru.jpg"
-                    alt="Neeru - 10th Generation Jeweller & Designer"
+                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Image-55276079-k0lq7s2CyRSgHVoiBRPbXXYDHzInAh.jpeg"
+                    alt="Aurex designer Neeru presenting an emerald necklace to a client in the atelier"
                     fill
                     priority
-                    className="object-cover object-top transition-transform duration-700 hover:scale-105"
+                    className="object-cover object-[48%_center] transition-transform duration-700 hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
                   
